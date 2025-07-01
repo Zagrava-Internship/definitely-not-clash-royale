@@ -19,10 +19,10 @@ namespace DefinitelyNotClashRoyale.Domain.Behaviors
             if (self.Status is UnitStatus.Attacking or UnitStatus.Stunned or UnitStatus.Dead)
                 return false;
 
-            if (target.Status == UnitStatus.Dead)
+            if (target.Status is UnitStatus.Dead)
                 return false;
 
-            return target.Type == UnitType.Ground;
+            return target.Type is UnitType.Ground;
         }
 
         public int GetDamage(Unit self, Unit target)
