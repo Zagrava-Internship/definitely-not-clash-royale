@@ -1,6 +1,6 @@
 {
     "name": "Domain",
-    "rootNamespace": "DefinitelyNotClashRoyale.Domain",
+    "rootNamespace": "DefinitelyNotClashRoyale",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
