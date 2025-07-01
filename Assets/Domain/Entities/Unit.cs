@@ -1,5 +1,4 @@
 using System;
-using DefinitelyNotClashRoyale.Domain.Behaviors;
 
 namespace DefinitelyNotClashRoyale.Domain.Entities
 {
