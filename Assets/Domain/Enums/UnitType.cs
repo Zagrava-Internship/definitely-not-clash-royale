@@ -1,4 +1,4 @@
-﻿namespace DefinitelyNotClashRoyale.Domain.Entities
+﻿namespace DefinitelyNotClashRoyale.Domain.Enums
 {
     public enum UnitType
     {
