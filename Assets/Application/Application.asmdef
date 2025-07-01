@@ -1,0 +1,16 @@
+{
+    "name": "Application",
+    "rootNamespace": "DefinitelyNotClashRoyale.Application",
+    "references": [
+        "GUID:e9a29e8692cc47a4f8a0110ff42c0fe0"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}
