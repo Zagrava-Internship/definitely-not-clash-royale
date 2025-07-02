@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b20e539e56bd94d428f7bf1cb8bdb8b0, type: 3}
   m_Name: KnightData
   m_EditorClassIdentifier: 
-  unitName: 
-  prefab: {fileID: 0}
-  health: 0
-  speed: 0
+  unitName: Knight
+  prefab: {fileID: 7706684635721876194, guid: 702bff40c09a0c341a2a934c3e50acea, type: 3}
+  health: 100
+  speed: 5
   type: 0
