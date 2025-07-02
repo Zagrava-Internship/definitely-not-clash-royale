@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a1501f7394f80428540a927157bc3d, type: 3}
   m_Name: CardData
   m_EditorClassIdentifier: 
-  cardName: 
-  icon: {fileID: 0}
-  unitToSpawn: {fileID: 0}
-  cost: 0
+  cardName: MiniPekka
+  icon: {fileID: -8750488957457466027, guid: fe8a737a06db1974287d45de16180b1c, type: 3}
+  unitToSpawn: {fileID: 11400000, guid: a0876aac08254764ab54e589172f514f, type: 2}
+  cost: 2
