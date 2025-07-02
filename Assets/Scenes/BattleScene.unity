@@ -363,6 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitSpawner: {fileID: 285458099}
   knightData: {fileID: 11400000, guid: 7039bd75eb0e5b144a2da1359947f76f, type: 2}
+  miniPekkaData: {fileID: 11400000, guid: a0876aac08254764ab54e589172f514f, type: 2}
 --- !u!4 &493633386
 Transform:
   m_ObjectHideFlags: 0
