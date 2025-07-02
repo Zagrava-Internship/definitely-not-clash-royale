@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cards;
+using UnityEngine;
 
 namespace Managers
 {
@@ -14,5 +15,14 @@ namespace Managers
                 unitSpawner.Spawn(miniPekkaData);
             }
         }
+        
+        public void OnCardPlayed(CardData card)
+        {
+            if (card != null && card.unitToSpawn != null)
+                unitSpawner.Spawn(card.unitToSpawn);
+            else
+                Debug.LogWarning("CardData или UnitData не назначены!");
+        }
+
     }
 }
