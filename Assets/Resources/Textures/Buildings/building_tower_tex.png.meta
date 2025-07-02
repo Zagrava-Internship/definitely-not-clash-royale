@@ -1,0 +1,3835 @@
+fileFormatVersion: 2
+guid: 4c463d06f9ca51c45973b83b37550f30
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -9141882289000081561
+    second: building_tower_tex_0
+  - first:
+      213: -911463606322212996
+    second: building_tower_tex_1
+  - first:
+      213: -4881653748324806957
+    second: building_tower_tex_2
+  - first:
+      213: -8587756456922323795
+    second: building_tower_tex_3
+  - first:
+      213: 7643779389267483508
+    second: building_tower_tex_4
+  - first:
+      213: 8711906038010557429
+    second: building_tower_tex_5
+  - first:
+      213: -1732566071860151340
+    second: building_tower_tex_6
+  - first:
+      213: -3348789938745212091
+    second: building_tower_tex_7
+  - first:
+      213: -8404466064421444578
+    second: building_tower_tex_8
+  - first:
+      213: 3527989365551640380
+    second: building_tower_tex_9
+  - first:
+      213: 4087748971496762180
+    second: building_tower_tex_10
+  - first:
+      213: -4035450137171745896
+    second: building_tower_tex_11
+  - first:
+      213: 2006619042699373682
+    second: building_tower_tex_12
+  - first:
+      213: -664114954315747538
+    second: building_tower_tex_13
+  - first:
+      213: 6587452989579238674
+    second: building_tower_tex_14
+  - first:
+      213: -8025099235246201290
+    second: building_tower_tex_15
+  - first:
+      213: 7765586002037354416
+    second: building_tower_tex_16
+  - first:
+      213: -1212560696234808027
+    second: building_tower_tex_17
+  - first:
+      213: -258500729273869850
+    second: building_tower_tex_18
+  - first:
+      213: 5178570476193789258
+    second: building_tower_tex_19
+  - first:
+      213: 628528036044547502
+    second: building_tower_tex_20
+  - first:
+      213: -4394263990448385744
+    second: building_tower_tex_21
+  - first:
+      213: -3516145729684877672
+    second: building_tower_tex_22
+  - first:
+      213: -3028596697144974095
+    second: building_tower_tex_23
+  - first:
+      213: -3061039906278272244
+    second: building_tower_tex_24
+  - first:
+      213: -3792678856717382986
+    second: building_tower_tex_25
+  - first:
+      213: -6759556165216462635
+    second: building_tower_tex_26
+  - first:
+      213: -7432705375023707225
+    second: building_tower_tex_27
+  - first:
+      213: 3849958909731528899
+    second: building_tower_tex_28
+  - first:
+      213: 4907435464091944147
+    second: building_tower_tex_29
+  - first:
+      213: -1867655567602148976
+    second: building_tower_tex_30
+  - first:
+      213: 7235530499801558008
+    second: building_tower_tex_31
+  - first:
+      213: 5707901209108355802
+    second: building_tower_tex_32
+  - first:
+      213: 8162720232275848377
+    second: building_tower_tex_33
+  - first:
+      213: 8303133273138103776
+    second: building_tower_tex_34
+  - first:
+      213: -8020238059741365919
+    second: building_tower_tex_35
+  - first:
+      213: -4503455325681151650
+    second: building_tower_tex_36
+  - first:
+      213: 8473871265492749147
+    second: building_tower_tex_37
+  - first:
+      213: -3076655801950096650
+    second: building_tower_tex_38
+  - first:
+      213: 5109765627037405776
+    second: building_tower_tex_39
+  - first:
+      213: -4766447130956902544
+    second: building_tower_tex_40
+  - first:
+      213: -4779930684886305276
+    second: building_tower_tex_41
+  - first:
+      213: 8468216635917113335
+    second: building_tower_tex_42
+  - first:
+      213: -989536114683465104
+    second: building_tower_tex_43
+  - first:
+      213: -4163328784157065181
+    second: building_tower_tex_44
+  - first:
+      213: 7886524044845909115
+    second: building_tower_tex_45
+  - first:
+      213: 7672337426296273181
+    second: building_tower_tex_46
+  - first:
+      213: -5268928579045470329
+    second: building_tower_tex_47
+  - first:
+      213: -2401202054066881026
+    second: building_tower_tex_48
+  - first:
+      213: -6946465227596090858
+    second: building_tower_tex_49
+  - first:
+      213: 3235884826712543127
+    second: building_tower_tex_50
+  - first:
+      213: 6212847893420753539
+    second: building_tower_tex_51
+  - first:
+      213: 1792016256554602033
+    second: building_tower_tex_52
+  - first:
+      213: 3921897225560535017
+    second: building_tower_tex_53
+  - first:
+      213: 898038617510190256
+    second: building_tower_tex_54
+  - first:
+      213: -4555992856985885174
+    second: building_tower_tex_55
+  - first:
+      213: -5604035180958446504
+    second: building_tower_tex_56
+  - first:
+      213: 7278018499253346552
+    second: building_tower_tex_57
+  - first:
+      213: -5924713080143481244
+    second: building_tower_tex_58
+  - first:
+      213: 340887084520237867
+    second: building_tower_tex_59
+  - first:
+      213: -751054732290575557
+    second: building_tower_tex_60
+  - first:
+      213: -2390808285170828381
+    second: building_tower_tex_61
+  - first:
+      213: -6870530369065676670
+    second: building_tower_tex_62
+  - first:
+      213: -7273340257307110585
+    second: building_tower_tex_63
+  - first:
+      213: -1756642369395342246
+    second: building_tower_tex_64
+  - first:
+      213: 4880257215628737983
+    second: building_tower_tex_65
+  - first:
+      213: -6046344004952225207
+    second: building_tower_tex_66
+  - first:
+      213: -4509641630219309216
+    second: building_tower_tex_67
+  - first:
+      213: -4227687182532722661
+    second: building_tower_tex_68
+  - first:
+      213: 7078849187656693176
+    second: building_tower_tex_69
+  - first:
+      213: -3632560730472088791
+    second: building_tower_tex_70
+  - first:
+      213: 5483506496860085387
+    second: building_tower_tex_71
+  - first:
+      213: 6658633781448192522
+    second: building_tower_tex_72
+  - first:
+      213: 7939207023554841002
+    second: building_tower_tex_73
+  - first:
+      213: -6488394894318617030
+    second: building_tower_tex_74
+  - first:
+      213: -2596466502097554864
+    second: building_tower_tex_75
+  - first:
+      213: -4512532358614026555
+    second: building_tower_tex_76
+  - first:
+      213: -1219831240674963530
+    second: building_tower_tex_77
+  - first:
+      213: 425702694915132198
+    second: building_tower_tex_78
+  - first:
+      213: -6416826653831641674
+    second: building_tower_tex_79
+  - first:
+      213: -2434458205316383139
+    second: building_tower_tex_80
+  - first:
+      213: 4236824227799733044
+    second: building_tower_tex_81
+  - first:
+      213: -7093172123148743667
+    second: building_tower_tex_82
+  - first:
+      213: 1470514159688423814
+    second: building_tower_tex_83
+  - first:
+      213: 7383130650825448459
+    second: building_tower_tex_84
+  - first:
+      213: -5328335859923895411
+    second: building_tower_tex_85
+  - first:
+      213: -6778679849338077586
+    second: building_tower_tex_86
+  - first:
+      213: -5812391953347815517
+    second: building_tower_tex_87
+  - first:
+      213: 2208186323852065591
+    second: building_tower_tex_88
+  - first:
+      213: -8769645745004189079
+    second: building_tower_tex_89
+  - first:
+      213: -8249266807745571632
+    second: building_tower_tex_90
+  - first:
+      213: 4648627440804501481
+    second: building_tower_tex_91
+  - first:
+      213: 1535018238710746079
+    second: building_tower_tex_92
+  - first:
+      213: -6364927334608693285
+    second: building_tower_tex_93
+  - first:
+      213: 7700096884335096643
+    second: building_tower_tex_94
+  - first:
+      213: -4601620178669788114
+    second: building_tower_tex_95
+  - first:
+      213: -5483417285795502872
+    second: building_tower_tex_96
+  - first:
+      213: 3101945418014423864
+    second: building_tower_tex_97
+  - first:
+      213: -4986146959082195256
+    second: building_tower_tex_98
+  - first:
+      213: 8486755240999392780
+    second: building_tower_tex_99
+  - first:
+      213: 7345175740245110139
+    second: building_tower_tex_100
+  - first:
+      213: 1023205136489123356
+    second: building_tower_tex_101
+  - first:
+      213: 7494478183877672111
+    second: building_tower_tex_102
+  - first:
+      213: -1059910109843856580
+    second: building_tower_tex_103
+  - first:
+      213: 5693346477974404659
+    second: building_tower_tex_104
+  - first:
+      213: 7621743543672844251
+    second: building_tower_tex_105
+  - first:
+      213: 2711953782194737930
+    second: building_tower_tex_106
+  - first:
+      213: -1467135475511407328
+    second: building_tower_tex_107
+  - first:
+      213: 166958565181223409
+    second: building_tower_tex_108
+  - first:
+      213: -6932689734284345023
+    second: building_tower_tex_109
+  - first:
+      213: -2565965926784819081
+    second: building_tower_tex_110
+  - first:
+      213: 8354771608015227380
+    second: building_tower_tex_111
+  - first:
+      213: 5831158589573844421
+    second: building_tower_tex_112
+  - first:
+      213: 8030556951172423332
+    second: building_tower_tex_113
+  - first:
+      213: -2528407713645448607
+    second: building_tower_tex_114
+  - first:
+      213: -9072540470560541188
+    second: building_tower_tex_115
+  - first:
+      213: -8950299384452155372
+    second: building_tower_tex_116
+  - first:
+      213: 8144871096438918732
+    second: building_tower_tex_117
+  - first:
+      213: -1496995817199779180
+    second: building_tower_tex_118
+  - first:
+      213: -8415800449094391628
+    second: building_tower_tex_119
+  - first:
+      213: 7019886129864349596
+    second: building_tower_tex_120
+  - first:
+      213: 653882715051030889
+    second: building_tower_tex_121
+  - first:
+      213: 1754993696153720098
+    second: building_tower_tex_122
+  - first:
+      213: -1486640503088432196
+    second: building_tower_tex_123
+  - first:
+      213: 3237126763772284094
+    second: building_tower_tex_124
+  - first:
+      213: -8320859275035882691
+    second: building_tower_tex_125
+  - first:
+      213: -2764650384948318783
+    second: building_tower_tex_126
+  - first:
+      213: 8515944607507311635
+    second: building_tower_tex_127
+  - first:
+      213: 1513141274901987068
+    second: building_tower_tex_128
+  - first:
+      213: 661997928590443705
+    second: building_tower_tex_129
+  - first:
+      213: -4219939396788064339
+    second: building_tower_tex_130
+  - first:
+      213: 60852161293934031
+    second: building_tower_tex_131
+  - first:
+      213: -7792772874822902808
+    second: building_tower_tex_132
+  - first:
+      213: 7342183158577984122
+    second: building_tower_tex_133
+  - first:
+      213: -4199285405510742629
+    second: building_tower_tex_134
+  - first:
+      213: 8682732546961847372
+    second: building_tower_tex_135
+  - first:
+      213: -613325198440283874
+    second: building_tower_tex_136
+  - first:
+      213: -1545545647818977676
+    second: building_tower_tex_137
+  - first:
+      213: -9114599116747815578
+    second: building_tower_tex_138
+  - first:
+      213: 8402285230372681583
+    second: building_tower_tex_139
+  - first:
+      213: -4507355655041392108
+    second: building_tower_tex_140
+  - first:
+      213: 732451101239686927
+    second: building_tower_tex_141
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: building_tower_tex_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2120
+        width: 402
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76717b17e72812180800000000000000
+      internalID: -9141882289000081561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_1
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 2456
+        width: 40
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7fc77fdda4d953f0800000000000000
+      internalID: -911463606322212996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_2
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 2139
+        width: 399
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3de45aea7c1e04cb0800000000000000
+      internalID: -4881653748324806957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_3
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 2424
+        width: 86
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da4e397900922d880800000000000000
+      internalID: -8587756456922323795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_4
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 2127
+        width: 316
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b9db62bd8241a60800000000000000
+      internalID: 7643779389267483508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_5
+      rect:
+        serializedVersion: 2
+        x: 1098
+        y: 2515
+        width: 34
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f333384268e6e870800000000000000
+      internalID: 8711906038010557429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_6
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 2144
+        width: 338
+        height: 398
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dbb1e05650b4f7e0800000000000000
+      internalID: -1732566071860151340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_7
+      rect:
+        serializedVersion: 2
+        x: 1357
+        y: 2505
+        width: 89
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54380b91b45b681d0800000000000000
+      internalID: -3348789938745212091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_8
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 2145
+        width: 327
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e14a557a4a65d5b80800000000000000
+      internalID: -8404466064421444578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_9
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 2290
+        width: 203
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3faf09c2afe5f030800000000000000
+      internalID: 3527989365551640380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_10
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 2373
+        width: 10
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44b6801280a9ab830800000000000000
+      internalID: 4087748971496762180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_11
+      rect:
+        serializedVersion: 2
+        x: 1748
+        y: 2147
+        width: 210
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 893a3112b733ff7c0800000000000000
+      internalID: -4035450137171745896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_12
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 2244
+        width: 38
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27c61a74361f8db10800000000000000
+      internalID: 2006619042699373682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_13
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 2124
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2f2cf9b7f698c6f0800000000000000
+      internalID: -664114954315747538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_14
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 2153
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21d947a97955b6b50800000000000000
+      internalID: 6587452989579238674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_15
+      rect:
+        serializedVersion: 2
+        x: 1269
+        y: 1750
+        width: 316
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63624eba3ce11a090800000000000000
+      internalID: -8025099235246201290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_16
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 2143
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bfae243357e4cb60800000000000000
+      internalID: 7765586002037354416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_17
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 2146
+        width: 88
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52de250a87e1c2fe0800000000000000
+      internalID: -1212560696234808027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1918
+        width: 237
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e99371d4fe996cf0800000000000000
+      internalID: -258500729273869850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_19
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 1775
+        width: 278
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a453bdd296afdd740800000000000000
+      internalID: 5178570476193789258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_20
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 2108
+        width: 35
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea52fcf2beaf8b800800000000000000
+      internalID: 628528036044547502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_21
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 1588
+        width: 310
+        height: 559
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0319808be207403c0800000000000000
+      internalID: -4394263990448385744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_22
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 1833
+        width: 158
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89e40a39614243fc0800000000000000
+      internalID: -3516145729684877672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_23
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 2104
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f4a0c2a95348f5d0800000000000000
+      internalID: -3028596697144974095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_24
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 1773
+        width: 279
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c031dfe5c600585d0800000000000000
+      internalID: -3061039906278272244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_25
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 1831
+        width: 405
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bac93e9ca2bd5bc0800000000000000
+      internalID: -3792678856717382986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_26
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 2053
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d898fc3b7b3132a0800000000000000
+      internalID: -6759556165216462635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1584
+        width: 274
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ab439177d9b9d890800000000000000
+      internalID: -7432705375023707225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_28
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 1855
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c0e56efa3dcd6530800000000000000
+      internalID: 3849958909731528899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_29
+      rect:
+        serializedVersion: 2
+        x: 1244
+        y: 1779
+        width: 35
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d4ca5bcd86ba1440800000000000000
+      internalID: 4907435464091944147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_30
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 1780
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0991b421821c416e0800000000000000
+      internalID: -1867655567602148976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_31
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 1500
+        width: 282
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fb2d2277a4c96460800000000000000
+      internalID: 7235530499801558008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_32
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 1506
+        width: 277
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ada1ded68e9863f40800000000000000
+      internalID: 5707901209108355802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_33
+      rect:
+        serializedVersion: 2
+        x: 1823
+        y: 1630
+        width: 146
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bc22b5adcec74170800000000000000
+      internalID: 8162720232275848377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_34
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1468
+        width: 276
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e58f1458b7aa3370800000000000000
+      internalID: 8303133273138103776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_35
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1300
+        width: 216
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1693c0b4af362b090800000000000000
+      internalID: -8020238059741365919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_36
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 1495
+        width: 318
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e511feadd338081c0800000000000000
+      internalID: -4503455325681151650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_37
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 1587
+        width: 177
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5bc51cf40d399570800000000000000
+      internalID: 8473871265492749147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_38
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 1533
+        width: 117
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f2be9459d58d45d0800000000000000
+      internalID: -3076655801950096650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1274
+        width: 271
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 052d01dd3c889e640800000000000000
+      internalID: 5109765627037405776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_40
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 1275
+        width: 148
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07f42ae869d2addb0800000000000000
+      internalID: -4766447130956902544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_41
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1413
+        width: 53
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 406bc540e564aadb0800000000000000
+      internalID: -4779930684886305276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_42
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 1359
+        width: 117
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f794e0f926258570800000000000000
+      internalID: 8468216635917113335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_43
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 1310
+        width: 146
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0723fdf75267442f0800000000000000
+      internalID: -989536114683465104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_44
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 1264
+        width: 87
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 320c8217782e836c0800000000000000
+      internalID: -4163328784157065181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_45
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 1129
+        width: 197
+        height: 378
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b740e9d85df827d60800000000000000
+      internalID: 7886524044845909115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_46
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 1377
+        width: 95
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d19f25b4d3e997a60800000000000000
+      internalID: 7672337426296273181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_47
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 1147
+        width: 345
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78f47139f5101e6b0800000000000000
+      internalID: -5268928579045470329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_48
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 1307
+        width: 176
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efdb76534773daed0800000000000000
+      internalID: -2401202054066881026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_49
+      rect:
+        serializedVersion: 2
+        x: 1780
+        y: 1300
+        width: 202
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6123880fda2399f90800000000000000
+      internalID: -6946465227596090858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1093
+        width: 141
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79f074efa1c28ec20800000000000000
+      internalID: 3235884826712543127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_51
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1136
+        width: 187
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 382c0e2fd38783650800000000000000
+      internalID: 6212847893420753539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_52
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1149
+        width: 144
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13e89a37a458ed810800000000000000
+      internalID: 1792016256554602033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_53
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 1201
+        width: 70
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ef202f5fb06d6630800000000000000
+      internalID: 3921897225560535017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_54
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 887
+        width: 247
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bc17475d59767c00800000000000000
+      internalID: 898038617510190256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_55
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 1102
+        width: 167
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a06a320a2acd5c0c0800000000000000
+      internalID: -4555992856985885174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_56
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 1160
+        width: 144
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85c0e22c1b77a32b0800000000000000
+      internalID: -5604035180958446504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_57
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 1226
+        width: 43
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f0a7b4b347b00560800000000000000
+      internalID: 7278018499253346552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_58
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1150
+        width: 241
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 466ffe518d037cda0800000000000000
+      internalID: -5924713080143481244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_59
+      rect:
+        serializedVersion: 2
+        x: 1731
+        y: 679
+        width: 251
+        height: 586
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2be85d4ff21bb400800000000000000
+      internalID: 340887084520237867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_60
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 998
+        width: 164
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b33b1f243b7b395f0800000000000000
+      internalID: -751054732290575557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_61
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 1026
+        width: 151
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3abf45c188422ded0800000000000000
+      internalID: -2390808285170828381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_62
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1057
+        width: 59
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2809e4de709f6a0a0800000000000000
+      internalID: -6870530369065676670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_63
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 1028
+        width: 152
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74359a06297ef0b90800000000000000
+      internalID: -7273340257307110585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_64
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 776
+        width: 147
+        height: 359
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a544ac672172f97e0800000000000000
+      internalID: -1756642369395342246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_65
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 1021
+        width: 177
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd7616b4182ab340800000000000000
+      internalID: 4880257215628737983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_66
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 1079
+        width: 101
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94a82039922171ca0800000000000000
+      internalID: -6046344004952225207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_67
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 771
+        width: 150
+        height: 408
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06fe67694d88a61c0800000000000000
+      internalID: -4509641630219309216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_68
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 575
+        width: 243
+        height: 527
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b104aaf18ec3455c0800000000000000
+      internalID: -4227687182532722661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_69
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 1055
+        width: 150
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b5f6d0b4df1d3260800000000000000
+      internalID: 7078849187656693176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_70
+      rect:
+        serializedVersion: 2
+        x: 1694
+        y: 989
+        width: 151
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92b7d23034d869dc0800000000000000
+      internalID: -3632560730472088791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_71
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 418
+        width: 142
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8c54e42b14591c40800000000000000
+      internalID: 5483506496860085387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_72
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 873
+        width: 139
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a02b2a03528386c50800000000000000
+      internalID: 6658633781448192522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_73
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 735
+        width: 394
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa9c54569babd2e60800000000000000
+      internalID: 7939207023554841002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_74
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 874
+        width: 140
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3e3ea9783794f5a0800000000000000
+      internalID: -6488394894318617030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_75
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 1007
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0523647197f77fbd0800000000000000
+      internalID: -2596466502097554864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_76
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 776
+        width: 209
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c6fa5f6ab34061c0800000000000000
+      internalID: -4512532358614026555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_77
+      rect:
+        serializedVersion: 2
+        x: 1593
+        y: 879
+        width: 144
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf05a513f9421fe0800000000000000
+      internalID: -1219831240674963530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_78
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 424
+        width: 343
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62bc756785668e500800000000000000
+      internalID: 425702694915132198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_79
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 919
+        width: 85
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b54b19f72ad2f6a0800000000000000
+      internalID: -6416826653831641674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_80
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 844
+        width: 145
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5ef49b1921173ed0800000000000000
+      internalID: -2434458205316383139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_81
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 218
+        width: 358
+        height: 573
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43395c100393cca30800000000000000
+      internalID: 4236824227799733044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_82
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 669
+        width: 122
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0c0405098dff8d90800000000000000
+      internalID: -7093172123148743667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_83
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 599
+        width: 139
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 689196d46d0586410800000000000000
+      internalID: 1470514159688423814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_84
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 706
+        width: 126
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0cdfbc9536267660800000000000000
+      internalID: 7383130650825448459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_85
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 609
+        width: 122
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8bb24124c2fd06b0800000000000000
+      internalID: -5328335859923895411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_86
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 648
+        width: 122
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6efa1e879a4de1a0800000000000000
+      internalID: -6778679849338077586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_87
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 731
+        width: 143
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a75d55505c365fa0800000000000000
+      internalID: -5812391953347815517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_88
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 525
+        width: 259
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73bf31713cd05ae10800000000000000
+      internalID: 2208186323852065591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_89
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 514
+        width: 119
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96a620398a5fb4680800000000000000
+      internalID: -8769645745004189079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_90
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 136
+        width: 175
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d497ea7b87b48d80800000000000000
+      internalID: -8249266807745571632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_91
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 529
+        width: 121
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e71946270e338040800000000000000
+      internalID: 4648627440804501481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_92
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 473
+        width: 260
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdb891a84fa7d4510800000000000000
+      internalID: 1535018238710746079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_93
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 508
+        width: 128
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd7997fdf4c3ba7a0800000000000000
+      internalID: -6364927334608693285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_94
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 608
+        width: 27
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 343b2e6c15d3cda60800000000000000
+      internalID: 7700096884335096643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_95
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 231
+        width: 192
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e242e13f3d2c320c0800000000000000
+      internalID: -4601620178669788114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_96
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 450
+        width: 141
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e42cece70df6e3b0800000000000000
+      internalID: -5483417285795502872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_97
+      rect:
+        serializedVersion: 2
+        x: 1932
+        y: 591
+        width: 34
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83b76614ce25c0b20800000000000000
+      internalID: 3101945418014423864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_98
+      rect:
+        serializedVersion: 2
+        x: 1933
+        y: 576
+        width: 49
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c6f20a22c5adcab0800000000000000
+      internalID: -4986146959082195256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_99
+      rect:
+        serializedVersion: 2
+        x: 1886
+        y: 451
+        width: 96
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c06147b4de207c570800000000000000
+      internalID: 8486755240999392780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_100
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 554
+        width: 51
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7d602a5b6e4fe560800000000000000
+      internalID: 7345175740245110139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_101
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 25
+        width: 262
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1e0ac486a7233e00800000000000000
+      internalID: 1023205136489123356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_102
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 160
+        width: 126
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fac71f6633cb10860800000000000000
+      internalID: 7494478183877672111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_103
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 16
+        width: 348
+        height: 510
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3369e8ee517a41f0800000000000000
+      internalID: -1059910109843856580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_104
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 251
+        width: 147
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33eb2e20574d20f40800000000000000
+      internalID: 5693346477974404659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_105
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 117
+        width: 329
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdf2fb90f5fd5c960800000000000000
+      internalID: 7621743543672844251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_106
+      rect:
+        serializedVersion: 2
+        x: 1314
+        y: 70
+        width: 436
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a039efaa89bc2a520800000000000000
+      internalID: 2711953782194737930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_107
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 189
+        width: 121
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02dc4c8ee00b3abe0800000000000000
+      internalID: -1467135475511407328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_108
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 402
+        width: 123
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f1f5d13ee7215200800000000000000
+      internalID: 166958565181223409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_109
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 252
+        width: 119
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1410cf9ea632acf90800000000000000
+      internalID: -6932689734284345023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_110
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 126
+        width: 117
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7702c3ca59bd36cd0800000000000000
+      internalID: -2565965926784819081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_111
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 198
+        width: 79
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f94443138c12f370800000000000000
+      internalID: 8354771608015227380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_112
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 161
+        width: 56
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cd4488a7df6ce050800000000000000
+      internalID: 5831158589573844421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_113
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 174
+        width: 14
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ae1d27dff4427f60800000000000000
+      internalID: 8030556951172423332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_114
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 171
+        width: 83
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1623ecc949a49ecd0800000000000000
+      internalID: -2528407713645448607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_115
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 177
+        width: 14
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf532e9a28cd71280800000000000000
+      internalID: -9072540470560541188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_116
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 100
+        width: 127
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 418f45c61262ac380800000000000000
+      internalID: -8950299384452155372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_117
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 181
+        width: 79
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4e869cdb15680170800000000000000
+      internalID: 8144871096438918732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_118
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12
+        width: 61
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 492cf855c3a993be0800000000000000
+      internalID: -1496995817199779180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_119
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 21
+        width: 84
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b8e7239412153b80800000000000000
+      internalID: -8415800449094391628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_120
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 14
+        width: 82
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c97914efd35ab6160800000000000000
+      internalID: 7019886129864349596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_121
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 64
+        width: 20
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 969726b6dde031900800000000000000
+      internalID: 653882715051030889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_122
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 22
+        width: 66
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 225da42e77dfa5810800000000000000
+      internalID: 1754993696153720098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_123
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 65
+        width: 81
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbbb4b8c6546e5be0800000000000000
+      internalID: -1486640503088432196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_124
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 92
+        width: 159
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebc8e8ff3a59cec20800000000000000
+      internalID: 3237126763772284094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_125
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 55
+        width: 116
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3bc87d339e568c80800000000000000
+      internalID: -8320859275035882691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_126
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 0
+        width: 96
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cd22056f1df1a9d0800000000000000
+      internalID: -2764650384948318783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_127
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 64
+        width: 20
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c60694086be2670800000000000000
+      internalID: 8515944607507311635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_128
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 37
+        width: 108
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfeb389f8f1cff410800000000000000
+      internalID: 1513141274901987068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_129
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 7
+        width: 64
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b48dafcb93ef2900800000000000000
+      internalID: 661997928590443705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_130
+      rect:
+        serializedVersion: 2
+        x: 1731
+        y: 0
+        width: 190
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daf65c01a73cf65c0800000000000000
+      internalID: -4219939396788064339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_131
+      rect:
+        serializedVersion: 2
+        x: 1756
+        y: 98
+        width: 89
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcd5db1e7b038d000800000000000000
+      internalID: 60852161293934031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_132
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 6
+        width: 60
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eb91e4bb528ad390800000000000000
+      internalID: -7792772874822902808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_133
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 0
+        width: 185
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7275e2aeaca4e560800000000000000
+      internalID: 7342183158577984122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_134
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 0
+        width: 94
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9dcc062c2429b5c0800000000000000
+      internalID: -4199285405510742629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_135
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 0
+        width: 88
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4432659f334f7870800000000000000
+      internalID: 8682732546961847372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_136
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 33
+        width: 117
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e11cb274bf70d77f0800000000000000
+      internalID: -613325198440283874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_137
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 0
+        width: 88
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47e49950c6e1d8ae0800000000000000
+      internalID: -1545545647818977676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_138
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 57
+        width: 62
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66548200560728180800000000000000
+      internalID: -9114599116747815578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_139
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 35
+        width: 82
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f67ffd956e9ea9470800000000000000
+      internalID: 8402285230372681583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_140
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 41
+        width: 15
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 412e8e8a9e7a271c0800000000000000
+      internalID: -4507355655041392108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: building_tower_tex_141
+      rect:
+        serializedVersion: 2
+        x: 1510
+        y: 26
+        width: 94
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f073cb855603a2a00800000000000000
+      internalID: 732451101239686927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      building_tower_tex_0: -9141882289000081561
+      building_tower_tex_1: -911463606322212996
+      building_tower_tex_10: 4087748971496762180
+      building_tower_tex_100: 7345175740245110139
+      building_tower_tex_101: 1023205136489123356
+      building_tower_tex_102: 7494478183877672111
+      building_tower_tex_103: -1059910109843856580
+      building_tower_tex_104: 5693346477974404659
+      building_tower_tex_105: 7621743543672844251
+      building_tower_tex_106: 2711953782194737930
+      building_tower_tex_107: -1467135475511407328
+      building_tower_tex_108: 166958565181223409
+      building_tower_tex_109: -6932689734284345023
+      building_tower_tex_11: -4035450137171745896
+      building_tower_tex_110: -2565965926784819081
+      building_tower_tex_111: 8354771608015227380
+      building_tower_tex_112: 5831158589573844421
+      building_tower_tex_113: 8030556951172423332
+      building_tower_tex_114: -2528407713645448607
+      building_tower_tex_115: -9072540470560541188
+      building_tower_tex_116: -8950299384452155372
+      building_tower_tex_117: 8144871096438918732
+      building_tower_tex_118: -1496995817199779180
+      building_tower_tex_119: -8415800449094391628
+      building_tower_tex_12: 2006619042699373682
+      building_tower_tex_120: 7019886129864349596
+      building_tower_tex_121: 653882715051030889
+      building_tower_tex_122: 1754993696153720098
+      building_tower_tex_123: -1486640503088432196
+      building_tower_tex_124: 3237126763772284094
+      building_tower_tex_125: -8320859275035882691
+      building_tower_tex_126: -2764650384948318783
+      building_tower_tex_127: 8515944607507311635
+      building_tower_tex_128: 1513141274901987068
+      building_tower_tex_129: 661997928590443705
+      building_tower_tex_13: -664114954315747538
+      building_tower_tex_130: -4219939396788064339
+      building_tower_tex_131: 60852161293934031
+      building_tower_tex_132: -7792772874822902808
+      building_tower_tex_133: 7342183158577984122
+      building_tower_tex_134: -4199285405510742629
+      building_tower_tex_135: 8682732546961847372
+      building_tower_tex_136: -613325198440283874
+      building_tower_tex_137: -1545545647818977676
+      building_tower_tex_138: -9114599116747815578
+      building_tower_tex_139: 8402285230372681583
+      building_tower_tex_14: 6587452989579238674
+      building_tower_tex_140: -4507355655041392108
+      building_tower_tex_141: 732451101239686927
+      building_tower_tex_15: -8025099235246201290
+      building_tower_tex_16: 7765586002037354416
+      building_tower_tex_17: -1212560696234808027
+      building_tower_tex_18: -258500729273869850
+      building_tower_tex_19: 5178570476193789258
+      building_tower_tex_2: -4881653748324806957
+      building_tower_tex_20: 628528036044547502
+      building_tower_tex_21: -4394263990448385744
+      building_tower_tex_22: -3516145729684877672
+      building_tower_tex_23: -3028596697144974095
+      building_tower_tex_24: -3061039906278272244
+      building_tower_tex_25: -3792678856717382986
+      building_tower_tex_26: -6759556165216462635
+      building_tower_tex_27: -7432705375023707225
+      building_tower_tex_28: 3849958909731528899
+      building_tower_tex_29: 4907435464091944147
+      building_tower_tex_3: -8587756456922323795
+      building_tower_tex_30: -1867655567602148976
+      building_tower_tex_31: 7235530499801558008
+      building_tower_tex_32: 5707901209108355802
+      building_tower_tex_33: 8162720232275848377
+      building_tower_tex_34: 8303133273138103776
+      building_tower_tex_35: -8020238059741365919
+      building_tower_tex_36: -4503455325681151650
+      building_tower_tex_37: 8473871265492749147
+      building_tower_tex_38: -3076655801950096650
+      building_tower_tex_39: 5109765627037405776
+      building_tower_tex_4: 7643779389267483508
+      building_tower_tex_40: -4766447130956902544
+      building_tower_tex_41: -4779930684886305276
+      building_tower_tex_42: 8468216635917113335
+      building_tower_tex_43: -989536114683465104
+      building_tower_tex_44: -4163328784157065181
+      building_tower_tex_45: 7886524044845909115
+      building_tower_tex_46: 7672337426296273181
+      building_tower_tex_47: -5268928579045470329
+      building_tower_tex_48: -2401202054066881026
+      building_tower_tex_49: -6946465227596090858
+      building_tower_tex_5: 8711906038010557429
+      building_tower_tex_50: 3235884826712543127
+      building_tower_tex_51: 6212847893420753539
+      building_tower_tex_52: 1792016256554602033
+      building_tower_tex_53: 3921897225560535017
+      building_tower_tex_54: 898038617510190256
+      building_tower_tex_55: -4555992856985885174
+      building_tower_tex_56: -5604035180958446504
+      building_tower_tex_57: 7278018499253346552
+      building_tower_tex_58: -5924713080143481244
+      building_tower_tex_59: 340887084520237867
+      building_tower_tex_6: -1732566071860151340
+      building_tower_tex_60: -751054732290575557
+      building_tower_tex_61: -2390808285170828381
+      building_tower_tex_62: -6870530369065676670
+      building_tower_tex_63: -7273340257307110585
+      building_tower_tex_64: -1756642369395342246
+      building_tower_tex_65: 4880257215628737983
+      building_tower_tex_66: -6046344004952225207
+      building_tower_tex_67: -4509641630219309216
+      building_tower_tex_68: -4227687182532722661
+      building_tower_tex_69: 7078849187656693176
+      building_tower_tex_7: -3348789938745212091
+      building_tower_tex_70: -3632560730472088791
+      building_tower_tex_71: 5483506496860085387
+      building_tower_tex_72: 6658633781448192522
+      building_tower_tex_73: 7939207023554841002
+      building_tower_tex_74: -6488394894318617030
+      building_tower_tex_75: -2596466502097554864
+      building_tower_tex_76: -4512532358614026555
+      building_tower_tex_77: -1219831240674963530
+      building_tower_tex_78: 425702694915132198
+      building_tower_tex_79: -6416826653831641674
+      building_tower_tex_8: -8404466064421444578
+      building_tower_tex_80: -2434458205316383139
+      building_tower_tex_81: 4236824227799733044
+      building_tower_tex_82: -7093172123148743667
+      building_tower_tex_83: 1470514159688423814
+      building_tower_tex_84: 7383130650825448459
+      building_tower_tex_85: -5328335859923895411
+      building_tower_tex_86: -6778679849338077586
+      building_tower_tex_87: -5812391953347815517
+      building_tower_tex_88: 2208186323852065591
+      building_tower_tex_89: -8769645745004189079
+      building_tower_tex_9: 3527989365551640380
+      building_tower_tex_90: -8249266807745571632
+      building_tower_tex_91: 4648627440804501481
+      building_tower_tex_92: 1535018238710746079
+      building_tower_tex_93: -6364927334608693285
+      building_tower_tex_94: 7700096884335096643
+      building_tower_tex_95: -4601620178669788114
+      building_tower_tex_96: -5483417285795502872
+      building_tower_tex_97: 3101945418014423864
+      building_tower_tex_98: -4986146959082195256
+      building_tower_tex_99: 8486755240999392780
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

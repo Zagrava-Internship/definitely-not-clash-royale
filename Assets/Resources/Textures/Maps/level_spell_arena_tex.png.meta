@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: aa5d61d83c9faf549a4634f3ef14d87b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7841778976364950663
+    second: level_spell_arena_tex_0
+  - first:
+      213: -7405110791029847433
+    second: level_spell_arena_tex_1
+  - first:
+      213: 6111682575712780811
+    second: level_spell_arena_tex_2
+  - first:
+      213: 7516264834223106134
+    second: level_spell_arena_tex_3
+  - first:
+      213: -8349858444197884599
+    second: level_spell_arena_tex_4
+  - first:
+      213: 3851913345772873046
+    second: level_spell_arena_tex_5
+  - first:
+      213: 4409973699579018538
+    second: level_spell_arena_tex_6
+  - first:
+      213: -148743240931019330
+    second: level_spell_arena_tex_7
+  - first:
+      213: 1819347846226051827
+    second: level_spell_arena_tex_8
+  - first:
+      213: 8472783382871523948
+    second: level_spell_arena_tex_9
+  - first:
+      213: -926684409297165552
+    second: level_spell_arena_tex_10
+  - first:
+      213: -1551020728753770710
+    second: level_spell_arena_tex_11
+  - first:
+      213: 6711381934018925632
+    second: level_spell_arena_tex_12
+  - first:
+      213: 6410678956604724687
+    second: level_spell_arena_tex_13
+  - first:
+      213: 3763887648673210532
+    second: level_spell_arena_tex_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: level_spell_arena_tex_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 821
+        width: 620
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97b04aa81976c2390800000000000000
+      internalID: -7841778976364950663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_spell_arena_tex_1
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 928
+        width: 104
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77a014238f2cb3990800000000000000
+      internalID: -7405110791029847433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_spell_arena_tex_2
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 856
+        width: 52
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b020e49ebee01d450800000000000000
+      internalID: 6111682575712780811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_spell_arena_tex_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 162
+        height: 538
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 658e0a93b032f4860800000000000000
+      internalID: 7516264834223106134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_spell_arena_tex_4
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 0
+        width: 370
+        height: 862
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94d0ac40cf75f1c80800000000000000
+      internalID: -8349858444197884599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_spell_arena_tex_5
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 608
+        width: 203
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 655e06897ceb47530800000000000000
+      internalID: 3851913345772873046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_spell_arena_tex_6
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 768
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2df838f6bf533d30800000000000000
+      internalID: 4409973699579018538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_spell_arena_tex_7
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 325
+        width: 168
+        height: 589
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb5f0997fce8fedf0800000000000000
+      internalID: -148743240931019330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_spell_arena_tex_8
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 426
+        width: 185
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f20d211a3f9f3910800000000000000
+      internalID: 1819347846226051827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_spell_arena_tex_9
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 475
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62c3e2989f559570800000000000000
+      internalID: 8472783382871523948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_spell_arena_tex_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 263
+        width: 96
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01323f48071c323f0800000000000000
+      internalID: -926684409297165552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_spell_arena_tex_11
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 276
+        width: 132
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2f2d576ddaa97ae0800000000000000
+      internalID: -1551020728753770710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_spell_arena_tex_12
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 44
+        width: 336
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0441c218f4e932d50800000000000000
+      internalID: 6711381934018925632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_spell_arena_tex_13
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 297
+        width: 140
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc51f79bb8e47f850800000000000000
+      internalID: 6410678956604724687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_spell_arena_tex_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 93
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a0a5a1efd30c3430800000000000000
+      internalID: 3763887648673210532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      level_spell_arena_tex_0: -7841778976364950663
+      level_spell_arena_tex_1: -7405110791029847433
+      level_spell_arena_tex_10: -926684409297165552
+      level_spell_arena_tex_11: -1551020728753770710
+      level_spell_arena_tex_12: 6711381934018925632
+      level_spell_arena_tex_13: 6410678956604724687
+      level_spell_arena_tex_14: 3763887648673210532
+      level_spell_arena_tex_2: 6111682575712780811
+      level_spell_arena_tex_3: 7516264834223106134
+      level_spell_arena_tex_4: -8349858444197884599
+      level_spell_arena_tex_5: 3851913345772873046
+      level_spell_arena_tex_6: 4409973699579018538
+      level_spell_arena_tex_7: -148743240931019330
+      level_spell_arena_tex_8: 1819347846226051827
+      level_spell_arena_tex_9: 8472783382871523948
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
