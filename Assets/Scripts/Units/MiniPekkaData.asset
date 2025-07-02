@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b20e539e56bd94d428f7bf1cb8bdb8b0, type: 3}
   m_Name: MiniPekkaData
   m_EditorClassIdentifier: 
-  unitName: 
+  unitName: Mini Pekka
   prefab: {fileID: 0}
-  health: 0
-  speed: 0
+  health: 100
+  speed: 5
   type: 0

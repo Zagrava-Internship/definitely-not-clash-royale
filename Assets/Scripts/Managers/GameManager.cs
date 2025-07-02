@@ -6,12 +6,12 @@ namespace Managers
     {
         public UnitSpawner unitSpawner;
         public UnitData knightData;
-
+        public UnitData miniPekkaData;
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                unitSpawner.Spawn(knightData);
+                unitSpawner.Spawn(miniPekkaData);
             }
         }
     }
