@@ -1,27 +1,30 @@
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+namespace Units
 {
-    private UnitData data;
-    private int currentHealth;
-
-    public void Initialize(UnitData unitData)
+    public class Unit : MonoBehaviour
     {
-        data = unitData;
-        currentHealth = data.health;
-    }
+        private UnitData _data;
+        private int _currentHealth;
 
-    public void TakeDamage(int amount)
-    {
-        currentHealth -= amount;
-        if (currentHealth <= 0)
+        public void Initialize(UnitData unitData)
         {
-            Die();
+            _data = unitData;
+            _currentHealth = _data.health;
         }
-    }
 
-    private void Die()
-    {
-        Destroy(gameObject);
+        public void TakeDamage(int amount)
+        {
+            _currentHealth -= amount;
+            if (_currentHealth <= 0)
+            {
+                Die();
+            }
+        }
+
+        private void Die()
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -1,18 +1,22 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "UnitData", menuName = "Game/UnitData")]
-public class UnitData : ScriptableObject
+namespace Units
 {
-    public string unitName;
-    public GameObject prefab;
-    public int health;
-    public float speed;
-    public UnitType type;
-}
+    [CreateAssetMenu(fileName = "UnitData", menuName = "Game/UnitData")]
+    public class UnitData : ScriptableObject
+    {
+        public string unitName;
+        public GameObject prefab;
+        public GameObject ghostPrefab;
+        public int health;
+        public float speed;
+        public UnitType type;
+    }
 
-public enum UnitType
-{
-    Melee,
-    Ranged,
-    Flying
+    public enum UnitType
+    {
+        Melee,
+        Ranged,
+        Flying
+    }
 }

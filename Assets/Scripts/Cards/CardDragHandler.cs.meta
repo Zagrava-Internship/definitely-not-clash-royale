@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7f8d51fdbb5f422887a77fd416f9990d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - cardData: {instanceID: 0}
+  - previewPrefab: {instanceID: 0}
+  - mainCam: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
