@@ -2,9 +2,9 @@ name: Unity Build Check
 
 on:
   push:
-    branches: [main, master, develop]
+    branches: [Vladdjuga-patch-1]
   pull_request:
-    branches: [main, master, develop]
+    branches: [Vladdjuga-patch-1]
 
 jobs:
   build:
