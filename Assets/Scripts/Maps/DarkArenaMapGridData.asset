@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35590f7cb58244bd99874952a98bf9e2, type: 3}
   m_Name: DarkArenaMapGridData
   m_EditorClassIdentifier: 
-  width: 0
-  height: 0
-  cellWidth: 0
-  cellHeight: 0
-  originPosition: {x: 0, y: 0, z: 0}
-  autoRegenerate: 0
-  regenInterval: 0
+  width: 18
+  height: 30
+  cellWidth: 0.37
+  cellHeight: 0.297
+  originPosition: {x: -3.052, y: -4.4, z: 0}
+  autoRegenerate: 1
+  regenInterval: 2
