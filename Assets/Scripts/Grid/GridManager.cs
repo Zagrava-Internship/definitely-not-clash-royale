@@ -1,9 +1,14 @@
-﻿using UnityEngine;
+﻿using Maps;
+using UnityEngine;
 
 namespace Grid
 {
     public class GridManager:MonoBehaviour
     {
+        [Header("Preload Settings")]
+        public bool usePreloadedSettings = false;
+        [Header("Preloaded Grid Settings Data")]
+        public MapGridSettingsData gridSettingsData;
         [Header("Grid Settings")]
         public uint width = 18;
         public uint height = 29;
@@ -30,6 +35,17 @@ namespace Grid
             if (!(regenTimer >= regenInterval)) return;
             regenTimer = 0f;
             GenerateGrid();
+        }
+        private void ApplySettings()
+        {
+            if (!usePreloadedSettings || gridSettingsData == null) return;
+            width = gridSettingsData.width;
+            height = gridSettingsData.height;
+            cellWidth = gridSettingsData.cellWidth;
+            cellHeight = gridSettingsData.cellHeight;
+            originPosition = gridSettingsData.originPosition;
+            autoRegenerate = gridSettingsData.autoRegenerate;
+            regenInterval = gridSettingsData.regenInterval;
         }
         private void GenerateGrid() {
             _grid = new GridNode[width, height];
