@@ -1,0 +1,42 @@
+name: Unity Build Check
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master, develop]
+
+jobs:
+  build:
+    name: Build Project
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Unity
+        uses: game-ci/unity-actions/setup@v3
+        with:
+          unityVersion: 6000.0.51f1
+
+      - name: Cache Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-${{ hashFiles('**/Packages/manifest.json') }}
+          restore-keys: |
+            Library-
+
+      - name: Build the project (Linux headless)
+        uses: game-ci/unity-actions/builder@v3
+        with:
+          unityVersion: 6000.0.51f1
+          targetPlatform: StandaloneLinux64
+
+      - name: Upload Build (optional)
+        uses: actions/upload-artifact@v4
+        with:
+          name: Build
+          path: build
