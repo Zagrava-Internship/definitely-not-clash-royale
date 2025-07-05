@@ -1,6 +1,7 @@
 name: Unity Build Check
 
 on:
+  workflow_dispatch:
   push:
     branches: [Vladdjuga-patch-1]
   pull_request:
@@ -17,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Unity
-        uses: game-ci/unity-actions/setup@v3
+        uses: game-ci/unity-setup@v4
         with:
           unityVersion: 6000.0.51f1
 
@@ -30,7 +31,7 @@ jobs:
             Library-
 
       - name: Build the project (Linux headless)
-        uses: game-ci/unity-actions/builder@v3
+        uses: game-ci/unity-builder@v4
         with:
           unityVersion: 6000.0.51f1
           targetPlatform: StandaloneLinux64
