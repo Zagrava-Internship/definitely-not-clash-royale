@@ -26,7 +26,7 @@ namespace Cards
             var camZ = Mathf.Abs(mainCam.transform.position.z - spawnZ);
             var worldPos = mainCam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, camZ));
             worldPos.z = spawnZ; 
-            spawner.Spawn(card.unitToSpawn, worldPos);
+            UnitSpawner.Spawn(card.unitToSpawn, worldPos);
         }
     }
 
