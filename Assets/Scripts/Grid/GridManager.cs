@@ -1,4 +1,5 @@
-﻿using Maps;
+﻿using System.Collections.Generic;
+using Maps;
 using UnityEngine;
 
 namespace Grid
@@ -51,7 +52,7 @@ namespace Grid
             _grid = new GridNode[width, height];
             for (var x = 0; x < width; x++) {
                 for (var y = 0; y < height; y++) {
-                    Vector3 worldPos = originPosition + new Vector3(x * cellWidth, y * cellHeight, 0f);
+                    var worldPos = originPosition + new Vector3(x * cellWidth, y * cellHeight, 0f);
                     _grid[x, y] = new GridNode(x,y, worldPos);
                 }
             }
@@ -77,6 +78,115 @@ namespace Grid
             foreach (var node in _grid) {
                 Gizmos.DrawWireCube(node.worldPosition, new Vector3(cellWidth, cellHeight, -5f));
             }
+        }
+        public List<GridNode> FindPath(Vector2Int startPos, Vector2Int targetPos)
+        {
+            if (!IsInBounds(startPos) || !IsInBounds(targetPos))
+            {
+                Debug.LogWarning("Start or target position is out of bounds!");
+                return null;
+            }
+            var startNode = GetNode(startPos);
+            var targetNode = GetNode(targetPos);
+            var openSet = new List<GridNode>();
+            var closedSet = new HashSet<GridNode>();
+
+            openSet.Add(startNode);
+            
+            for (var x = 0; x < width; x++)
+            {
+                for (var y = 0; y < height; y++)
+                {
+                    var node = _grid[x, y];
+                    node.gCost = int.MaxValue;
+                    node.hCost = 0;
+                    node.parent = null;
+                }
+            }
+            startNode.gCost = 0;
+            startNode.hCost = GetDistance(startNode, targetNode);
+
+            while (openSet.Count > 0)
+            {
+                var currentNode = openSet[0];
+                for (var i = 1; i < openSet.Count; i++)
+                {
+                    if (openSet[i].fCost < currentNode.fCost || 
+                        (Mathf.Approximately(openSet[i].fCost, currentNode.fCost) && 
+                         openSet[i].hCost < currentNode.hCost))
+                    {
+                        currentNode = openSet[i];
+                    }
+                }
+                if (currentNode == targetNode)
+                {
+                    return RetracePath(startNode, targetNode);
+                }
+
+                openSet.Remove(currentNode);
+                closedSet.Add(currentNode);
+
+                foreach (var neighbor in GetNeighbors(currentNode))
+                {
+                    if (!neighbor.isWalkable || closedSet.Contains(neighbor))
+                    {
+                        continue;
+                    }
+                    var tentativeGCost = currentNode.gCost + GetDistance(currentNode, neighbor);
+                    if (!(tentativeGCost < neighbor.gCost)) continue;
+                    neighbor.gCost = tentativeGCost;
+                    neighbor.hCost = GetDistance(neighbor, targetNode);
+                    neighbor.parent = currentNode;
+                    if (!openSet.Contains(neighbor))
+                        openSet.Add(neighbor);
+                }
+            }
+            return null;
+        }
+        private static List<GridNode> RetracePath(GridNode startNode, GridNode endNode)
+        {
+            var path = new List<GridNode>();
+            var currentNode = endNode;
+            while (currentNode != startNode)
+            {
+                path.Add(currentNode);
+                currentNode = currentNode.parent;
+            }
+            path.Reverse();
+            return path;
+        }
+        private static int GetDistance(GridNode a, GridNode b)
+        {
+            var dstX = Mathf.Abs(a.x - b.x);
+            var dstY = Mathf.Abs(a.y - b.y);
+            if (dstX > dstY)
+                return 14 * dstY + 10 * (dstX - dstY);
+            return 14 * dstX + 10 * (dstY - dstX);
+        }
+        private List<GridNode> GetNeighbors(GridNode node)
+        {
+            var neighbors = new List<GridNode>();
+            var directions = new int[,]
+            {
+                {  0,  1 },  // up
+                {  1,  0 },  // right
+                {  0, -1 },  // down
+                { -1,  0 },  // left
+                {  1,  1 },  // right-up (↗)
+                {  1, -1 },  // right-down (↘)
+                { -1, -1 },  // left-down (↙)
+                { -1,  1 }   // left-up (↖)
+            };
+            for (var i = 0; i < directions.GetLength(0); i++)
+            {
+                var checkX = node.x + directions[i, 0];
+                var checkY = node.y + directions[i, 1];
+                if (IsInBounds(new Vector2Int(checkX, checkY)))
+                {
+                    neighbors.Add(_grid[checkX, checkY]);
+                }
+            }
+            return neighbors;
         }
     }
 }

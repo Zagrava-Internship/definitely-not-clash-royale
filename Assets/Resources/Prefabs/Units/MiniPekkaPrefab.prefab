@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 5485107605816039553}
   - component: {fileID: 2907041483746647017}
   - component: {fileID: 9115931688533665171}
+  - component: {fileID: 7181394458553254338}
   m_Layer: 0
   m_Name: MiniPekkaPrefab
   m_TagString: Untagged
@@ -364,3 +365,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4073d60f82dc5904690fe478130f875f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7181394458553254338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7706684635721876194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a435da4b611c46d19d3d297847b6f146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3

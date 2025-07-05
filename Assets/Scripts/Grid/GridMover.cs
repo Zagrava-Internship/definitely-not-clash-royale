@@ -1,0 +1,47 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Grid
+{
+    public class GridMover:MonoBehaviour
+    {
+        public float moveSpeed = 3f;
+        private List<GridNode> path;
+        private int targetIndex;
+        public void MoveTo(GridNode targetNode)
+        {
+            var startGridNode = GridManager.Instance.GetClosestNode(transform.position);
+            if (startGridNode == null)
+            {
+                Debug.LogError("No valid start node found for movement.");
+                return;
+            }
+            var startGridPos = new Vector2Int(startGridNode.x, startGridNode.y);
+            path = GridManager.Instance.FindPath(startGridPos, new Vector2Int(targetNode.x, targetNode.y));
+            if (path is not { Count: > 0 }) return;
+            StopAllCoroutines();
+            StartCoroutine(FollowPath());
+        }
+        private IEnumerator FollowPath()
+        {
+            targetIndex = 0;
+            var currentWaypoint = path[targetIndex].worldPosition;
+            while (true)
+            {
+                if (Vector3.Distance(transform.position, currentWaypoint) < 0.05f)
+                {
+                    targetIndex++;
+                    if (targetIndex >= path.Count)
+                    {
+                        yield break; 
+                    }
+                    currentWaypoint = path[targetIndex].worldPosition;
+                }
+                transform.position = Vector3.MoveTowards(transform.position, 
+                    currentWaypoint, moveSpeed * Time.deltaTime);
+                yield return null;
+            }
+        }
+    }
+}
