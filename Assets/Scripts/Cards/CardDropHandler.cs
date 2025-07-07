@@ -5,9 +5,9 @@ namespace Cards
 {
     public class CardDropHandler : MonoBehaviour
     {
-        public Camera mainCam;             
+        public Camera mainCam;              // screen → world conversion
         public UnitSpawner spawner;
-        public float spawnZ;
+        public float spawnZ;               // Z-depth for spawn plane
         private void OnEnable()
         {
             CardDragHandler.OnCardDropped += HandleDrop;
@@ -24,10 +24,19 @@ namespace Cards
                 Debug.LogError("CardDropHandler: 'mainCam' or 'spawner' reference is missing. Please assign them in the inspector.");
                 return;
             }
+            
+            // 1) Convert screen to raw world position at desired Z
             var camZ = Mathf.Abs(mainCam.transform.position.z - spawnZ);
-            var worldPos = mainCam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, camZ));
-            worldPos.z = spawnZ; 
-            spawner.Spawn(card.unitToSpawn, worldPos);
+            var rawWorldPos = mainCam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, camZ));
+            rawWorldPos.z = spawnZ;
+            
+            // 2) Find closest grid node to that position
+            var node = Grid.GridManager.Instance.GetClosestNode(rawWorldPos);
+            
+            // 3) Snap spawn position to node.worldPosition if node exists
+            var finalPos = node?.worldPosition ?? rawWorldPos;
+            
+            spawner.Spawn(card.unitToSpawn, finalPos);
             Mana.ManaManager.Instance.Spend(card.cost);
         }
     }
