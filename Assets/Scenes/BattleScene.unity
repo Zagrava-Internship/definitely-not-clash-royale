@@ -553,7 +553,6 @@ GameObject:
   - component: {fileID: 176438148}
   - component: {fileID: 176438147}
   - component: {fileID: 176438146}
-  - component: {fileID: 176438145}
   - component: {fileID: 176438149}
   - component: {fileID: 176438150}
   m_Layer: 5
@@ -583,21 +582,6 @@ RectTransform:
   m_AnchoredPosition: {x: -349, y: -1052}
   m_SizeDelta: {x: 43.14, y: 36.2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &176438145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 176438143}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6813448b077659f4daa81da6e5f14361, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardData: {fileID: 11400000, guid: 6f1104aa307ad2f4584115f17636f74f, type: 2}
-  gameManager: {fileID: 493633385}
-  iconImage: {fileID: 125791941}
 --- !u!114 &176438146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1327,53 +1311,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &493633384
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 493633386}
-  - component: {fileID: 493633385}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &493633385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493633384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a91d1eeff674711aea1ebd3b018fcde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitSpawner: {fileID: 285458099}
-  knightData: {fileID: 11400000, guid: 7039bd75eb0e5b144a2da1359947f76f, type: 2}
-  miniPekkaData: {fileID: 11400000, guid: a0876aac08254764ab54e589172f514f, type: 2}
---- !u!4 &493633386
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493633384}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7088623, y: -0.5240842, z: 0.055111498}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &537606165
 GameObject:
   m_ObjectHideFlags: 0
@@ -1725,7 +1662,7 @@ GameObject:
   - component: {fileID: 737997886}
   - component: {fileID: 737997885}
   m_Layer: 0
-  m_Name: GameLogic
+  m_Name: CardDropHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5098,7 +5035,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 317180837}
   - {fileID: 80768530}
-  - {fileID: 493633386}
   - {fileID: 1858369526}
   - {fileID: 285458100}
   - {fileID: 1605148575}

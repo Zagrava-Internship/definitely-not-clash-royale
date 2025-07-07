@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Spawners;
+using UnityEngine;
 
 namespace Cards
 {
-    public class BoardInputResolver : MonoBehaviour
+    public class CardDropHandler : MonoBehaviour
     {
         public Camera mainCam;             
         public UnitSpawner spawner;
@@ -26,7 +27,7 @@ namespace Cards
             var camZ = Mathf.Abs(mainCam.transform.position.z - spawnZ);
             var worldPos = mainCam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, camZ));
             worldPos.z = spawnZ; 
-            UnitSpawner.Spawn(card.unitToSpawn, worldPos);
+            spawner.Spawn(card.unitToSpawn, worldPos);
         }
     }
 
