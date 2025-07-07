@@ -20,19 +20,56 @@ namespace Cards
         private CanvasGroup _canvasGroup;
         private GameObject _previewInstance;
         private GameObject _ghostInstance;
+        private Image _image;
 
+        private bool _isDraggingAllowed;
         public static event System.Action<CardData, Vector2> OnCardDropped;
 
         private void Awake()
         {
             _rootCanvas  = GetComponentInParent<Canvas>();
             _canvasGroup = GetComponent<CanvasGroup>();
+            _image = GetComponent<Image>();
+
+        }
+
+        private void OnEnable()
+        {
+            Mana.ManaManager.OnManaChanged += OnManaChanged;
+            UpdateVisualState();
+        }
+        
+        private void OnManaChanged(float mana)
+        {
+            UpdateVisualState();
+        }
+        private void UpdateVisualState()
+        {
+            if (Mana.ManaManager.Instance.CanSpend(cardData.cost))
+            {
+                _image.color = Color.white;
+                _canvasGroup.alpha = 1f;
+            }
+            else
+            {
+                _image.color = Color.gray; 
+                _canvasGroup.alpha = 0.6f;
+            }
         }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
             if (!ValidateData()) return;
 
+            if (!Mana.ManaManager.Instance.CanSpend(cardData.cost))
+            {
+                Debug.Log($"Not enough mana to drag {cardData.cardName}");
+                _isDraggingAllowed = false;
+                return;
+            }
+
+            _isDraggingAllowed = true;
+            
             _canvasGroup.blocksRaycasts = false;
             CreatePreview(eventData.position);
             CreateGhost(eventData.position);
@@ -40,6 +77,8 @@ namespace Cards
 
         public void OnDrag(PointerEventData eventData)
         {
+            if (!_isDraggingAllowed) return;
+
             if (_previewInstance != null)
                 _previewInstance.transform.position = eventData.position;
 
@@ -49,6 +88,9 @@ namespace Cards
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            if (!_isDraggingAllowed) return;
+            _isDraggingAllowed = false;
+            
             _canvasGroup.blocksRaycasts = true;
             OnCardDropped?.Invoke(cardData, eventData.position);
             if (_previewInstance != null) Destroy(_previewInstance);

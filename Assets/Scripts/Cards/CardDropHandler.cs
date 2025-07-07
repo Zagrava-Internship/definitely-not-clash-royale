@@ -21,13 +21,14 @@ namespace Cards
         private void HandleDrop(CardData card, Vector2 screenPos)
         {
             if (mainCam == null || spawner == null) {
-                Debug.LogError("BoardInputResolver: 'mainCam' or 'spawner' reference is missing. Please assign them in the inspector.");
+                Debug.LogError("CardDropHandler: 'mainCam' or 'spawner' reference is missing. Please assign them in the inspector.");
                 return;
             }
             var camZ = Mathf.Abs(mainCam.transform.position.z - spawnZ);
             var worldPos = mainCam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, camZ));
             worldPos.z = spawnZ; 
             spawner.Spawn(card.unitToSpawn, worldPos);
+            Mana.ManaManager.Instance.Spend(card.cost);
         }
     }
 
