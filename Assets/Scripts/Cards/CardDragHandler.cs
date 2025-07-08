@@ -9,8 +9,10 @@ namespace Cards
     public sealed class CardDragHandler : MonoBehaviour,
         IBeginDragHandler, IDragHandler, IEndDragHandler
     {
-        [Header("Data")]
-        [SerializeField] private CardData cardData;       
+        
+        [Header("References")]
+        [SerializeField] private CardView cardView;  
+        
         [Header("Visuals")]
         [SerializeField] private Camera mainCam;   // camera used to convert screen → world
         
@@ -18,7 +20,6 @@ namespace Cards
 
         private CanvasGroup _canvasGroup;
         private GameObject _ghostInstance;
-        private Image _image;
 
         private bool _isDraggingAllowed;
         public static event System.Action<CardData, Vector2> OnCardDropped;
@@ -26,7 +27,6 @@ namespace Cards
         private void Awake()
         {
             _canvasGroup = GetComponent<CanvasGroup>();
-            _image = GetComponent<Image>();
 
         }
 
@@ -35,33 +35,35 @@ namespace Cards
             Mana.ManaManager.OnManaChanged += OnManaChanged;
             UpdateVisualState();
         }
-        
-        private void OnManaChanged(float mana)
+
+        private void OnDisable()
         {
-            UpdateVisualState();
+            Mana.ManaManager.OnManaChanged -= OnManaChanged;
         }
+
+        private void OnManaChanged(float mana) => UpdateVisualState();
+
         private void UpdateVisualState()
         {
-            // grey out / lower alpha if not enough mana
-            if (Mana.ManaManager.Instance.CanSpend(cardData.cost))
+            if (Mana.ManaManager.Instance.CanSpend(cardView.CardData.cost))
             {
-                _image.color = Color.white;
+                cardView.BackgroundImage.color = Color.white;
                 _canvasGroup.alpha = 1f;
             }
             else
             {
-                _image.color = Color.gray; 
+                cardView.BackgroundImage.color = Color.gray;
                 _canvasGroup.alpha = 0.6f;
             }
         }
-
+        
         public void OnBeginDrag(PointerEventData eventData)
         {
             ValidateData();
 
-            if (!Mana.ManaManager.Instance.CanSpend(cardData.cost))
+            if (!Mana.ManaManager.Instance.CanSpend(cardView.CardData.cost))
             {
-                Debug.Log($"Not enough mana to drag {cardData.cardName}");
+                Debug.Log($"Not enough mana to drag {cardView.CardData.cardName}");
                 _isDraggingAllowed = false;
                 return;
             }
@@ -87,7 +89,7 @@ namespace Cards
             _isDraggingAllowed = false;
             
             _canvasGroup.blocksRaycasts = true;
-            OnCardDropped?.Invoke(cardData, eventData.position);
+            OnCardDropped?.Invoke(cardView.CardData, eventData.position);
             
             // clean up ghost
             if (_ghostInstance != null) Destroy(_ghostInstance);
@@ -95,8 +97,8 @@ namespace Cards
     
         private void ValidateData()
         {
-            if (cardData == null)
-                throw new System.InvalidOperationException($"{nameof(CardDragHandler)}: CardData not assigned! (obj: {gameObject.name})");
+            if (cardView  == null)
+                throw new System.InvalidOperationException($"{nameof(CardDragHandler)}: CardView not assigned! (obj: {gameObject.name})");
 
             if (mainCam == null)
                 throw new System.InvalidOperationException($"{nameof(CardDragHandler)}: Main Camera not assigned! (obj: {gameObject.name})");
@@ -106,7 +108,7 @@ namespace Cards
 
         private void CreateGhost(Vector2 screenPos)
         {
-            var unitData = cardData.unitToSpawn;
+            var unitData = cardView.CardData.unitToSpawn;
             if (unitData == null || unitData.ghostPrefab == null) return;
 
             // 1) Convert screen to raw world position at desired Z

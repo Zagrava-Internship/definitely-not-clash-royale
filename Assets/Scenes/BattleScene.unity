@@ -632,6 +632,7 @@ GameObject:
   - component: {fileID: 176438148}
   - component: {fileID: 176438147}
   - component: {fileID: 176438146}
+  - component: {fileID: 176438151}
   - component: {fileID: 176438149}
   - component: {fileID: 176438150}
   m_Layer: 5
@@ -755,7 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f8d51fdbb5f422887a77fd416f9990d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 11400000, guid: 6f1104aa307ad2f4584115f17636f74f, type: 2}
+  cardView: {fileID: 176438151}
   mainCam: {fileID: 317180836}
   ghostZ: -5
 --- !u!225 &176438150
@@ -770,6 +771,21 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &176438151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176438143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657c324709594ef08aa329806b206c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardData: {fileID: 11400000, guid: 6f1104aa307ad2f4584115f17636f74f, type: 2}
+  backgroundImage: {fileID: 176438147}
+  iconImage: {fileID: 125791941}
 --- !u!1 &285458098
 GameObject:
   m_ObjectHideFlags: 0

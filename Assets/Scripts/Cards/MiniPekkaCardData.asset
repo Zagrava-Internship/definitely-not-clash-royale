@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MiniPekkaCardData
   m_EditorClassIdentifier: 
   cardName: MiniPekka
-  icon: {fileID: -9170284070294548834, guid: 79bb3095fe9d20045ae79a9a4919b651, type: 3}
+  icon: {fileID: -1847518032597975860, guid: 57a986889f410364c8500c1901cecfac, type: 3}
   unitToSpawn: {fileID: 11400000, guid: a0876aac08254764ab54e589172f514f, type: 2}
   cost: 4
