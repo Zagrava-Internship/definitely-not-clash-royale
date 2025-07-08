@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,11 @@ namespace Grid
         public float moveSpeed = 3f;
         private List<GridNode> path;
         private int targetIndex;
+        
+        
+        // Invoked when the unit finishes moving along the entire path to the target node.
+        public event Action OnPathComplete;
+        
         public void MoveTo(GridNode targetNode)
         {
             var startGridNode = GridManager.Instance.GetClosestNode(transform.position);
@@ -34,6 +40,7 @@ namespace Grid
                     targetIndex++;
                     if (targetIndex >= path.Count)
                     {
+                        OnPathComplete?.Invoke();
                         yield break; 
                     }
                     currentWaypoint = path[targetIndex].worldPosition;

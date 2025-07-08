@@ -3,15 +3,12 @@ using UnityEngine;
 
 namespace Spawners
 {
-    public class UnitSpawner : MonoBehaviour
+    public static class UnitSpawner 
     {
-        
-        public Vector2Int followingPosition = Vector2Int.zero;
-    
-        public void Spawn(UnitData unitData, Vector3 position)
+        public static void Spawn(UnitData unitData, Vector3 position)
         {
-            var obj = Instantiate(unitData.prefab, position, Quaternion.identity);
-            obj.GetComponent<Unit>().Initialize(unitData, followingPosition);
+            var obj = Object.Instantiate(unitData.prefab, position, Quaternion.identity);
+            obj.GetComponent<Unit>().Initialize(unitData);
         }
 
     }

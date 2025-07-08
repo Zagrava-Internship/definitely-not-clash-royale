@@ -1,29 +1,42 @@
 using Grid;
+using Units.UnitStates;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Units
 {
+    [RequireComponent(typeof(GridMover))]
     public class Unit : MonoBehaviour
     {
-        private UnitData _data;
-        private int _currentHealth;
-        private Vector2Int _followingPosition;
+        [Header("Base data")]
+        [SerializeField] private UnitData data;
+        
+        public float MaxHealth => data.health;
+        public float Speed => data.speed;
+        public float Damage => data.damage;
+        public UnitType Type => data.type;
 
-        public void Initialize(UnitData unitData,Vector2Int position)
+        public GridMover Mover { get; private set; } 
+        public ITargetable CurrentTarget { get; private set; }
+        public void SetTarget(ITargetable target) => CurrentTarget = target;
+        
+        private float _currentHealth;
+        private UnitState _state;          
+
+        public void Initialize(UnitData unitData)
         {
             if (!unitData)
             {
-                Debug.LogError("UnitData is null. Please assign a valid UnitData.");
-                return;
+                throw new System.ArgumentNullException(nameof(unitData), "Unit.Initialize: UnitData is null");
             }
-            var grid = GridManager.Instance;
-            _data = unitData;
-            _currentHealth = _data.health;
-            _followingPosition = position;
-            GetComponent<GridMover>().MoveTo(GridManager.Instance.GetNode(_followingPosition));
+            data = unitData;
+            _currentHealth = data.health;
+            Mover = GetComponent<GridMover>();
+            Mover.moveSpeed = data.speed;
+            SetState(new IdleState(this));
         }
-
-        public void TakeDamage(int amount)
+        
+        public void TakeDamage(float amount)
         {
             _currentHealth -= amount;
             if (_currentHealth <= 0)
@@ -31,6 +44,16 @@ namespace Units
                 Die();
             }
         }
+
+        private void Update() =>  _state?.Update();
+
+        public void SetState(UnitState next)
+        {
+            _state?.Exit();
+            _state = next;
+            _state.Enter();
+        }
+
 
         private void Die()
         {

@@ -8,8 +8,9 @@ namespace Units
         public string unitName;
         public GameObject prefab;
         public GameObject ghostPrefab;
-        public int health;
+        public float health;
         public float speed;
+        public float damage;
         public UnitType type;
     }
 

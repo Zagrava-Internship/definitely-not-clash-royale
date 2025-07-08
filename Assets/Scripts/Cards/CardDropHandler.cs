@@ -6,7 +6,6 @@ namespace Cards
     public class CardDropHandler : MonoBehaviour
     {
         public Camera mainCam;              // screen → world conversion
-        public UnitSpawner spawner;
         public float spawnZ;               // Z-depth for spawn plane
         private void OnEnable()
         {
@@ -20,9 +19,10 @@ namespace Cards
 
         private void HandleDrop(CardData card, Vector2 screenPos)
         {
-            if (mainCam == null || spawner == null) {
-                Debug.LogError("CardDropHandler: 'mainCam' or 'spawner' reference is missing. Please assign them in the inspector.");
-                return;
+            if (mainCam == null) {
+                throw new System.InvalidOperationException(
+                    $"{nameof(CardDropHandler)}: 'mainCam' reference is not assigned. Please set it in the inspector. (GameObject: {gameObject.name})"
+                );
             }
             
             // 1) Convert screen to raw world position at desired Z
@@ -36,7 +36,7 @@ namespace Cards
             // 3) Snap spawn position to node.worldPosition if node exists
             var finalPos = node?.worldPosition ?? rawWorldPos;
             
-            spawner.Spawn(card.unitToSpawn, finalPos);
+            UnitSpawner.Spawn(card.unitToSpawn, finalPos);
             Mana.ManaManager.Instance.Spend(card.cost);
         }
     }
