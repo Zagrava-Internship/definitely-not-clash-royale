@@ -19,6 +19,8 @@
         
         // Called once when exiting this state.
         public abstract void Exit();
-
+        
+        // used for UI menus
+        public abstract string DisplayName { get; }
     }
 }

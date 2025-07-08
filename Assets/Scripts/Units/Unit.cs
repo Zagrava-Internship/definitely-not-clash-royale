@@ -47,6 +47,11 @@ namespace Units
 
         private void Update() =>  _state?.Update();
 
+        public UnitState GetState()
+        {
+           return _state;
+        }
+        
         public void SetState(UnitState next)
         {
             _state?.Exit();

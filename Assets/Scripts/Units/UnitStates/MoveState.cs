@@ -37,6 +37,7 @@ namespace Units.UnitStates
             else
                 Unit.SetState(new IdleState(Unit));
         }
+        public override string DisplayName => "Move";
     }
 
 

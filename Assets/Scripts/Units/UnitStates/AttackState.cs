@@ -34,6 +34,8 @@ namespace Units.UnitStates
         }
 
         public override void Exit() { }
+        
+        public override string DisplayName => "Attack";
 
     }
 }
