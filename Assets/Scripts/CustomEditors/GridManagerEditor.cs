@@ -1,4 +1,5 @@
 ﻿using Grid;
+using Grid.Obstacles;
 using Maps;
 using UnityEditor;
 using UnityEngine;
@@ -11,6 +12,8 @@ namespace CustomEditors
         public override void OnInspectorGUI()
         {
             var gm = (GridManager)target;
+            gm.obstacleData = (MapObstacleData)EditorGUILayout.ObjectField("Obstacle Data",
+                gm.obstacleData, typeof(MapObstacleData), false);
             gm.usePreloadedSettings = EditorGUILayout.Toggle("Use Preloaded Settings", gm.usePreloadedSettings);
             if (gm.usePreloadedSettings)
             {

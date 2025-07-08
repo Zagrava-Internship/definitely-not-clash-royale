@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Grid.Obstacles;
 using Maps;
 using UnityEngine;
 
@@ -19,6 +20,8 @@ namespace Grid
         [Header("Origin Position")]
         public Vector3 originPosition = Vector3.zero;
         private GridNode[,] _grid;
+        [Header("Grid obstacles")]
+        public MapObstacleData obstacleData;
         [Header("Debug Grid Regeneration")]
         public bool autoRegenerate = true;      
         public float regenInterval = 2f;         
@@ -28,7 +31,7 @@ namespace Grid
             Instance = this;
             GenerateGrid();
         }
-        void Update()
+        private void Update()
         {
             if (!autoRegenerate) return;
 
@@ -53,7 +56,14 @@ namespace Grid
             for (var x = 0; x < width; x++) {
                 for (var y = 0; y < height; y++) {
                     var worldPos = originPosition + new Vector3(x * cellWidth, y * cellHeight, 0f);
-                    _grid[x, y] = new GridNode(x,y, worldPos);
+                    _grid[x, y] = new GridNode(x,y, worldPos)
+                    {
+                        isWalkable = true // Default to walkable
+                    };
+                    var isBlocked = obstacleData?.IsBlocked(new Vector2Int(x, y));
+                    if(isBlocked.HasValue && isBlocked.Value) {
+                        _grid[x, y].isWalkable = false; 
+                    }
                 }
             }
         }
@@ -74,9 +84,13 @@ namespace Grid
         {
             if (_grid == null) return;
 
-            Gizmos.color = Color.cyan;
-            foreach (var node in _grid) {
-                Gizmos.DrawWireCube(node.worldPosition, new Vector3(cellWidth, cellHeight, -5f));
+            foreach (var node in _grid)
+            {
+                Gizmos.color= node.isWalkable? Color.cyan : new Color(1f, 0f, 0f, 0.4f);
+                if (node.isWalkable)
+                    Gizmos.DrawWireCube(node.worldPosition, new Vector3(cellWidth, cellHeight, 0.1f));
+                else
+                    Gizmos.DrawCube(node.worldPosition, new Vector3(cellWidth, cellHeight, 0.1f));
             }
         }
         public List<GridNode> FindPath(Vector2Int startPos, Vector2Int targetPos)
