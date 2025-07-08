@@ -22,6 +22,7 @@ namespace Cards
         private GameObject _ghostInstance;
 
         private bool _isDraggingAllowed;
+        
         public static event System.Action<CardData, Vector2> OnCardDropped;
 
         private void Awake()
@@ -87,10 +88,15 @@ namespace Cards
         {
             if (!_isDraggingAllowed) return;
             _isDraggingAllowed = false;
-            
             _canvasGroup.blocksRaycasts = true;
-            OnCardDropped?.Invoke(cardView.CardData, eventData.position);
             
+            var rawPos = ScreenToWorldWithZ(eventData.position, mainCam, ghostZ);
+            var isValid = DropValidator.IsValidDropPosition(rawPos);
+
+            if (isValid)
+            {
+                OnCardDropped?.Invoke(cardView.CardData, eventData.position);
+            }
             // clean up ghost
             if (_ghostInstance != null) Destroy(_ghostInstance);
         }
@@ -103,9 +109,7 @@ namespace Cards
             if (mainCam == null)
                 throw new System.InvalidOperationException($"{nameof(CardDragHandler)}: Main Camera not assigned! (obj: {gameObject.name})");
         }
-
-
-
+        
         private void CreateGhost(Vector2 screenPos)
         {
             var unitData = cardView.CardData.unitToSpawn;
