@@ -205,6 +205,7 @@ MonoBehaviour:
   cellWidth: 0.37
   cellHeight: 0.297
   originPosition: {x: -3.052, y: -4.4, z: 0}
+  obstacleData: {fileID: 11400000, guid: c31e904c6a4a8554abbeea3f2c009a39, type: 2}
   autoRegenerate: 1
   regenInterval: 2
 --- !u!1 &52561145
@@ -4307,6 +4308,7 @@ MonoBehaviour:
   maxMana: 10
   regenRate: 1
   currentMana: 0
+  initialMana: 5
 --- !u!1 &1852598468
 GameObject:
   m_ObjectHideFlags: 0

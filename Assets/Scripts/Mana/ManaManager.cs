@@ -12,6 +12,7 @@ namespace Mana
         public int maxMana = 10;
         public float regenRate = 1f;      // mana per second
         [ReadOnly] public float currentMana;
+        public float initialMana = 0f; // initial mana at start
 
         public static event Action<float> OnManaChanged;
 
@@ -23,7 +24,7 @@ namespace Mana
                 return;
             }
             Instance = this;
-            currentMana = 0;
+            currentMana = initialMana;
         }
 
         private void Update()

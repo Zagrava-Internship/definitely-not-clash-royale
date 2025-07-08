@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9a1501f7394f80428540a927157bc3d, type: 3}
-  m_Name: CardData
+  m_Name: MiniPekkaCardData
   m_EditorClassIdentifier: 
   cardName: MiniPekka
   icon: {fileID: -9170284070294548834, guid: 79bb3095fe9d20045ae79a9a4919b651, type: 3}
   unitToSpawn: {fileID: 11400000, guid: a0876aac08254764ab54e589172f514f, type: 2}
-  cost: 2
+  cost: 4
