@@ -1,0 +1,11 @@
+﻿using UnityEngine;
+
+namespace Grid.Obstacles.ObstaclesStrategy
+{
+    public abstract class RegionStrategy:ScriptableObject
+    {
+        [SerializeField] protected Vector2Int center;
+        [SerializeField] protected Vector2Int size;
+        public abstract bool IsBlocked(Vector2Int pos);
+    }
+}
