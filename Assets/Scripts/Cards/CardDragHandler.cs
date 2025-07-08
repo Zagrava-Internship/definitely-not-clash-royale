@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Ghost;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -17,6 +18,8 @@ namespace Cards
         [SerializeField] private Camera mainCam;   // camera used to convert screen → world
         
         [SerializeField] private float ghostZ;    // Z-depth for the ghost prefab in world space
+
+        private readonly GhostPreview _ghost = new GhostPreview();
 
         private CanvasGroup _canvasGroup;
         private GameObject _ghostInstance;
@@ -78,10 +81,7 @@ namespace Cards
         public void OnDrag(PointerEventData eventData)
         {
             if (!_isDraggingAllowed) return;
-            
-            //  move ghost with snap logic
-            if (_ghostInstance != null)
-                UpdateGhostPosition(eventData.position);
+            UpdateGhostPosition(eventData.position);
         }
 
         public void OnEndDrag(PointerEventData eventData)
@@ -97,8 +97,8 @@ namespace Cards
             {
                 OnCardDropped?.Invoke(cardView.CardData, eventData.position);
             }
-            // clean up ghost
-            if (_ghostInstance != null) Destroy(_ghostInstance);
+            
+            _ghost.Destroy();
         }
     
         private void ValidateData()
@@ -125,8 +125,7 @@ namespace Cards
             var snapPos = node?.worldPosition ?? rawPos;
             
             
-            // Instantiate the ghost at snapped position
-            _ghostInstance = Instantiate(unitData.ghostPrefab, snapPos, Quaternion.identity);
+            _ghost.Create(unitData, snapPos);
         }
 
         private void UpdateGhostPosition(Vector2 screenPos)
@@ -134,7 +133,8 @@ namespace Cards
             // same logic as CreateGhost, but move existing ghost instead of instantiating
             var rawPos = ScreenToWorldWithZ(screenPos, mainCam, ghostZ);
             var node = Grid.GridManager.Instance.GetClosestNode(rawPos);
-            _ghostInstance.transform.position = node?.worldPosition ?? rawPos;
+            var snapPos = node?.worldPosition ?? rawPos;
+            _ghost.Move(snapPos);
         }
 
         private static Vector3 ScreenToWorldWithZ(Vector2 screenPos, Camera cam, float ghostZ)
