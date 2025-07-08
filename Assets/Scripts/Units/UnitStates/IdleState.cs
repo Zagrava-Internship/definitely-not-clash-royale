@@ -18,8 +18,7 @@ namespace Units.UnitStates
             if (Unit.CurrentTarget is { IsDead: false })
             {
                 var node = GridManager.Instance.GetClosestNode(Unit.CurrentTarget.Position);
-                if (node != null) ;
-                //  Unit.SetState(new MoveState(Unit, node));
+                if (node != null) Unit.SetState(new MoveState(Unit, node));
             }
         }
 
