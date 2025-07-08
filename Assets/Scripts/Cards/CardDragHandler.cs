@@ -57,7 +57,7 @@ namespace Cards
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            if (!ValidateData()) return;
+            ValidateData();
 
             if (!Mana.ManaManager.Instance.CanSpend(cardData.cost))
             {
@@ -93,17 +93,13 @@ namespace Cards
             if (_ghostInstance != null) Destroy(_ghostInstance);
         }
     
-        private bool ValidateData()
+        private void ValidateData()
         {
             if (cardData == null)
-            {
-                Debug.LogWarning($"{nameof(CardDragHandler)}: CardData not assigned!", this);
-                return false;
-            }
+                throw new System.InvalidOperationException($"{nameof(CardDragHandler)}: CardData not assigned! (obj: {gameObject.name})");
 
-            if (mainCam != null) return true;
-            Debug.LogWarning($"{nameof(CardDragHandler)}: Main Camera not assigned!", this);
-            return false;
+            if (mainCam == null)
+                throw new System.InvalidOperationException($"{nameof(CardDragHandler)}: Main Camera not assigned! (obj: {gameObject.name})");
         }
 
 
