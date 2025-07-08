@@ -29,16 +29,17 @@ namespace Grid
         public static GridManager Instance { get; private set; }
         private void Awake() {
             Instance = this;
+            ApplySettings();
             GenerateGrid();
         }
         private void Update()
         {
-            if (!autoRegenerate) return;
+            /*if (!autoRegenerate) return;
 
             regenTimer += Time.deltaTime;
             if (!(regenTimer >= regenInterval)) return;
             regenTimer = 0f;
-            GenerateGrid();
+            GenerateGrid();*/
         }
         private void ApplySettings()
         {
