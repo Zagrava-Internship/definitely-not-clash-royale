@@ -200,8 +200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSettingsData: {fileID: 11400000, guid: de0924bc86eacca4f8ad69a51d752668, type: 2}
   obstacleData: {fileID: 11400000, guid: c31e904c6a4a8554abbeea3f2c009a39, type: 2}
-  placementSettings: {fileID: 11400000, guid: bf9b907e94eeb874c8f1b1038f7c0d16, type: 2}
-  drawGridGizmos: 0
+  placementSettings: {fileID: 11400000, guid: c9ac71300467c084aab8910772271dd8, type: 2}
+  drawGridGizmos: 1
 --- !u!1 &52561145
 GameObject:
   m_ObjectHideFlags: 0
