@@ -18,7 +18,7 @@ namespace Maps.MapManagement.Pathfinding
             var startNode = _gridData.GetNode(startPos);
             var targetNode = _gridData.GetNode(targetPos);
 
-            if (startNode == null || targetNode is not { isWalkable: true })
+            if (startNode == null || targetNode is not { IsWalkable: true })
             {
                 Debug.LogWarning("Start/Target node is invalid or target is not walkable.");
                 return null;
@@ -29,12 +29,12 @@ namespace Maps.MapManagement.Pathfinding
             
             foreach(var node in _gridData.Grid)
             {
-                node.gCost = int.MaxValue;
-                node.parent = null;
+                node.GCost = int.MaxValue;
+                node.Parent = null;
             }
 
-            startNode.gCost = 0;
-            startNode.hCost = PathfinderUtils.GetDistance(startNode, targetNode);
+            startNode.GCost = 0;
+            startNode.HCost = PathfinderUtils.GetDistance(startNode, targetNode);
 
             while (openSet.Count > 0)
             {
@@ -50,13 +50,13 @@ namespace Maps.MapManagement.Pathfinding
 
                 foreach (var neighbor in GetNeighbors(currentNode))
                 {
-                    if (!neighbor.isWalkable || closedSet.Contains(neighbor)) continue;
+                    if (!neighbor.IsWalkable || closedSet.Contains(neighbor)) continue;
 
-                    var tentativeGCost = currentNode.gCost + PathfinderUtils.GetDistance(currentNode, neighbor);
-                    if (tentativeGCost >= neighbor.gCost) continue;
-                    neighbor.parent = currentNode;
-                    neighbor.gCost = tentativeGCost;
-                    neighbor.hCost = PathfinderUtils.GetDistance(neighbor, targetNode);
+                    var tentativeGCost = currentNode.GCost + PathfinderUtils.GetDistance(currentNode, neighbor);
+                    if (tentativeGCost >= neighbor.GCost) continue;
+                    neighbor.Parent = currentNode;
+                    neighbor.GCost = tentativeGCost;
+                    neighbor.HCost = PathfinderUtils.GetDistance(neighbor, targetNode);
 
                     if (!openSet.Contains(neighbor))
                     {
@@ -73,7 +73,7 @@ namespace Maps.MapManagement.Pathfinding
                 for (var y = -1; y <= 1; y++)
                 {
                     if (x == 0 && y == 0) continue;
-                    var checkPos = new Vector2Int(node.x + x, node.y + y);
+                    var checkPos = new Vector2Int(node.X + x, node.Y + y);
                     var neighborNode = _gridData.GetNode(checkPos);
                     if(neighborNode != null)
                         neighbors.Add(neighborNode);

@@ -29,11 +29,11 @@ namespace Maps.MapManagement.Grid
                     var worldPos = OriginPosition + new Vector3(x * CellWidth, y * CellHeight, 0f);
                     Grid[x, y] = new GridNode(x,y, worldPos)
                     {
-                        isWalkable = true // Default to walkable
+                        IsWalkable = true // Default to walkable
                     };
                     var isBlocked = ObstacleData?.IsBlocked(new Vector2Int(x, y));
                     if(isBlocked.HasValue && isBlocked.Value) {
-                        Grid[x, y].isWalkable = false; 
+                        Grid[x, y].IsWalkable = false; 
                     }
                 }
             }

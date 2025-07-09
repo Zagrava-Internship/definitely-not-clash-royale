@@ -35,7 +35,7 @@ namespace Cards
             var node = GridManager.Instance.GetNodeFromWorldPoint(rawWorldPos);
             
             // 3) Snap spawn position to node.worldPosition if node exists
-            var finalPos = node?.worldPosition ?? rawWorldPos;
+            var finalPos = node?.WorldPosition ?? rawWorldPos;
             
             UnitSpawner.Spawn(card.unitToSpawn, finalPos);
             Mana.ManaManager.Instance.Spend(card.cost);

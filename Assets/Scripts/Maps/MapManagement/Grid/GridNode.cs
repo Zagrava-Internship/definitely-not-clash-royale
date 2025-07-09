@@ -4,19 +4,31 @@ namespace Maps.MapManagement.Grid
 {
     public class GridNode
     {
-        //public Vector2Int gridPosition; 
-        public int x, y;            // Grid coordinates
-        public Vector3 worldPosition;   
-        public bool isWalkable;         
-        public GridNode parent;         // For A* pathfinding
-        public float gCost, hCost;      // Cost values for A* pathfinding
-        public float fCost => gCost + hCost; // Total cost for A* pathfinding
-        public GridNode(int x , int y , Vector3 worldPos, bool walkable = true)
+        // --- Grid coordinates ---
+        public int X { get; }
+        public int Y { get; }
+
+        // --- World position ---
+        public Vector3 WorldPosition { get; }
+
+        // --- Status flags ---
+        public bool IsWalkable { get; set; }
+        public bool IsPlaceable { get; set; }
+
+        // --- Pathfinding fields ---
+        public GridNode Parent { get; set; }
+        public float GCost { get; set; }
+        public float HCost { get; set; }
+        public float FCost => GCost + HCost;
+
+        // --- Constructor ---
+        public GridNode(int x, int y, Vector3 worldPos, bool isWalkable = true)
         {
-            this.x = x;
-            this.y = y;
-            worldPosition = worldPos;
-            isWalkable = walkable;
+            X = x;
+            Y = y;
+            WorldPosition = worldPos;
+            IsWalkable = isWalkable;
+            IsPlaceable = true; // default true
         }
     }
 }

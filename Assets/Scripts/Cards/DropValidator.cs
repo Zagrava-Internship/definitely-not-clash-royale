@@ -8,7 +8,7 @@ namespace Cards
         public static bool IsValidDropPosition(Vector3 worldPosition)
         {
             var node = GridManager.Instance.GetNodeFromWorldPoint(worldPosition);
-            return node is { isWalkable: true };
+            return node is { IsWalkable: true };
         }
     }
 }

@@ -123,7 +123,7 @@ namespace Cards
             var node = GridManager.Instance.GetNodeFromWorldPoint(rawPos);
             
             // 3) Snap spawn position to node.worldPosition if node exists
-            var snapPos = node?.worldPosition ?? rawPos;
+            var snapPos = node?.WorldPosition ?? rawPos;
             
             
             _ghost.Create(unitData, snapPos);
@@ -134,7 +134,7 @@ namespace Cards
             // same logic as CreateGhost, but move existing ghost instead of instantiating
             var rawPos = ScreenToWorldWithZ(screenPos, mainCam, ghostZ);
             var node = GridManager.Instance.GetNodeFromWorldPoint(rawPos);
-            var snapPos = node?.worldPosition ?? rawPos;
+            var snapPos = node?.WorldPosition ?? rawPos;
             _ghost.Move(snapPos);
         }
 

@@ -22,8 +22,8 @@ namespace Maps.MapManagement.Grid
                 Debug.LogError("No valid start node found for movement.");
                 return;
             }
-            var startGridPos = new Vector2Int(startGridNode.x, startGridNode.y);
-            path = GridManager.Instance.FindPath(startGridPos, new Vector2Int(targetNode.x, targetNode.y));
+            var startGridPos = new Vector2Int(startGridNode.X, startGridNode.Y);
+            path = GridManager.Instance.FindPath(startGridPos, new Vector2Int(targetNode.X, targetNode.Y));
             if (path is not { Count: > 0 }) return;
             StopAllCoroutines();
             StartCoroutine(FollowPath());
@@ -31,7 +31,7 @@ namespace Maps.MapManagement.Grid
         private IEnumerator FollowPath()
         {
             targetIndex = 0;
-            var currentWaypoint = path[targetIndex].worldPosition;
+            var currentWaypoint = path[targetIndex].WorldPosition;
             while (true)
             {
                 if (Vector3.Distance(transform.position, currentWaypoint) < 0.05f)
@@ -42,7 +42,7 @@ namespace Maps.MapManagement.Grid
                         OnPathComplete?.Invoke();
                         yield break; 
                     }
-                    currentWaypoint = path[targetIndex].worldPosition;
+                    currentWaypoint = path[targetIndex].WorldPosition;
                 }
                 transform.position = Vector3.MoveTowards(transform.position, 
                     currentWaypoint, moveSpeed * Time.deltaTime);

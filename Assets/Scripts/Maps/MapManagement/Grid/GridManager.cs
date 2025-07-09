@@ -49,8 +49,8 @@ namespace Maps.MapManagement.Grid
             if (startNode == null || targetNode == null) return null;
 
             return Pathfinder.FindPath(
-                new Vector2Int(startNode.x, startNode.y), 
-                new Vector2Int(targetNode.x, targetNode.y)
+                new Vector2Int(startNode.X, startNode.Y), 
+                new Vector2Int(targetNode.X, targetNode.Y)
             );
         }
         /// <summary>
