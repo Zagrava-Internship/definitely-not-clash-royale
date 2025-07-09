@@ -13,12 +13,7 @@ namespace Maps.MapManagement.Validators
             _obstacleValidator = new ObstacleValidator(obstacleData);
             _placementValidator = new PlacementValidator(placementData);
         }
-        // Combined validation method
-        public bool IsValidPlacement(int x, int y)
-        {
-            return _obstacleValidator.IsValid(x, y) && _placementValidator.IsValid(x, y);
-        }
         public bool IsObstacle(int x, int y) => !_obstacleValidator.IsValid(x, y);
-        public bool IsPlaceable(int x, int y) => _placementValidator.IsValid(x, y);
+        public bool IsPlaceable(int x, int y) => !IsObstacle(x, y) && _placementValidator.IsValid(x, y);
     }
 }
