@@ -6,6 +6,6 @@ namespace Maps.MapManagement.Grid.Strategies
     {
         [SerializeField] protected Vector2Int center;
         [SerializeField] protected Vector2Int size;
-        public abstract bool IsBlocked(Vector2Int pos);
+        public abstract bool IsOccupied(Vector2Int pos);
     }
 }

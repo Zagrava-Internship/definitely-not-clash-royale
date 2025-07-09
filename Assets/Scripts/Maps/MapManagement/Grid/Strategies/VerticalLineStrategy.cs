@@ -2,10 +2,10 @@
 
 namespace Maps.MapManagement.Grid.Strategies
 {
-    [CreateAssetMenu(fileName = "VerticalLineStrategy", menuName = "Grid/Obstacles/VerticalLineStrategy")]
+    [CreateAssetMenu(fileName = "VerticalLineStrategy", menuName = "Grid/Strategies/VerticalLineStrategy")]
     public class VerticalLineStrategy: RegionStrategy
     {
-        public override bool IsBlocked(Vector2Int pos)
+        public override bool IsOccupied(Vector2Int pos)
         {
             var halfLength = size.y / 2;
             var startY = center.y - halfLength + (size.y % 2 ^ 1); 

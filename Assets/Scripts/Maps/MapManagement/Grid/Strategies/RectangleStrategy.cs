@@ -2,9 +2,10 @@
 
 namespace Maps.MapManagement.Grid.Strategies
 {
+    [CreateAssetMenu(fileName = "RectangleStrategy", menuName = "Grid/Strategies/RectangleStrategy")]
     public class RectangleStrategy: RegionStrategy
     {
-        public override bool IsBlocked(Vector2Int pos)
+        public override bool IsOccupied(Vector2Int pos)
         {
             var minX = center.x - size.x / 2;
             var maxX = center.x + (size.x - 1) / 2;

@@ -2,10 +2,10 @@
 
 namespace Maps.MapManagement.Grid.Strategies
 {
-    [CreateAssetMenu(fileName = "HorizontalLineStrategy", menuName = "Grid/Obstacles/HorizontalLineStrategy")]
+    [CreateAssetMenu(fileName = "HorizontalLineStrategy", menuName = "Grid/Strategies/HorizontalLineStrategy")]
     public class HorizontalLineStrategy: RegionStrategy
     {
-        public override bool IsBlocked(Vector2Int pos)
+        public override bool IsOccupied(Vector2Int pos)
         {
             var halfLength = size.x / 2;
             var startX=center.x - halfLength + (size.x % 2 ^ 1);
