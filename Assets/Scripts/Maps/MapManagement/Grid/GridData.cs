@@ -1,4 +1,5 @@
 ﻿using Maps.MapManagement.Grid.Obstacles;
+using Maps.MapManagement.Validators;
 using UnityEngine;
 
 namespace Maps.MapManagement.Grid
@@ -8,11 +9,14 @@ namespace Maps.MapManagement.Grid
         public GridNode[,] Grid { get; private set; }
         private uint Width { get; }
         private uint Height { get; }
-        private float CellWidth { get; }
-        private float CellHeight { get; }
-        private Vector3 OriginPosition { get; }
-        private MapObstacleData ObstacleData { get; }
-        public GridData(MapGridSettingsData settings,MapObstacleData obstacleData)
+        public float CellWidth { get; }
+        public float CellHeight { get; }
+        public Vector3 OriginPosition { get; }
+        private ObstacleData ObstacleData { get; }
+        
+        private readonly ValidationManager _validationManager;
+        public GridData(GridSettingsData settings,ObstacleData obstacleData,
+            ValidationManager validationManager)
         {
             Width = settings.width;
             Height = settings.height;
@@ -20,6 +24,7 @@ namespace Maps.MapManagement.Grid
             CellHeight = settings.cellHeight;
             OriginPosition = settings.originPosition;
             ObstacleData = obstacleData;
+            _validationManager = validationManager;
             GenerateGrid();
         }
         private void GenerateGrid() {
@@ -31,10 +36,10 @@ namespace Maps.MapManagement.Grid
                     {
                         IsWalkable = true // Default to walkable
                     };
-                    var isBlocked = ObstacleData?.IsBlocked(new Vector2Int(x, y));
-                    if(isBlocked.HasValue && isBlocked.Value) {
-                        Grid[x, y].IsWalkable = false; 
-                    }
+                    var isBlocked = _validationManager.IsObstacle(x,y);
+                    var isPlaceable = _validationManager.IsPlaceable(x, y);
+                    Grid[x, y].IsWalkable = !isBlocked;
+                    Grid[x, y].IsPlaceable = isPlaceable;
                 }
             }
         }

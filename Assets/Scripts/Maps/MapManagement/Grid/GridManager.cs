@@ -1,6 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using JetBrains.Annotations;
+using Maps.MapManagement.Grid.DebuggingUtils;
 using Maps.MapManagement.Grid.Obstacles;
+using Maps.MapManagement.Grid.Placement;
 using Maps.MapManagement.Pathfinding;
+using Maps.MapManagement.Validators;
 using UnityEngine;
 
 namespace Maps.MapManagement.Grid
@@ -8,13 +13,16 @@ namespace Maps.MapManagement.Grid
     public class GridManager:MonoBehaviour
     {
         [Header("Grid Settings Data")]
-        public MapGridSettingsData gridSettingsData;
+        public GridSettingsData gridSettingsData;
         [Header("Obstacle Settings")]
-        public MapObstacleData obstacleData;
+        public ObstacleData obstacleData;
+        [Header("Placement Settings")]
+        public PlacementData placementSettings;
         
         private GridData GridData { get; set; }
         private Pathfinder Pathfinder { get; set; }
-    
+        private ValidationManager ValidationManager { get; set; }
+        
         public static GridManager Instance { get; private set; }
 
         private void Awake()
@@ -35,24 +43,26 @@ namespace Maps.MapManagement.Grid
                 Debug.LogError("GridSettingsData is not assigned in the GridManager!");
                 return;
             }
-            GridData = new GridData(gridSettingsData,obstacleData);
-            Pathfinder = new Pathfinder(GridData);
+
+            if (placementSettings == null)
+            {
+                Debug.LogError("PlacementSettings is not assigned in the GridManager!");
+                return;
+            }
+            // Register the subsystems in the correct order
+            ValidationManager = new ValidationManager(obstacleData, placementSettings);//1
+            GridData = new GridData(gridSettingsData,obstacleData,ValidationManager);//2
+            Pathfinder = new Pathfinder(GridData);//3
+            // No dependency injection is a pain :(
         }
-        /// <summary>
-        /// Finds a path between two points in the world space.
-        /// </summary>
-        public List<GridNode> FindPath(Vector3 startWorldPos, Vector3 targetWorldPos)
+        private void OnDrawGizmos()
         {
-            var startNode = GridData.GetClosestNode(startWorldPos);
-            var targetNode = GridData.GetClosestNode(targetWorldPos);
-
-            if (startNode == null || targetNode == null) return null;
-
-            return Pathfinder.FindPath(
-                new Vector2Int(startNode.X, startNode.Y), 
-                new Vector2Int(targetNode.X, targetNode.Y)
-            );
+            if (GridData == null)
+                return;
+            GridVisualizer.Draw(GridData);
         }
+
+        #region Public API
         /// <summary>
         /// Finds a path between two grid positions.
         /// </summary>
@@ -67,5 +77,18 @@ namespace Maps.MapManagement.Grid
         {
             return GridData.GetClosestNode(worldPosition);
         }
+        /// <summary>
+        /// Gets the closest grid node with checking if it`s placeable.
+        /// Used fot placement validation in CardDropHandler.
+        /// </summary>
+        [CanBeNull]
+        public GridNode GetPlaceableNodeFromWorldPoint(Vector3 worldPosition)
+        {
+            var node = GridData.GetClosestNode(worldPosition);
+            if (node != null && ValidationManager.IsPlaceable(node.X, node.Y))
+                return node;
+            return null;
+        }
+        #endregion
     }
 }
