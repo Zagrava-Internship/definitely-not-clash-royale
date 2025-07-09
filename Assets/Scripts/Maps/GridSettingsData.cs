@@ -3,7 +3,7 @@
 namespace Maps
 {
     [CreateAssetMenu(fileName = "MapGridSettingsData", menuName = "Game/MapGridSettingsData")]
-    public class MapGridSettingsData: ScriptableObject
+    public class GridSettingsData: ScriptableObject
     {
         [Header("Grid Settings")] 
         public uint width;

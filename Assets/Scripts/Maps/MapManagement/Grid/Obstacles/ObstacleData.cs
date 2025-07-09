@@ -8,7 +8,7 @@ namespace Maps.MapManagement.Grid.Obstacles
 {
     [Serializable]
     [CreateAssetMenu(fileName = "MapObstacleData", menuName = "Grid/Obstacles/MapObstacleData")]
-    public class MapObstacleData: ScriptableObject
+    public class ObstacleData: ScriptableObject
     {
         public List<RegionStrategy> regions;
     }
