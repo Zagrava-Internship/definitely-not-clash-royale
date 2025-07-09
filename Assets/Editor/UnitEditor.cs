@@ -12,7 +12,9 @@ namespace Editor
 
             var unit = (Unit)target;
             EditorGUILayout.Space();
-            EditorGUILayout.LabelField("Current State", unit.GetState().DisplayName ?? "None");
+            var currentState = unit.GetState();
+            EditorGUILayout.LabelField("Current State", 
+                currentState != null ? currentState.DisplayName : "None");
         }
     }
 }
