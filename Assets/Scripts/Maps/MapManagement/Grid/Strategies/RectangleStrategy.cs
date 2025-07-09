@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Maps.MapManagement.Grid.Obstacles.ObstaclesStrategy
+namespace Maps.MapManagement.Grid.Strategies
 {
     public class RectangleStrategy: RegionStrategy
     {

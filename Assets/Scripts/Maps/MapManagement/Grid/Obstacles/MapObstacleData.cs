@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Maps.MapManagement.Grid.Obstacles.ObstaclesStrategy;
+using Maps.MapManagement.Grid.Strategies;
 using UnityEngine;
 
 namespace Maps.MapManagement.Grid.Obstacles
@@ -11,9 +11,5 @@ namespace Maps.MapManagement.Grid.Obstacles
     public class MapObstacleData: ScriptableObject
     {
         public List<RegionStrategy> regions;
-        public bool IsBlocked(Vector2Int pos)
-        {
-            return regions.Any(region => region.IsBlocked(pos));
-        }
     }
 }

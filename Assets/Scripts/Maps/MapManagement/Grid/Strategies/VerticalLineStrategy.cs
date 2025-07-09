@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Maps.MapManagement.Grid.Obstacles.ObstaclesStrategy
+namespace Maps.MapManagement.Grid.Strategies
 {
     [CreateAssetMenu(fileName = "VerticalLineStrategy", menuName = "Grid/Obstacles/VerticalLineStrategy")]
     public class VerticalLineStrategy: RegionStrategy

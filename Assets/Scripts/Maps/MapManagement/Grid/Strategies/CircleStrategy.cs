@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Maps.MapManagement.Grid.Obstacles.ObstaclesStrategy
+namespace Maps.MapManagement.Grid.Strategies
 {
     [CreateAssetMenu(fileName = "CircleStrategy", menuName = "Grid/Obstacles/CircleStrategy")]
     public class CircleStrategy: RegionStrategy
