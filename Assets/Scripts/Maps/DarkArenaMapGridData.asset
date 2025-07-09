@@ -18,4 +18,4 @@ MonoBehaviour:
   cellHeight: 0.297
   originPosition: {x: -3.052, y: -4.4, z: 0}
   autoRegenerate: 1
-  regenInterval: 2
+  regenInterval: 0

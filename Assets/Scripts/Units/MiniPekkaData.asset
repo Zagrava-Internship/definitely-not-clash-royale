@@ -16,6 +16,6 @@ MonoBehaviour:
   prefab: {fileID: 7706684635721876194, guid: 3c4b2b59d89097144915e9cfd6fe05e2, type: 3}
   ghostPrefab: {fileID: 7706684635721876194, guid: 77773d95861721c43a803d013abeb763, type: 3}
   health: 100
-  speed: 5
+  speed: 1
   damage: 5
   type: 0

@@ -198,16 +198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01490a15efb64f82b6d7ff1e53a172e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usePreloadedSettings: 1
   gridSettingsData: {fileID: 11400000, guid: de0924bc86eacca4f8ad69a51d752668, type: 2}
-  width: 18
-  height: 30
-  cellWidth: 0.37
-  cellHeight: 0.297
-  originPosition: {x: 1.91, y: -4.4, z: 0}
   obstacleData: {fileID: 11400000, guid: c31e904c6a4a8554abbeea3f2c009a39, type: 2}
-  autoRegenerate: 1
-  regenInterval: 2
+  placementSettings: {fileID: 11400000, guid: bf9b907e94eeb874c8f1b1038f7c0d16, type: 2}
+  drawGridGizmos: 0
 --- !u!1 &52561145
 GameObject:
   m_ObjectHideFlags: 0
