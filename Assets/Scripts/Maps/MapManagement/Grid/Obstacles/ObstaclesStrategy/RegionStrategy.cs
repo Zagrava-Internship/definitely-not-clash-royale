@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Grid.Obstacles.ObstaclesStrategy
+namespace Maps.MapManagement.Grid.Obstacles.ObstaclesStrategy
 {
     public abstract class RegionStrategy:ScriptableObject
     {

@@ -1,4 +1,5 @@
-﻿using Spawners;
+﻿using Maps.MapManagement.Grid;
+using Spawners;
 using UnityEngine;
 
 namespace Cards
@@ -31,7 +32,7 @@ namespace Cards
             rawWorldPos.z = spawnZ;
             
             // 2) Find closest grid node to that position
-            var node = Grid.GridManager.Instance.GetClosestNode(rawWorldPos);
+            var node = GridManager.Instance.GetNodeFromWorldPoint(rawWorldPos);
             
             // 3) Snap spawn position to node.worldPosition if node exists
             var finalPos = node?.worldPosition ?? rawWorldPos;

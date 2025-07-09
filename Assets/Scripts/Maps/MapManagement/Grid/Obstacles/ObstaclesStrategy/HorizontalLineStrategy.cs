@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Grid.Obstacles.ObstaclesStrategy
+namespace Maps.MapManagement.Grid.Obstacles.ObstaclesStrategy
 {
     [CreateAssetMenu(fileName = "HorizontalLineStrategy", menuName = "Grid/Obstacles/HorizontalLineStrategy")]
     public class HorizontalLineStrategy: RegionStrategy

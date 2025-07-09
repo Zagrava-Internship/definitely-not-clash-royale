@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Grid.Obstacles.ObstaclesStrategy
+namespace Maps.MapManagement.Grid.Obstacles.ObstaclesStrategy
 {
     [CreateAssetMenu(fileName = "PointStrategy", menuName = "Grid/Obstacles/PointStrategy")]
     public class PointStrategy : RegionStrategy

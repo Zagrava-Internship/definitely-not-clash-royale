@@ -1,4 +1,4 @@
-using Grid;
+using Maps.MapManagement.Grid;
 using Units.UnitStates;
 using UnityEngine;
 using UnityEngine.Serialization;

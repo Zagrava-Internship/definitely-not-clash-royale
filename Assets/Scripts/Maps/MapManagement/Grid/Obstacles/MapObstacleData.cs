@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Grid.Obstacles.ObstaclesStrategy;
+using Maps.MapManagement.Grid.Obstacles.ObstaclesStrategy;
 using UnityEngine;
 
-namespace Grid.Obstacles
+namespace Maps.MapManagement.Grid.Obstacles
 {
     [Serializable]
     [CreateAssetMenu(fileName = "MapObstacleData", menuName = "Grid/Obstacles/MapObstacleData")]

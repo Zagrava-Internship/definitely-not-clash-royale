@@ -1,4 +1,5 @@
 ﻿using Ghost;
+using Maps.MapManagement.Grid;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -119,7 +120,7 @@ namespace Cards
             var rawPos = ScreenToWorldWithZ(screenPos, mainCam, ghostZ);
             
             // 2) Find closest grid node to that position
-            var node = Grid.GridManager.Instance.GetClosestNode(rawPos);
+            var node = GridManager.Instance.GetNodeFromWorldPoint(rawPos);
             
             // 3) Snap spawn position to node.worldPosition if node exists
             var snapPos = node?.worldPosition ?? rawPos;
@@ -132,7 +133,7 @@ namespace Cards
         {
             // same logic as CreateGhost, but move existing ghost instead of instantiating
             var rawPos = ScreenToWorldWithZ(screenPos, mainCam, ghostZ);
-            var node = Grid.GridManager.Instance.GetClosestNode(rawPos);
+            var node = GridManager.Instance.GetNodeFromWorldPoint(rawPos);
             var snapPos = node?.worldPosition ?? rawPos;
             _ghost.Move(snapPos);
         }

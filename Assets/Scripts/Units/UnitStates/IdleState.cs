@@ -1,4 +1,4 @@
-﻿using Grid;
+﻿using Maps.MapManagement.Grid;
 
 namespace Units.UnitStates
 {
@@ -17,7 +17,7 @@ namespace Units.UnitStates
             }
             if (Unit.CurrentTarget is { IsDead: false })
             {
-                var node = GridManager.Instance.GetClosestNode(Unit.CurrentTarget.Position);
+                var node = GridManager.Instance.GetNodeFromWorldPoint(Unit.CurrentTarget.Position);
                 if (node != null) Unit.SetState(new MoveState(Unit, node));
             }
         }
