@@ -18,6 +18,8 @@ namespace Maps.MapManagement.Grid
         public ObstacleData obstacleData;
         [Header("Placement Settings")]
         public PlacementData placementSettings;
+        [Header("Debugging")]
+        public bool drawGridGizmos = true;
         
         private GridData GridData { get; set; }
         private Pathfinder Pathfinder { get; set; }
@@ -57,6 +59,8 @@ namespace Maps.MapManagement.Grid
         }
         private void OnDrawGizmos()
         {
+            if (!drawGridGizmos)
+                return;
             if (GridData == null)
                 return;
             GridVisualizer.Draw(GridData);
