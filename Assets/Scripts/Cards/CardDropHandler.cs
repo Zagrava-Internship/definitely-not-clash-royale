@@ -32,7 +32,9 @@ namespace Cards
             rawWorldPos.z = spawnZ;
             
             // 2) Find closest grid node to that position
-            var node = GridManager.Instance.GetPlaceableNodeFromWorldPoint(rawWorldPos);
+            var node = GridManager.Instance.GetNodeFromWorldPoint(rawWorldPos);
+
+            // var node = GridManager.Instance.GetPlaceableNodeFromWorldPoint(rawWorldPos);
             if (node is null)
             {
                 Debug.LogWarning($"No valid grid node found for position {rawWorldPos}. Card drop failed.");
@@ -40,7 +42,6 @@ namespace Cards
             }
             // 3) Snap spawn position to node.worldPosition if node exists
             var finalPos = node?.WorldPosition ?? rawWorldPos;
-            
             
             // 4) Spawn the unit at the final position
             UnitSpawner.Spawn(card.unitToSpawn, finalPos);
