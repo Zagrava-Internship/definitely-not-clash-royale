@@ -32,7 +32,6 @@ namespace Units
             data = unitData;
             _currentHealth = data.health;
             Mover = GetComponent<GridMover>();
-            Mover.moveSpeed = data.speed;
             SetState(new IdleState(this));
         }
         
@@ -63,6 +62,22 @@ namespace Units
         private void Die()
         {
             Destroy(gameObject);
+        }
+        
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (CurrentTarget is null)
+                return;
+            if (other.transform.position == CurrentTarget.Position)
+            {
+                Debug.Log($"Reached target position: {CurrentTarget.Position}. Stopping movement.");
+                Mover.ForceToStop();// Stop the movement coroutine
+            }
+            else
+            {
+                Debug.LogWarning($"Unexpected collision with {other.name} at position {other.transform.position}. " +
+                                 $"Expected target position: {CurrentTarget.Position}");
+            }
         }
     }
 }

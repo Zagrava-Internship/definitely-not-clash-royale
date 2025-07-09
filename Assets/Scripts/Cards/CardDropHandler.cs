@@ -38,10 +38,11 @@ namespace Cards
                 Debug.LogWarning($"No valid grid node found for position {rawWorldPos}. Card drop failed.");
                 return;
             }
-            
             // 3) Snap spawn position to node.worldPosition if node exists
             var finalPos = node?.WorldPosition ?? rawWorldPos;
             
+            
+            // 4) Spawn the unit at the final position
             UnitSpawner.Spawn(card.unitToSpawn, finalPos);
             Mana.ManaManager.Instance.Spend(card.cost);
         }

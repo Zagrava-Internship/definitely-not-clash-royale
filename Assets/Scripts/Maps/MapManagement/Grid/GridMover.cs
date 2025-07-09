@@ -1,21 +1,23 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Units;
 using UnityEngine;
 
 namespace Maps.MapManagement.Grid
 {
     public class GridMover:MonoBehaviour
     {
-        public float moveSpeed = 3f;
-        private List<GridNode> path;
-        private int targetIndex;
+        private float _moveSpeed;
+        private List<GridNode> _path;
+        private int _targetIndex;
         
         // Invoked when the unit finishes moving along the entire path to the target node.
         public event Action OnPathComplete;
         
-        public void MoveTo(GridNode targetNode)
+        public void MoveTo(GridNode targetNode,float speed)
         {
+            _moveSpeed = speed;
             var startGridNode = GridManager.Instance.GetNodeFromWorldPoint(transform.position);
             if (startGridNode == null)
             {
@@ -23,31 +25,40 @@ namespace Maps.MapManagement.Grid
                 return;
             }
             var startGridPos = new Vector2Int(startGridNode.X, startGridNode.Y);
-            path = GridManager.Instance.FindPath(startGridPos, new Vector2Int(targetNode.X, targetNode.Y));
-            if (path is not { Count: > 0 }) return;
+            _path = GridManager.Instance.FindPath(startGridPos, new Vector2Int(targetNode.X, targetNode.Y));
+            if (_path is not { Count: > 0 }) return;
             StopAllCoroutines();
             StartCoroutine(FollowPath());
         }
         private IEnumerator FollowPath()
         {
-            targetIndex = 0;
-            var currentWaypoint = path[targetIndex].WorldPosition;
+            _targetIndex = 0;
+            var currentWaypoint = _path[_targetIndex].WorldPosition;
             while (true)
             {
                 if (Vector3.Distance(transform.position, currentWaypoint) < 0.05f)
                 {
-                    targetIndex++;
-                    if (targetIndex >= path.Count)
+                    _targetIndex++;
+                    if (_targetIndex >= _path.Count)
                     {
+                        // Reached the end of the path, invoke the completion event
+                        StopAllCoroutines();
                         OnPathComplete?.Invoke();
                         yield break; 
                     }
-                    currentWaypoint = path[targetIndex].WorldPosition;
+                    currentWaypoint = _path[_targetIndex].WorldPosition;
                 }
                 transform.position = Vector3.MoveTowards(transform.position, 
-                    currentWaypoint, moveSpeed * Time.deltaTime);
+                    currentWaypoint, _moveSpeed * Time.deltaTime);
                 yield return null;
             }
+        }
+        public void ForceToStop()
+        {
+            StopAllCoroutines();
+            _path = null;
+            _targetIndex = 0;
+            OnPathComplete?.Invoke(); // Notify that the path is complete even if stopped
         }
     }
 }

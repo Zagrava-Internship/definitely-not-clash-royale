@@ -125,7 +125,6 @@ namespace Cards
             // 3) Snap spawn position to node.worldPosition if node exists
             var snapPos = node?.WorldPosition ?? rawPos;
             
-            
             _ghost.Create(unitData, snapPos);
         }
 

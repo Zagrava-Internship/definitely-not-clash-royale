@@ -1,4 +1,5 @@
 ﻿using Maps.MapManagement.Grid;
+using UnityEngine;
 
 namespace Units.UnitStates
 {
@@ -20,7 +21,7 @@ namespace Units.UnitStates
             }
 
             Unit.Mover.OnPathComplete += OnPathComplete;
-            Unit.Mover.MoveTo(_targetNode);
+            Unit.Mover.MoveTo(_targetNode, Unit.Speed);
         }
 
         public override void Update() { }
