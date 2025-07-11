@@ -4511,7 +4511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3fbe6d9536472c82b80fc8aa90e036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manaManager: {fileID: 1748467180}
+  manaProvider: {fileID: 1748467181}
 --- !u!4 &1778110290
 Transform:
   m_ObjectHideFlags: 0
