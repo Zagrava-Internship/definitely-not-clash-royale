@@ -6,8 +6,17 @@ namespace Cards
 {
     public class CardDropHandler : MonoBehaviour
     {
-        public Camera mainCam;              // screen → world conversion
-        public float spawnZ;               // Z-depth for spawn plane
+        [SerializeField] private Camera mainCam;              // screen → world conversion
+        [SerializeField] private float spawnZ;               // Z-depth for spawn plane
+        
+        private void Awake()
+        {
+            if (mainCam == null)
+                throw new System.InvalidOperationException(
+                    "[{nameof(CardDropHandler)}] Main Camera not assigned in inspector."
+                );
+        }
+        
         private void OnEnable()
         {
             CardDragHandler.OnCardDropped += HandleDrop;
@@ -20,12 +29,6 @@ namespace Cards
 
         private void HandleDrop(CardData card, Vector2 screenPos)
         {
-            if (mainCam == null) {
-                throw new System.InvalidOperationException(
-                    $"{nameof(CardDropHandler)}: 'mainCam' reference is not assigned. Please set it in the inspector. (GameObject: {gameObject.name})"
-                );
-            }
-            
             // 1) Convert screen to raw world position at desired Z
             var camZ = Mathf.Abs(mainCam.transform.position.z - spawnZ);
             var rawWorldPos = mainCam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, camZ));
