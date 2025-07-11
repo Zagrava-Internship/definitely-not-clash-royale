@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ namespace Mana
 
         [Header("UI Elements")]
         [SerializeField] private Image manaFill; // Image type Filled
+        [SerializeField] private TMP_Text manaText;
         
         private IManaReadOnly _mana;
 
@@ -25,6 +27,11 @@ namespace Mana
             if (manaFill == null)
                 throw new InvalidOperationException(
                     $"[{nameof(ManaUI)}] 'manaFill' reference not assigned in inspector."
+                );
+            
+            if (manaText ==null) 
+                throw new InvalidOperationException(
+                    $"[{nameof(ManaUI)}] 'manaText' reference not assigned in inspector"
                 );
             
             _mana = manaProvider as IManaReadOnly;
@@ -48,6 +55,7 @@ namespace Mana
         private void UpdateUI(float currentMana)
         {
             manaFill.fillAmount = currentMana / _mana.MaxMana;
+            manaText.text = $"{Mathf.FloorToInt(currentMana)}/{_mana.MaxMana}";
         }
     }
 

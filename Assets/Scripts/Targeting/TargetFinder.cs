@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Units;
+﻿using Units;
 using UnityEngine;
 
 namespace Targeting
