@@ -1,11 +1,16 @@
 ﻿using Maps.MapManagement.Grid;
+using Units.Animation;
 
 namespace Units.UnitStates
 {
     public class IdleState : UnitState
     {
         public IdleState(Unit unit) : base(unit) { }
-        public override void Enter() {  }
+
+        public override void Enter()
+        {
+            Unit.Animator.PlayIdle();
+        }
 
         public override void Update()
         {
@@ -22,7 +27,10 @@ namespace Units.UnitStates
             }
         }
 
-        public override void Exit() { }
+        public override void Exit()
+        {
+            Unit.Animator.ResetState();
+        }
 
 
         public override string DisplayName => "Idle";

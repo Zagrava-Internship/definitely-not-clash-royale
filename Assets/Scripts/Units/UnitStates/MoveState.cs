@@ -1,4 +1,5 @@
 ﻿using Maps.MapManagement.Grid;
+using Units.Animation;
 using UnityEngine;
 
 namespace Units.UnitStates
@@ -21,7 +22,11 @@ namespace Units.UnitStates
             }
 
             Unit.Mover.OnPathComplete += OnPathComplete;
+            Unit.Mover.OnDirectionChanged += OnDirectionChanged;
             Unit.Mover.MoveTo(_targetNode, Unit.Speed);
+            
+            // Animation
+            Unit.Animator.PlayMove(Vector2.zero);
         }
 
         public override void Update() { }
@@ -29,6 +34,8 @@ namespace Units.UnitStates
         public override void Exit()
         {
             Unit.Mover.OnPathComplete -= OnPathComplete;
+            // Reset the animator state
+            Unit.Animator.ResetState();
         }
 
         private void OnPathComplete()
@@ -37,6 +44,11 @@ namespace Units.UnitStates
                 Unit.SetState(new AttackState(Unit, Unit.CurrentTarget));
             else
                 Unit.SetState(new IdleState(Unit));
+        }
+        
+        private void OnDirectionChanged(Vector2 direction)
+        {
+            Unit.Animator.ChangeMovingDirection(direction);
         }
         public override string DisplayName => "Move";
     }

@@ -16,6 +16,7 @@ namespace Units.UnitStates
         public override void Enter()
         {
             _timer = 0f;
+            Unit.Animator.PlayAttack();
         }
 
         public override void Update()
@@ -33,7 +34,10 @@ namespace Units.UnitStates
             }
         }
 
-        public override void Exit() { }
+        public override void Exit()
+        {
+            Unit.Animator.ResetState();
+        }
         
         public override string DisplayName => "Attack";
 
