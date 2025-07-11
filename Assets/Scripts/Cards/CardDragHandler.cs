@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Cards
 {
-    [RequireComponent(typeof(Image))]
+    [RequireComponent(typeof(Image), typeof(CanvasGroup))]
     [DisallowMultipleComponent]
     public sealed class CardDragHandler : MonoBehaviour,
         IBeginDragHandler, IDragHandler, IEndDragHandler
@@ -14,17 +14,17 @@ namespace Cards
         
         [Header("References")]
         [SerializeField] private CardView cardView;  
+        [SerializeField] private MonoBehaviour manaValidatorProvider;
+        [SerializeField] private CardPlayabilityService playabilityService;
         
         [Header("Visuals")]
         [SerializeField] private Camera mainCam;   // camera used to convert screen → world
-        
         [SerializeField] private float ghostZ;    // Z-depth for the ghost prefab in world space
 
-        private readonly GhostPreview _ghost = new GhostPreview();
 
+        private ICardDragValidator _validator;
         private CanvasGroup _canvasGroup;
-        private GameObject _ghostInstance;
-
+        private readonly GhostPreview _ghost = new GhostPreview();
         private bool _isDraggingAllowed;
         
         public static event System.Action<CardData, Vector2> OnCardDropped;
@@ -33,51 +33,56 @@ namespace Cards
         {
             _canvasGroup = GetComponent<CanvasGroup>();
 
+            if (cardView == null)
+                throw new System.InvalidOperationException($"[{nameof(CardDragHandler)}] CardView reference not assigned in inspector.");
+
+            if (mainCam == null)
+                throw new System.InvalidOperationException($"[{nameof(CardDragHandler)}] Main Camera not assigned in inspector.");
+
+            if (manaValidatorProvider == null)
+                throw new System.InvalidOperationException($"[{nameof(CardDragHandler)}] ManaValidatorProvider not assigned in inspector.");
+
+            if (playabilityService == null)
+                throw new System.InvalidOperationException($"[{nameof(CardDragHandler)}] PlayabilityService not assigned in inspector.");
+
+            _validator = manaValidatorProvider as ICardDragValidator
+                         ?? throw new System.InvalidOperationException(
+                             $"[{nameof(CardDragHandler)}] Assigned validator provider does not implement ICardDragValidator");
         }
+
 
         private void OnEnable()
         {
-            Mana.ManaManager.OnManaChanged += OnManaChanged;
-            UpdateVisualState();
+            playabilityService.OnCardPlayabilityChanged += OnPlayabilityChanged;
+            playabilityService.Register(cardView.CardData);
         }
 
         private void OnDisable()
         {
-            Mana.ManaManager.OnManaChanged -= OnManaChanged;
+            playabilityService.OnCardPlayabilityChanged -= OnPlayabilityChanged;
+            playabilityService.Unregister(cardView.CardData);
         }
 
-        private void OnManaChanged(float mana) => UpdateVisualState();
-
-        private void UpdateVisualState()
+        private void OnPlayabilityChanged(CardData card, bool canPlay)
         {
-            if (Mana.ManaManager.Instance.CanSpend(cardView.CardData.cost))
-            {
-                cardView.BackgroundImage.color = Color.white;
-                _canvasGroup.alpha = 1f;
-            }
-            else
-            {
-                cardView.BackgroundImage.color = Color.gray;
-                _canvasGroup.alpha = 0.6f;
-            }
+            if (card != cardView.CardData) return;
+            cardView.BackgroundImage.color = canPlay ? Color.white : Color.gray;
+            _canvasGroup.alpha = canPlay ? 1f : 0.6f;
         }
-        
         public void OnBeginDrag(PointerEventData eventData)
         {
-            ValidateData();
-
-            if (!Mana.ManaManager.Instance.CanSpend(cardView.CardData.cost))
+            if (!_validator.CanStartDrag(cardView.CardData))
             {
-                Debug.Log($"Not enough mana to drag {cardView.CardData.cardName}");
+                Debug.Log($"Not enough mana to drag {cardView.CardData.CardName}");
                 _isDraggingAllowed = false;
                 return;
             }
 
             _isDraggingAllowed = true;
-            
-            _canvasGroup.blocksRaycasts = false; // allow raycasts to pass through while dragging
+            _canvasGroup.blocksRaycasts = false;
             CreateGhost(eventData.position);
         }
+
 
         public void OnDrag(PointerEventData eventData)
         {
@@ -101,19 +106,10 @@ namespace Cards
             
             _ghost.Destroy();
         }
-    
-        private void ValidateData()
-        {
-            if (cardView  == null)
-                throw new System.InvalidOperationException($"{nameof(CardDragHandler)}: CardView not assigned! (obj: {gameObject.name})");
-
-            if (mainCam == null)
-                throw new System.InvalidOperationException($"{nameof(CardDragHandler)}: Main Camera not assigned! (obj: {gameObject.name})");
-        }
         
         private void CreateGhost(Vector2 screenPos)
         {
-            var unitData = cardView.CardData.unitToSpawn;
+            var unitData = cardView.CardData.UnitToSpawn;
             if (unitData == null || unitData.ghostPrefab == null) return;
 
             // 1) Convert screen to raw world position at desired Z

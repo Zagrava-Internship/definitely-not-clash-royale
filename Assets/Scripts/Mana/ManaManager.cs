@@ -14,7 +14,7 @@ namespace Mana
         [ReadOnly] public float currentMana;
         public float initialMana = 0f; // initial mana at start
 
-        public static event Action<float> OnManaChanged;
+        public event Action<float> OnManaChanged;
 
         private void Awake()
         {
