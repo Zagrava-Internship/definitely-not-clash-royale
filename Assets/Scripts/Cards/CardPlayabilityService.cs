@@ -7,23 +7,33 @@ namespace Cards
 {
     public class CardPlayabilityService:  MonoBehaviour
     {
-        [SerializeField] private ManaManager manaManager;
-        private readonly Dictionary<CardData, bool> _registry = new();
-
         
+        [Header("Provider")]
+        [Tooltip("Assign a MonoBehaviour that implements IManaReadOnly (usually a ManaReadOnlyFacade).")]
+        [SerializeField] private MonoBehaviour manaProvider;
+        
+        private IManaReadOnly _mana;
+        
+        private readonly Dictionary<CardData, bool> _registry = new();
         public event Action<CardData, bool> OnCardPlayabilityChanged;
-
         
         private void Awake()
         {
-            if (manaManager == null)
-                manaManager = ManaManager.Instance;
-            manaManager.OnManaChanged += HandleManaChanged;
+            if (manaProvider == null)
+                throw new InvalidOperationException(
+                    $"[{nameof(ManaUI)}] 'manaProvider' reference not assigned in inspector."
+                );
+            _mana = manaProvider as IManaReadOnly;
+            if (_mana == null)
+                throw new InvalidOperationException(
+                    $"[{nameof(ManaUI)}] Assigned manaProvider does not implement IManaReadOnly."
+                );
         }
 
         private void Start()
         {
-            HandleManaChanged(manaManager.currentMana);
+            _mana.OnManaChanged += HandleManaChanged;
+            HandleManaChanged(_mana.CurrentMana);
         }
 
         private void HandleManaChanged(float currentMana)
@@ -40,7 +50,7 @@ namespace Cards
         public void Register(CardData card)
         {
             if (_registry.ContainsKey(card)) return;
-            var playable = manaManager.currentMana >= card.Cost;
+            var playable = _mana.CurrentMana >= card.Cost;
             _registry[card] = playable;
             OnCardPlayabilityChanged?.Invoke(card, playable);
         }

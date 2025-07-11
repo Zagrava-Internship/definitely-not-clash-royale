@@ -14,6 +14,8 @@ namespace Cards
         
         [Header("References")]
         [SerializeField] private CardView cardView;  
+        
+        [Tooltip("Assign a MonoBehaviour that implements ICardDragValidator (e.g., ManaCardDragValidator).")]
         [SerializeField] private MonoBehaviour manaValidatorProvider;
         [SerializeField] private CardPlayabilityService playabilityService;
         
@@ -51,7 +53,7 @@ namespace Cards
         }
 
 
-        private void OnEnable()
+        private void Start()
         {
             playabilityService.OnCardPlayabilityChanged += OnPlayabilityChanged;
             playabilityService.Register(cardView.CardData);
