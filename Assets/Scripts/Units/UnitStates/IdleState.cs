@@ -1,5 +1,5 @@
 ﻿using Maps.MapManagement.Grid;
-using Units.Animation;
+using Targeting;
 
 namespace Units.UnitStates
 {
