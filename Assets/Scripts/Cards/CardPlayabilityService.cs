@@ -30,7 +30,7 @@ namespace Cards
         {
             foreach (var (card, wasPlay) in new List<KeyValuePair<CardData,bool>>(_registry))
             {
-                var nowPlay = currentMana >= card.cost;
+                var nowPlay = currentMana >= card.Cost;
                 if (nowPlay == wasPlay) continue;
                 _registry[card] = nowPlay;
                 OnCardPlayabilityChanged?.Invoke(card, nowPlay);
@@ -40,7 +40,7 @@ namespace Cards
         public void Register(CardData card)
         {
             if (_registry.ContainsKey(card)) return;
-            var playable = manaManager.currentMana >= card.cost;
+            var playable = manaManager.currentMana >= card.Cost;
             _registry[card] = playable;
             OnCardPlayabilityChanged?.Invoke(card, playable);
         }

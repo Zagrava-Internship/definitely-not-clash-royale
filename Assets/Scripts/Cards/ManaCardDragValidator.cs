@@ -24,7 +24,7 @@ namespace Cards
 
         public bool CanStartDrag(CardData card)
         {
-            return _mana.CanSpend(card.cost);
+            return _mana.CanSpend(card.Cost);
         }
     }
 

@@ -63,7 +63,7 @@ namespace Cards
             
             if (!_validator.CanStartDrag(cardView.CardData))
             {
-                Debug.Log($"Not enough mana to drag {cardView.CardData.cardName}");
+                Debug.Log($"Not enough mana to drag {cardView.CardData.CardName}");
                 _isDraggingAllowed = false;
                 return;
             }
@@ -108,7 +108,7 @@ namespace Cards
         
         private void CreateGhost(Vector2 screenPos)
         {
-            var unitData = cardView.CardData.unitToSpawn;
+            var unitData = cardView.CardData.UnitToSpawn;
             if (unitData == null || unitData.ghostPrefab == null) return;
 
             // 1) Convert screen to raw world position at desired Z

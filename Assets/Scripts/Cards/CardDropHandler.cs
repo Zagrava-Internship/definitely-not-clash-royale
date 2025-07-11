@@ -43,8 +43,8 @@ namespace Cards
             
             
             // 4) Spawn the unit at the final position
-            UnitSpawner.Spawn(card.unitToSpawn, finalPos);
-            Mana.ManaManager.Instance.Spend(card.cost);
+            UnitSpawner.Spawn(card.UnitToSpawn, finalPos);
+            Mana.ManaManager.Instance.Spend(card.Cost);
         }
     }
 

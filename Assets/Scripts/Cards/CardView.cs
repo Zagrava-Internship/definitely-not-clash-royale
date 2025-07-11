@@ -32,8 +32,8 @@ namespace Cards
             }
 
             backgroundImage.color = Color.white;
-            if (cardData.icon != null)
-                iconImage.sprite = cardData.icon;
+            if (cardData.Icon != null)
+                iconImage.sprite = cardData.Icon;
             else
                 iconImage.enabled = false;
 
