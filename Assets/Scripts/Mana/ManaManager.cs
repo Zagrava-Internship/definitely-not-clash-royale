@@ -6,8 +6,6 @@ namespace Mana
 {
     public class ManaManager : MonoBehaviour
     {
-        public static ManaManager Instance { get; private set; }
-
         [Header("Mana Settings")] 
         public int maxMana = 10;
         public float regenRate = 1f;      // mana per second
@@ -18,12 +16,6 @@ namespace Mana
 
         private void Awake()
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            Instance = this;
             currentMana = initialMana;
         }
 

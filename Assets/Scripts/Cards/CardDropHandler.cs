@@ -1,4 +1,5 @@
-﻿using Maps.MapManagement.Grid;
+﻿using Mana;
+using Maps.MapManagement.Grid;
 using Spawners;
 using UnityEngine;
 
@@ -6,17 +7,34 @@ namespace Cards
 {
     public class CardDropHandler : MonoBehaviour
     {
+        [Header("References")]
         [SerializeField] private Camera mainCam;              // screen → world conversion
         [SerializeField] private float spawnZ;               // Z-depth for spawn plane
         
+        [Header("Mana")]
+        [Tooltip("Assign a MonoBehaviour that implements IManaSpender (usually ManaSpenderFacade).")]
+        [SerializeField] private MonoBehaviour manaSpenderProvider;
+
+        private IManaSpender _manaSpender;
+
         private void Awake()
         {
             if (mainCam == null)
                 throw new System.InvalidOperationException(
                     "[{nameof(CardDropHandler)}] Main Camera not assigned in inspector."
                 );
+            if (manaSpenderProvider == null)
+                throw new System.InvalidOperationException(
+                    $"[{nameof(CardDropHandler)}] 'manaSpenderProvider' reference not assigned in inspector."
+                );
+            
+            _manaSpender = manaSpenderProvider as IManaSpender;
+            if (_manaSpender == null)
+                throw new System.InvalidOperationException(
+                    $"[{nameof(CardDropHandler)}] Assigned manaSpenderProvider does not implement IManaSpender."
+                );
+
         }
-        
         private void OnEnable()
         {
             CardDragHandler.OnCardDropped += HandleDrop;
@@ -47,7 +65,7 @@ namespace Cards
             
             // 4) Spawn the unit at the final position
             UnitSpawner.Spawn(card.UnitToSpawn, finalPos);
-            Mana.ManaManager.Instance.Spend(card.Cost);
+            _manaSpender.Spend(card.Cost);
         }
     }
 

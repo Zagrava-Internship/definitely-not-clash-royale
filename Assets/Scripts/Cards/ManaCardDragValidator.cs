@@ -6,7 +6,8 @@ namespace Cards
 {
     public sealed class ManaCardDragValidator : MonoBehaviour, ICardDragValidator
     {
-        [Tooltip("Object implementing IManaReadOnly – usually a GameObject with ManaReadOnlyFacade")]
+        [Header("Provider")]
+        [Tooltip("Assign a MonoBehaviour that implements IManaReadOnly (usually a ManaReadOnlyFacade).")]
         [SerializeField] private MonoBehaviour manaProvider;
 
         private IManaReadOnly _mana;
