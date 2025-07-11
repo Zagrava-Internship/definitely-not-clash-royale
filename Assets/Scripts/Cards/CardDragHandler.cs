@@ -32,12 +32,24 @@ namespace Cards
         private void Awake()
         {
             _canvasGroup = GetComponent<CanvasGroup>();
-            
+
+            if (cardView == null)
+                throw new System.InvalidOperationException($"[{nameof(CardDragHandler)}] CardView reference not assigned in inspector.");
+
+            if (mainCam == null)
+                throw new System.InvalidOperationException($"[{nameof(CardDragHandler)}] Main Camera not assigned in inspector.");
+
+            if (manaValidatorProvider == null)
+                throw new System.InvalidOperationException($"[{nameof(CardDragHandler)}] ManaValidatorProvider not assigned in inspector.");
+
+            if (playabilityService == null)
+                throw new System.InvalidOperationException($"[{nameof(CardDragHandler)}] PlayabilityService not assigned in inspector.");
+
             _validator = manaValidatorProvider as ICardDragValidator
                          ?? throw new System.InvalidOperationException(
-                             $"{nameof(CardDragHandler)}: {nameof(manaValidatorProvider)} does not implement ICardDragValidator");
-
+                             $"[{nameof(CardDragHandler)}] Assigned validator provider does not implement ICardDragValidator");
         }
+
 
         private void OnEnable()
         {
@@ -59,8 +71,6 @@ namespace Cards
         }
         public void OnBeginDrag(PointerEventData eventData)
         {
-            ValidateData();
-            
             if (!_validator.CanStartDrag(cardView.CardData))
             {
                 Debug.Log($"Not enough mana to drag {cardView.CardData.CardName}");
@@ -95,15 +105,6 @@ namespace Cards
             }
             
             _ghost.Destroy();
-        }
-    
-        private void ValidateData()
-        {
-            if (cardView  == null)
-                throw new System.InvalidOperationException($"{nameof(CardDragHandler)}: CardView not assigned! (obj: {gameObject.name})");
-
-            if (mainCam == null)
-                throw new System.InvalidOperationException($"{nameof(CardDragHandler)}: Main Camera not assigned! (obj: {gameObject.name})");
         }
         
         private void CreateGhost(Vector2 screenPos)
