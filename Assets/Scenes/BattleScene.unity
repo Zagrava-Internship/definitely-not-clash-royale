@@ -753,7 +753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardView: {fileID: 176438151}
   manaValidatorProvider: {fileID: 176438152}
-  playabilityService: {fileID: 0}
+  playabilityService: {fileID: 1778110289}
   mainCam: {fileID: 317180836}
   ghostZ: -5
 --- !u!225 &176438150
