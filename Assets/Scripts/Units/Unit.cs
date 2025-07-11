@@ -1,4 +1,5 @@
 using Maps.MapManagement.Grid;
+using Units.Animation;
 using Units.UnitStates;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -17,11 +18,13 @@ namespace Units
         public UnitType Type => data.type;
 
         public GridMover Mover { get; private set; } 
+        public UnitAnimator Animator { get; private set; }
         public ITargetable CurrentTarget { get; private set; }
         public void SetTarget(ITargetable target) => CurrentTarget = target;
         
         private float _currentHealth;
         private UnitState _state;          
+        private SpriteRenderer _spriteRenderer;
 
         public void Initialize(UnitData unitData)
         {
@@ -32,6 +35,10 @@ namespace Units
             data = unitData;
             _currentHealth = data.health;
             Mover = GetComponent<GridMover>();
+            Animator = GetComponent<UnitAnimator>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            
+            Mover.OnDirectionChanged += RotateFromDirection;
             SetState(new IdleState(this));
         }
         
@@ -42,6 +49,10 @@ namespace Units
             {
                 Die();
             }
+        }
+        private void RotateFromDirection(Vector2 direction)
+        {
+            _spriteRenderer.flipX = direction.x < 0;
         }
 
         private void Update() =>  _state?.Update();
