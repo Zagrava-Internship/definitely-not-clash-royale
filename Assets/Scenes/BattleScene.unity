@@ -1876,6 +1876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 317180836}
   spawnZ: -1
+  manaSpenderProvider: {fileID: 1748467182}
 --- !u!4 &737997886
 Transform:
   m_ObjectHideFlags: 0
