@@ -333,6 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01dea95db7cd41feb68d0bc45f64eeb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manaProvider: {fileID: 1748467181}
   manaFill: {fileID: 1157760338}
 --- !u!1 &77234803
 GameObject:
