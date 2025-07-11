@@ -59,5 +59,10 @@ namespace Cards
         {
             _registry.Remove(card);
         }
+        
+        private void OnDestroy()
+        { 
+            _mana.OnManaChanged -= HandleManaChanged;
+        }
     }
 }
