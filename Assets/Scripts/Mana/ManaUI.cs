@@ -9,13 +9,13 @@ namespace Mana
 
         private void OnEnable()
         {
-            ManaManager.OnManaChanged += UpdateUI;
+            ManaManager.Instance.OnManaChanged += UpdateUI;
             UpdateUI(ManaManager.Instance.currentMana);
         }
 
         private void OnDisable()
         {
-            ManaManager.OnManaChanged -= UpdateUI;
+            ManaManager.Instance.OnManaChanged -= UpdateUI;
         }
 
         private void UpdateUI(float currentMana)
