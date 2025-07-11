@@ -1,27 +1,53 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Mana
 {
     public class ManaUI : MonoBehaviour
     {
+        [Header("Provider")]
+        [Tooltip("Assign a MonoBehaviour that implements IManaReadOnly (usually a ManaReadOnlyFacade).")]
+        [SerializeField] private MonoBehaviour manaProvider;
+
+        [Header("UI Elements")]
         [SerializeField] private Image manaFill; // Image type Filled
+        
+        private IManaReadOnly _mana;
 
-        private void OnEnable()
+        private void Awake()
         {
-            ManaManager.Instance.OnManaChanged += UpdateUI;
-            UpdateUI(ManaManager.Instance.currentMana);
-        }
+            if (manaProvider == null)
+                throw new InvalidOperationException(
+                    $"[{nameof(ManaUI)}] 'manaProvider' reference not assigned in inspector."
+                );
+            
+            if (manaFill == null)
+                throw new InvalidOperationException(
+                    $"[{nameof(ManaUI)}] 'manaFill' reference not assigned in inspector."
+                );
+            
+            _mana = manaProvider as IManaReadOnly;
+            if (_mana == null)
+                throw new InvalidOperationException(
+                    $"[{nameof(ManaUI)}] Assigned manaProvider does not implement IManaReadOnly."
+                );
 
+        }
+        
+        private void Start()
+        {
+            _mana.OnManaChanged += UpdateUI;
+            UpdateUI(_mana.CurrentMana);
+        }
         private void OnDisable()
         {
-            ManaManager.Instance.OnManaChanged -= UpdateUI;
+            _mana.OnManaChanged -= UpdateUI;
         }
 
         private void UpdateUI(float currentMana)
         {
-            if (manaFill != null && ManaManager.Instance != null)
-                manaFill.fillAmount = currentMana / ManaManager.Instance.maxMana;
+            manaFill.fillAmount = currentMana / _mana.MaxMana;
         }
     }
 
