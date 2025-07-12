@@ -4465,7 +4465,7 @@ Transform:
   m_GameObject: {fileID: 1345320890}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.3625001, z: -0.11851873}
+  m_LocalPosition: {x: 0, y: 1.3625001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5549,10 +5549,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerDeck:
+  - {fileID: 11400000, guid: 5827878daad7a074d994863953845d6f, type: 2}
   - {fileID: 11400000, guid: 6f1104aa307ad2f4584115f17636f74f, type: 2}
-  - {fileID: 11400000, guid: 6f1104aa307ad2f4584115f17636f74f, type: 2}
-  - {fileID: 11400000, guid: 51b82ac939d38c845b0619fa95328cf2, type: 2}
-  - {fileID: 11400000, guid: 51b82ac939d38c845b0619fa95328cf2, type: 2}
+  - {fileID: 11400000, guid: 5827878daad7a074d994863953845d6f, type: 2}
+  - {fileID: 11400000, guid: 5827878daad7a074d994863953845d6f, type: 2}
   - {fileID: 11400000, guid: 8c7fabf940c3eaa48a0aa5b3c170427f, type: 2}
   - {fileID: 11400000, guid: 8c7fabf940c3eaa48a0aa5b3c170427f, type: 2}
   - {fileID: 11400000, guid: e0cbf2ae0051d7e43b43ff38883d78d7, type: 2}
