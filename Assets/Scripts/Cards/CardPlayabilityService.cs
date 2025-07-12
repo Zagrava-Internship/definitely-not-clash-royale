@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Mana;
 using UnityEngine;
 
@@ -38,7 +39,7 @@ namespace Cards
 
         private void HandleManaChanged(float currentMana)
         {
-            foreach (var (card, wasPlay) in new List<KeyValuePair<CardData,bool>>(_registry))
+            foreach (var (card, wasPlay) in _registry.ToList())
             {
                 var nowPlay = currentMana >= card.Cost;
                 if (nowPlay == wasPlay) continue;

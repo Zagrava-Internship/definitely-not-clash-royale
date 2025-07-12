@@ -1,5 +1,4 @@
 ﻿using System;
-using Deck;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -61,7 +60,7 @@ namespace Cards
         public void SetPlayableVisual(bool canPlay)
         {
             BackgroundImage.color = canPlay ? Color.white : Color.gray;
-            _canvasGroup.alpha = canPlay ? 1f : 0.6f;
+            _canvasGroup.alpha = canPlay ? 1f : 0.6f; // transparency for non-playable cards
         }
         
         private void Start()

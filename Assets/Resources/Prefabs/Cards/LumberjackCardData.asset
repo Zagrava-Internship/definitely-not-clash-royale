@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a1501f7394f80428540a927157bc3d, type: 3}
+  m_Name: LumberjackCardData
+  m_EditorClassIdentifier: 
+  cardName: Lumberjack
+  background: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: -4923447447102277557, guid: c6cb7d390337e6c418c8ed02ce3bcc51, type: 3}
+  unitToSpawn: {fileID: 11400000, guid: cbfe2b78c272c494cb4a816c5919311e, type: 2}
+  cost: 4
