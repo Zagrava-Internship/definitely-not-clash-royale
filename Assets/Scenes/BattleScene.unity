@@ -631,6 +631,7 @@ GameObject:
   - component: {fileID: 176438151}
   - component: {fileID: 176438152}
   - component: {fileID: 176438149}
+  - component: {fileID: 176438153}
   - component: {fileID: 176438150}
   m_Layer: 5
   m_Name: Card1
@@ -754,7 +755,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaValidatorProvider: {fileID: 176438152}
-  playabilityService: {fileID: 1778110289}
   mainCam: {fileID: 317180836}
   ghostZ: -5
 --- !u!225 &176438150
@@ -795,6 +795,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaProvider: {fileID: 1748467181}
+--- !u!114 &176438153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176438143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f25470fd3f4468c879adcaa77e65e35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playabilityService: {fileID: 1778110289}
+  manaProvider: {fileID: 1748467181}
 --- !u!1 &294679403
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +824,7 @@ GameObject:
   - component: {fileID: 294679408}
   - component: {fileID: 294679407}
   - component: {fileID: 294679406}
+  - component: {fileID: 294679412}
   - component: {fileID: 294679405}
   m_Layer: 5
   m_Name: Card4
@@ -863,7 +878,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaValidatorProvider: {fileID: 294679407}
-  playabilityService: {fileID: 1778110289}
   mainCam: {fileID: 317180836}
   ghostZ: -5
 --- !u!114 &294679407
@@ -974,6 +988,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294679403}
   m_CullTransparentMesh: 1
+--- !u!114 &294679412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294679403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f25470fd3f4468c879adcaa77e65e35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playabilityService: {fileID: 1778110289}
+  manaProvider: {fileID: 1748467181}
 --- !u!1 &317180834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,6 +1978,7 @@ GameObject:
   - component: {fileID: 666926858}
   - component: {fileID: 666926857}
   - component: {fileID: 666926856}
+  - component: {fileID: 666926862}
   - component: {fileID: 666926855}
   m_Layer: 5
   m_Name: Card2
@@ -2003,7 +2032,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaValidatorProvider: {fileID: 666926857}
-  playabilityService: {fileID: 1778110289}
   mainCam: {fileID: 317180836}
   ghostZ: -5
 --- !u!114 &666926857
@@ -2114,6 +2142,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666926853}
   m_CullTransparentMesh: 1
+--- !u!114 &666926862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666926853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f25470fd3f4468c879adcaa77e65e35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playabilityService: {fileID: 1778110289}
+  manaProvider: {fileID: 1748467181}
 --- !u!1 &683219488
 GameObject:
   m_ObjectHideFlags: 0
@@ -2216,6 +2258,7 @@ GameObject:
   - component: {fileID: 706199422}
   - component: {fileID: 706199421}
   - component: {fileID: 706199420}
+  - component: {fileID: 706199426}
   - component: {fileID: 706199419}
   m_Layer: 5
   m_Name: Card3
@@ -2269,7 +2312,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaValidatorProvider: {fileID: 706199421}
-  playabilityService: {fileID: 1778110289}
   mainCam: {fileID: 317180836}
   ghostZ: -5
 --- !u!114 &706199421
@@ -2380,6 +2422,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 706199417}
   m_CullTransparentMesh: 1
+--- !u!114 &706199426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706199417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f25470fd3f4468c879adcaa77e65e35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playabilityService: {fileID: 1778110289}
+  manaProvider: {fileID: 1748467181}
 --- !u!1 &721853175
 GameObject:
   m_ObjectHideFlags: 0
