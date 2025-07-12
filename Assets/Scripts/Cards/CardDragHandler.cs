@@ -13,7 +13,6 @@ namespace Cards
     {
         [Tooltip("Assign a MonoBehaviour that implements ICardDragValidator (e.g., ManaCardDragValidator).")]
         [SerializeField] private MonoBehaviour manaValidatorProvider;
-        [SerializeField] private CardPlayabilityService playabilityService;
         
         [Header("Visuals")]
         [SerializeField] private Camera mainCam;   // camera used to convert screen → world
@@ -39,47 +38,12 @@ namespace Cards
 
             if (manaValidatorProvider == null)
                 throw new System.InvalidOperationException($"[{nameof(CardDragHandler)}] ManaValidatorProvider not assigned in inspector.");
-
-            if (playabilityService == null)
-                throw new System.InvalidOperationException($"[{nameof(CardDragHandler)}] PlayabilityService not assigned in inspector.");
-
+            
             _validator = manaValidatorProvider as ICardDragValidator
                          ?? throw new System.InvalidOperationException(
                              $"[{nameof(CardDragHandler)}] Assigned validator provider does not implement ICardDragValidator");
-            
-            _cardView.CardChanged += OnCardChanged;
         }
         
-        private void OnCardChanged(CardData oldCard, CardData newCard)
-        {
-            playabilityService.Register(newCard);
-            UpdatePlayabilityVisual(newCard);
-        }
-        private void UpdatePlayabilityVisual(CardData card)
-        {
-            var canPlay = _validator.CanStartDrag(card);
-            _cardView.SetPlayableVisual(canPlay);
-        }
-        
-        private void Start()
-        {
-            playabilityService.OnCardPlayabilityChanged += OnPlayabilityChanged;
-            playabilityService.Register(_cardView.CardData);
-        }
-
-        private void OnDestroy()
-        {
-            _cardView.CardChanged -= OnCardChanged;
-            playabilityService.OnCardPlayabilityChanged -= OnPlayabilityChanged;
-            playabilityService.Unregister(_cardView.CardData);
-        }
-
-        private void OnPlayabilityChanged(CardData card, bool canPlay)
-        {
-            if (card != _cardView.CardData) return;
-            _cardView.BackgroundImage.color = canPlay ? Color.white : Color.gray;
-            _canvasGroup.alpha = canPlay ? 1f : 0.6f;
-        }
         public void OnBeginDrag(PointerEventData eventData)
         {
             if (!_validator.CanStartDrag(_cardView.CardData))
@@ -130,6 +94,5 @@ namespace Cards
             var snapPos = DropPositionUtils.ScreenToSnappedWorld(screenPos, mainCam, ghostZ);
             _ghost.Move(snapPos);
         }
-        
     }
 }

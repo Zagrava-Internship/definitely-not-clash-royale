@@ -25,6 +25,12 @@ namespace Cards
 
         public bool CanStartDrag(CardData card)
         {
+            if (!enabled)
+                return false;
+
+            if (card == null)
+                throw new ArgumentNullException(nameof(card));
+
             return _mana.CanSpend(card.Cost);
         }
     }
