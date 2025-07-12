@@ -53,23 +53,14 @@ namespace Cards
 
         private void HandleDrop(int index, CardData card, Vector2 screenPos)
         {
-            // 1) Convert screen to raw world position at desired Z
-            var camZ = Mathf.Abs(mainCam.transform.position.z - spawnZ);
-            var rawWorldPos = mainCam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, camZ));
-            rawWorldPos.z = spawnZ;
-            
-            // 2) Find closest grid node to that position
-            var node = GridManager.Instance.GetPlaceableNodeFromWorldPoint(rawWorldPos);
-            if (node is null)
+            var finalPos = DropPositionUtils.ScreenToSnappedWorld(screenPos, mainCam, spawnZ);
+            var node = GridManager.Instance.GetPlaceableNodeFromWorldPoint(finalPos);
+            if (node == null)
             {
-                Debug.LogWarning($"No valid grid node found for position {rawWorldPos}. Card drop failed.");
+                Debug.LogWarning($"No valid grid node found for position {finalPos}. Card drop failed.");
                 return;
             }
-            // 3) Snap spawn position to node.worldPosition if node exists
-            var finalPos = node.WorldPosition;
-            finalPos.z = spawnZ; // Ensure Z is set correctly for spawning
             
-            // 4) Spawn the unit at the final position
             UnitSpawner.Spawn(card.UnitToSpawn, finalPos);
             _manaSpender.Spend(card.Cost);
             
