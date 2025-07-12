@@ -1,42 +1,72 @@
-﻿using UnityEngine;
-using UnityEngine.InputSystem.HID;
+﻿using System;
+using Deck;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Cards
 {
-    [RequireComponent(typeof(HID.Button))]
+    [RequireComponent(typeof(Button))]
+    [RequireComponent(typeof(Image))]
     public class CardView : MonoBehaviour
     {
-        [SerializeField] private CardData cardData;
-        [SerializeField] private Image backgroundImage; // button background
-        [SerializeField] private Image iconImage;       // card icon
+        [SerializeField] private Image iconImage; // card icon
+        
+        public CardData CardData { get; private set; }
+        public Image BackgroundImage { get; private set; }
 
-        public CardData CardData => cardData;
-        public Image BackgroundImage => backgroundImage;
+        public int SlotIndex { get; private set; }
 
-        private void Reset()
+        public event Action<CardData /*old*/, CardData /*new*/> CardChanged;
+        
+        private  void Awake()
         {
-            if (backgroundImage == null) 
-                backgroundImage = GetComponent<Image>();
-            if (iconImage == null) 
-                iconImage = transform.Find("Image")?.GetComponent<Image>();
+            BackgroundImage = GetComponent<Image>();
+        }
+        public void Init(CardData initCardData, int index)
+        {
+            if (iconImage == null)
+                throw new System.InvalidOperationException($"[{nameof(CardView)}] iconImage is not assigned in inspector.");
+            if (initCardData == null)
+                throw new System.ArgumentNullException(nameof(initCardData), "CardData must not be null.");
+            if (index < 0)
+                throw new System.ArgumentOutOfRangeException(nameof(index), "Index must be non-negative.");
+
+            CardData = initCardData;
+            SlotIndex = index;
+            UpdateVisual();
+        }
+
+        public void SetCard(CardData data)
+        {
+            var old = CardData;
+            CardData = data;
+            UpdateVisual();
+            CardChanged?.Invoke(old, data);
+        }
+        
+        private void UpdateVisual()
+        {
+            BackgroundImage.sprite = CardData.Background;
+            iconImage.enabled = true;
+            iconImage.sprite = CardData.Icon;
         }
 
         private void Start()
         {
-            if (cardData == null)
+            if (CardData == null)
             {
                 Debug.LogError("CardView: cardData is not set");
                 enabled = false;
                 return;
             }
 
-            backgroundImage.color = Color.white;
-            if (cardData.Icon != null)
-                iconImage.sprite = cardData.Icon;
+            BackgroundImage.color = Color.white;
+            if (CardData.Icon != null)
+                iconImage.sprite = CardData.Icon;
             else
                 iconImage.enabled = false;
 
         }
+
     }
 }
