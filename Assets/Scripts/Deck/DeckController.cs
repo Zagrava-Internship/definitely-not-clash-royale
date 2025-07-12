@@ -11,7 +11,7 @@ namespace Deck
         
         private Deck _deck;
         
-        private void Start()
+        private void Awake()
         {
             _deck = new Deck(playerDeck, handSlots.Length, new System.Random());
             Init();
