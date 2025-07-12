@@ -1,4 +1,5 @@
-﻿using Mana;
+﻿using Deck;
+using Mana;
 using Maps.MapManagement.Grid;
 using Spawners;
 using UnityEngine;
@@ -10,7 +11,8 @@ namespace Cards
         [Header("References")]
         [SerializeField] private Camera mainCam;              // screen → world conversion
         [SerializeField] private float spawnZ;               // Z-depth for spawn plane
-        
+        [SerializeField] private DeckController deckController;
+
         [Header("Mana")]
         [Tooltip("Assign a MonoBehaviour that implements IManaSpender (usually ManaSpenderFacade).")]
         [SerializeField] private MonoBehaviour manaSpenderProvider;
@@ -34,6 +36,10 @@ namespace Cards
                     $"[{nameof(CardDropHandler)}] Assigned manaSpenderProvider does not implement IManaSpender."
                 );
 
+            if (deckController == null)
+                throw new System.InvalidOperationException(
+                    $"[{nameof(CardDropHandler)}] DeckController reference not assigned in inspector."
+                );
         }
         private void OnEnable()
         {
@@ -45,7 +51,7 @@ namespace Cards
             CardDragHandler.OnCardDropped -= HandleDrop;
         }
 
-        private void HandleDrop(CardData card, Vector2 screenPos)
+        private void HandleDrop(int index, CardData card, Vector2 screenPos)
         {
             // 1) Convert screen to raw world position at desired Z
             var camZ = Mathf.Abs(mainCam.transform.position.z - spawnZ);
@@ -60,12 +66,14 @@ namespace Cards
                 return;
             }
             // 3) Snap spawn position to node.worldPosition if node exists
-            var finalPos = node?.WorldPosition ?? rawWorldPos;
+            var finalPos = node.WorldPosition;
             finalPos.z = spawnZ; // Ensure Z is set correctly for spawning
             
             // 4) Spawn the unit at the final position
             UnitSpawner.Spawn(card.UnitToSpawn, finalPos);
             _manaSpender.Spend(card.Cost);
+            
+            deckController.PlayCard(index);
         }
     }
 
