@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cards;
 
-namespace Cards
+namespace Deck
 {
     public class Deck
     {
@@ -33,7 +34,7 @@ namespace Cards
             _queue = new Queue<CardData>(cards.Skip(handSize));
         }
 
-        public CardData Play(int index)
+        public void Play(int index)
         {
             if (index < 0 || index >= _hand.Count) throw new ArgumentOutOfRangeException(nameof(index));
             var played = _hand[index];
@@ -44,7 +45,6 @@ namespace Cards
             _hand[index] = nextCard;
 
             CardReplaced?.Invoke(index, nextCard);
-            return played;
         }
     }
 }
