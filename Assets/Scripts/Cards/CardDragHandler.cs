@@ -50,17 +50,18 @@ namespace Cards
             
             _cardView.CardChanged += OnCardChanged;
         }
-
         
         private void OnCardChanged(CardData oldCard, CardData newCard)
         {
             playabilityService.Register(newCard);
-
-            var canPlay = _validator.CanStartDrag(newCard); 
-            _cardView.BackgroundImage.color = canPlay ? Color.white : Color.gray;
-            _canvasGroup.alpha = canPlay ? 1f : 0.6f;
+            UpdatePlayabilityVisual(newCard);
         }
-
+        private void UpdatePlayabilityVisual(CardData card)
+        {
+            var canPlay = _validator.CanStartDrag(card);
+            _cardView.SetPlayableVisual(canPlay);
+        }
+        
         private void Start()
         {
             playabilityService.OnCardPlayabilityChanged += OnPlayabilityChanged;

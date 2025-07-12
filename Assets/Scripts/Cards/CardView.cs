@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 namespace Cards
 {
-    [RequireComponent(typeof(Button))]
-    [RequireComponent(typeof(Image))]
+    [RequireComponent(typeof(Image), typeof(CanvasGroup), typeof(Button))]
     public class CardView : MonoBehaviour
     {
         [SerializeField] private Image iconImage; // card icon
@@ -18,18 +17,26 @@ namespace Cards
 
         public event Action<CardData /*old*/, CardData /*new*/> CardChanged;
         
+        private CanvasGroup _canvasGroup;
+
         private  void Awake()
         {
             BackgroundImage = GetComponent<Image>();
+            _canvasGroup = GetComponent<CanvasGroup>();
+            if (BackgroundImage == null)
+                throw new InvalidOperationException($"[{nameof(CardView)}] Image is not assigned or missing.");
+            if (_canvasGroup == null)
+                throw new InvalidOperationException($"[{nameof(CardView)}] CanvasGroup is not assigned or missing.");
+
         }
         public void Init(CardData initCardData, int index)
         {
             if (iconImage == null)
-                throw new System.InvalidOperationException($"[{nameof(CardView)}] iconImage is not assigned in inspector.");
+                throw new InvalidOperationException($"[{nameof(CardView)}] iconImage is not assigned in inspector.");
             if (initCardData == null)
-                throw new System.ArgumentNullException(nameof(initCardData), "CardData must not be null.");
+                throw new ArgumentNullException(nameof(initCardData), "CardData must not be null.");
             if (index < 0)
-                throw new System.ArgumentOutOfRangeException(nameof(index), "Index must be non-negative.");
+                throw new ArgumentOutOfRangeException(nameof(index), "Index must be non-negative.");
 
             CardData = initCardData;
             SlotIndex = index;
@@ -51,6 +58,12 @@ namespace Cards
             iconImage.sprite = CardData.Icon;
         }
 
+        public void SetPlayableVisual(bool canPlay)
+        {
+            BackgroundImage.color = canPlay ? Color.white : Color.gray;
+            _canvasGroup.alpha = canPlay ? 1f : 0.6f;
+        }
+        
         private void Start()
         {
             if (CardData == null)
