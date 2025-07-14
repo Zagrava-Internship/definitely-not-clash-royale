@@ -31,7 +31,7 @@ namespace Cards
                 );
         }
 
-        private void Start()
+        private void OnEnable()
         {
             _mana.OnManaChanged += HandleManaChanged;
             HandleManaChanged(_mana.CurrentMana);
@@ -50,7 +50,6 @@ namespace Cards
 
         public void Register(CardData card)
         {
-            if (_registry.ContainsKey(card)) return;
             var playable = _mana.CurrentMana >= card.Cost;
             _registry[card] = playable;
             OnCardPlayabilityChanged?.Invoke(card, playable);
@@ -61,7 +60,7 @@ namespace Cards
             _registry.Remove(card);
         }
         
-        private void OnDestroy()
+        private void OnDisable()
         { 
             _mana.OnManaChanged -= HandleManaChanged;
         }
