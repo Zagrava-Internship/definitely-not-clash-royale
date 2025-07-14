@@ -11,7 +11,7 @@ namespace Units
         
         public abstract Vector3 Position { get; }
         public abstract bool IsDead { get; }
-        public HealthComponent Health { get; set; }
+        public abstract void TakeDamage(int damage);
     }
 
 }

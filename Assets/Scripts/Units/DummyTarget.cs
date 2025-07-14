@@ -8,7 +8,8 @@ namespace Units
     public class DummyTarget : TargetableBase
     {
         [SerializeField] private int hp = 100;
-        public HealthBarController HealthBarController { get; private set; }
+        private HealthComponent Health { get; set; }
+        private HealthBarController HealthBarController { get; set; }
         public override Vector3 Position => transform.position;
         public override bool IsDead => Health.Current<=0;
 
@@ -24,6 +25,11 @@ namespace Units
             HealthBarController.Init(Health);
         }
 
+        public override void TakeDamage(int damage)
+        {
+            if (IsDead) return;
+            Health.TakeDamage(damage);
+        }
         private void Die()
         {
             Destroy(gameObject);

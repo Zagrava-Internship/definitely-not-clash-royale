@@ -18,7 +18,7 @@ namespace Units.UnitStates
 
         private void OnAttackAnimationEnd()
         {
-            _target.Health.TakeDamage(Unit.Damage);
+            _target.TakeDamage(Unit.Damage);
         }
 
         public override void Update()

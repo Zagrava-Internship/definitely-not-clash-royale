@@ -13,7 +13,8 @@ namespace Units
         
         // Is the target dead?
         bool IsDead { get; }
-
-        public HealthComponent Health { get; set; }
+        
+        // Method to apply damage to the target
+        void TakeDamage(int damage);
     }
 }
