@@ -1,4 +1,5 @@
-﻿using Targeting;
+﻿using Health;
+using Targeting;
 using UnityEngine;
 
 namespace Units
@@ -9,8 +10,8 @@ namespace Units
         protected virtual void OnDisable() => TargetRegistry.AllTargets.Remove(this);
         
         public abstract Vector3 Position { get; }
-        public abstract void TakeDamage(float amount);
         public abstract bool IsDead { get; }
+        public HealthComponent Health { get; set; }
     }
 
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Health;
+using UnityEngine;
 
 namespace Units
 {
@@ -9,12 +10,10 @@ namespace Units
     {
         // World position of the target 
         Vector3 Position { get; }
-       
-        // Apply damage to the target
-        void TakeDamage(float amount);
         
         // Is the target dead?
         bool IsDead { get; }
 
+        public HealthComponent Health { get; set; }
     }
 }

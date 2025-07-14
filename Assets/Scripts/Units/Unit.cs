@@ -1,3 +1,4 @@
+using Health;
 using Maps.MapManagement.Grid;
 using Units.Animation;
 using Units.UnitStates;
@@ -14,15 +15,17 @@ namespace Units
         
         public float MaxHealth => data.health;
         public float Speed => data.speed;
-        public float Damage => data.damage;
+        public int Damage => data.damage;
         public UnitType Type => data.type;
 
         public GridMover Mover { get; private set; } 
         public UnitAnimator Animator { get; private set; }
         public ITargetable CurrentTarget { get; private set; }
+        public HealthComponent Health { get; private set; }
+        public HealthBarController HealthBarController { get; private set; }
+        
         public void SetTarget(ITargetable target) => CurrentTarget = target;
         
-        private float _currentHealth;
         private UnitState _state;          
         private SpriteRenderer _spriteRenderer;
 
@@ -33,23 +36,21 @@ namespace Units
                 throw new System.ArgumentNullException(nameof(unitData), "Unit.Initialize: UnitData is null");
             }
             data = unitData;
-            _currentHealth = data.health;
             Mover = GetComponent<GridMover>();
             Animator = GetComponent<UnitAnimator>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            HealthBarController= GetComponent<HealthBarController>();
+            
+            Health = GetComponent<HealthComponent>();
+            Health.OnDied+= Die;
+            Health.Setup(unitData.health);
+            
+            HealthBarController.Init(Health);
             
             Mover.OnDirectionChanged += RotateFromDirection;
             SetState(new IdleState(this));
         }
         
-        public void TakeDamage(float amount)
-        {
-            _currentHealth -= amount;
-            if (_currentHealth <= 0)
-            {
-                Die();
-            }
-        }
         private void RotateFromDirection(Vector2 direction)
         {
             _spriteRenderer.flipX = direction.x < 0;
@@ -61,15 +62,12 @@ namespace Units
         {
            return _state;
         }
-        
         public void SetState(UnitState next)
         {
             _state?.Exit();
             _state = next;
             _state.Enter();
         }
-
-
         private void Die()
         {
             Destroy(gameObject);
