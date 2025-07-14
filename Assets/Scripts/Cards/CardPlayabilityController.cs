@@ -13,6 +13,7 @@ namespace Cards
 
         private CardView _view;
         private IManaReadOnly _mana;
+        private bool _subscribed;
 
         private void Awake()
         {
@@ -24,26 +25,35 @@ namespace Cards
 
         private void Start()
         {
-            playabilityService.OnCardPlayabilityChanged += HandlePlayabilityChanged;
-            Register(_view.CardData);
+            TrySubscribe();
+        }
+        private void OnEnable()
+        {
+            TrySubscribe();
         }
 
-        private void OnDestroy()
+        private void OnDisable()
         {
+            if (!_subscribed) return;
             playabilityService.OnCardPlayabilityChanged -= HandlePlayabilityChanged;
             playabilityService.Unregister(_view.CardData);
+            _subscribed = false;
+        }
+        
+        
+        private void TrySubscribe()
+        {
+            if (_subscribed) return;
+            if (playabilityService == null || _mana == null || _view.CardData == null) return;
+
+            playabilityService.OnCardPlayabilityChanged += HandlePlayabilityChanged;
+            playabilityService.Register(_view.CardData);
+            _subscribed = true;
         }
         
         private void OnCardChanged(CardData oldCard, CardData newCard)
         {
-            Register(newCard);
-        }
-        
-        private void Register(CardData card)
-        {
-            playabilityService.Register(card);
-            var canPlay = _mana.CurrentMana >= card.Cost;
-            _view.SetPlayableVisual(canPlay);
+            playabilityService.Register(_view.CardData);
         }
         
         private void HandlePlayabilityChanged(CardData card, bool canPlay)
