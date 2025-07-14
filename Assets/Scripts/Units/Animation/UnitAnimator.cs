@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Units.Animation
 {
     public class UnitAnimator:MonoBehaviour
     {
         private Animator _animator;
-
+        public event Action OnAttackAnimationEnd;
         private void Awake()
         {
             _animator = GetComponent<Animator>();
@@ -38,6 +39,12 @@ namespace Units.Animation
         public void PlayIdle()
         {
             ResetState();
+        }
+        
+        // This method is called by the animation event at the end of the attack animation
+        public void OnAttackAnimationEndEvent()
+        {
+            OnAttackAnimationEnd?.Invoke();
         }
     }
 }
