@@ -65,7 +65,7 @@ namespace Units
             TeamId = teamId;
 
             MovementStrategy = GetComponent<IMovementStrategy>();
-            AttackStrategy   = GetComponent<IAttackStrategy>();
+            AttackStrategy = GetComponent<IAttackStrategy>();
             
             if (MovementStrategy == null)
                 Debug.LogError($"{name}: missing IMovementStrategy component!");
@@ -73,8 +73,8 @@ namespace Units
                 Debug.LogError($"{name}: missing IAttackStrategy component!");
             
             // Set up the unit's properties based on the provided UnitData
-            var aggreCollider=GetComponent<CircleCollider2D>();
-            aggreCollider.radius = config.aggressionRange;
+            var agreeCollider = GetComponent<CircleCollider2D>();
+            agreeCollider.radius = config.aggressionRange;
             
             Mover = GetComponent<GridMover>();
             Animator = GetComponent<UnitAnimator>();

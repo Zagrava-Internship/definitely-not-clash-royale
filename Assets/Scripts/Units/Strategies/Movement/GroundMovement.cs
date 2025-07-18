@@ -8,12 +8,9 @@ namespace Units.Strategies.Movement
     public class GroundMovement : MonoBehaviour, IMovementStrategy
     {
         private Unit _unit;
-        private GridMover _mover;
-
         private void Awake()
         {
             _unit = GetComponent<Unit>();
-            _mover = _unit.Mover; 
         }
 
 
@@ -25,25 +22,27 @@ namespace Units.Strategies.Movement
                 Debug.LogWarning($"{name}: cannot find grid node at {destination}");
                 return;
             }
-            _mover.OnPathComplete += OnPathComplete;
-            _mover.OnDirectionChanged += OnDirectionChanged;
-            _mover.MoveTo(node, speed);
+            unit.Mover.OnPathComplete += OnPathComplete;
+            unit.Mover.OnDirectionChanged += OnDirectionChanged;
+            unit.Mover.MoveTo(node, speed);
         }
 
 
         public void Stop(Unit unit)
         {
-            _mover.ForceToStop();
-            _mover.OnPathComplete -= OnPathComplete;
-            _mover.OnDirectionChanged -= OnDirectionChanged;
+            unit.Mover.ForceToStop();
+            unit.Mover.OnPathComplete -= OnPathComplete;
+            unit.Mover.OnDirectionChanged -= OnDirectionChanged;
         }
+
 
         private void OnPathComplete()
         {
-            _mover.OnPathComplete -= OnPathComplete;
+            _unit.Mover.OnPathComplete -= OnPathComplete;
             _unit.SetState(new AttackState(_unit, _unit.CurrentTarget));
         }
 
+        
         private void OnDirectionChanged(Vector2 dir)
         {
             _unit.Animator.ChangeMovingDirection(dir);

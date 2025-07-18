@@ -26,11 +26,11 @@ namespace Units.Factories
                 },
             };
         
-        public static IAttackStrategy AddAttack(GameObject go, AttackType type, UnitConfig cfg)
+        public static void AddAttack(GameObject go, AttackType type, UnitConfig cfg)
         {
             if (!Map.TryGetValue(type, out var creator))
-                throw new ArgumentException($"AttackFactory: No strategy registered for {type}");
-            return creator(go, cfg);
+                throw new ArgumentException($"AttackFactory: No strategy registered for {type}"); 
+            creator(go, cfg);
         }
     }
 }

@@ -19,11 +19,11 @@ namespace Units.Factories
                 { MovementType.Static,  go => go.AddComponent<StaticMovement>()  }
             };
         
-        public static IMovementStrategy AddMovement(GameObject go, MovementType type)
+        public static void AddMovement(GameObject go, MovementType type)
         {
             if (!Map.TryGetValue(type, out var creator))
-                throw new ArgumentException($"MovementFactory: No strategy registered for {type}");
-            return creator(go);
+                throw new ArgumentException($"MovementFactory: No strategy registered for {type}"); 
+            creator(go);
         }
     }
 }
