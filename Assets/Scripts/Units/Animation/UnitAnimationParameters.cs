@@ -6,5 +6,6 @@
         public const string IsAttacking = "isAttacking";
         public const string MoveX = "moveX";
         public const string MoveY = "moveY";
+        public const string AttackSpeed = "attackSpeed";
     }
 }

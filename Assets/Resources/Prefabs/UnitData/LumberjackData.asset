@@ -17,5 +17,4 @@ MonoBehaviour:
   ghostPrefab: {fileID: 7706684635721876194, guid: 833d8a29fe3bc2c4fb4a9def021fb34e, type: 3}
   health: 75
   speed: 2
-  damage: 5
-  type: 0
+  weaponData: {fileID: 11400000, guid: 0d148829936cd78489b82a91433b89f8, type: 2}
