@@ -19,14 +19,14 @@ namespace Cards
         
         [Header("Spawn Data")]
         [Tooltip("Unit to spawn when this card is played.")]
-        [SerializeField] private UnitData unitToSpawn;
+        [SerializeField] private UnitConfig unitToSpawn;
         [Tooltip("Mana cost to play the card.")]
         [SerializeField] private int cost = 1;
         
         public string CardName => cardName;
         public Sprite Icon => icon;
         public Sprite Background => background;
-        public UnitData UnitToSpawn => unitToSpawn;
+        public UnitConfig UnitToSpawn => unitToSpawn;
         public int Cost => cost;
 
 

@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Units
 {
-    [CreateAssetMenu(fileName = "UnitData", menuName = "Game/UnitData")]
-    public class UnitData : ScriptableObject
+    [CreateAssetMenu(fileName = "UnitConfig", menuName = "Game/UnitConfig")]
+    public class UnitConfig : ScriptableObject
     {
         public string unitName;
         public GameObject prefab;

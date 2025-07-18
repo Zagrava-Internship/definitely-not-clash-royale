@@ -7,11 +7,11 @@ namespace Ghost
     {
         private GameObject _instance;
 
-        public void Create(UnitData unitData, Vector3 position)
+        public void Create(UnitConfig unitConfig, Vector3 position)
         {
             Destroy();
-            if (unitData == null || unitData.ghostPrefab == null) return;
-            _instance = Object.Instantiate(unitData.ghostPrefab, position, Quaternion.identity);
+            if (unitConfig == null || unitConfig.ghostPrefab == null) return;
+            _instance = Object.Instantiate(unitConfig.ghostPrefab, position, Quaternion.identity);
         }
 
         public void Move(Vector3 position)

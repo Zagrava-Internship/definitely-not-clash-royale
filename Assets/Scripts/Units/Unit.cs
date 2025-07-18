@@ -8,6 +8,7 @@ using Units.Strategies;
 using Units.Strategies.Attack;
 using Units.Strategies.Movement;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 namespace Units
@@ -15,19 +16,20 @@ namespace Units
     [RequireComponent(typeof(GridMover))]
     public class Unit : TargetableBase
     {
+        [FormerlySerializedAs("data")]
         [Header("Base data")]
-        [SerializeField] private UnitData data;
+        [SerializeField] private UnitConfig config;
         
         public IMovementStrategy MovementStrategy { get; private set; }
         public IAttackStrategy   AttackStrategy   { get; private set; }
 
-        public float MaxHealth => data.health;
-        public float Speed => data.speed;
-        public int Damage => data.weaponData.Damage;
-        public float AttackRange => data.weaponData.AttackRange;
-        public float AttackSpeed => data.weaponData.AttackSpeed;
-        public float AttackDelay => data.weaponData.AttackDelay;
-        public float AggressionRange => data.aggressionRange;
+        public float MaxHealth => config.health;
+        public float Speed => config.speed;
+        public int Damage => config.weaponData.Damage;
+        public float AttackRange => config.weaponData.AttackRange;
+        public float AttackSpeed => config.weaponData.AttackSpeed;
+        public float AttackDelay => config.weaponData.AttackDelay;
+        public float AggressionRange => config.aggressionRange;
         //public UnitType Type => data.type;
 
         public GridMover Mover { get; private set; } 
@@ -52,13 +54,13 @@ namespace Units
 
         
         
-        public void Initialize(UnitData unitData, string teamId)
+        public void Initialize(UnitConfig unitConfig, string teamId)
         {
-            if (!unitData)
+            if (!unitConfig)
             {
-                throw new System.ArgumentNullException(nameof(unitData), "Unit.Initialize: UnitData is null");
+                throw new System.ArgumentNullException(nameof(unitConfig), "Unit.Initialize: UnitData is null");
             }
-            data = unitData;
+            config = unitConfig;
             
             TeamId = teamId;
 
@@ -72,7 +74,7 @@ namespace Units
             
             // Set up the unit's properties based on the provided UnitData
             var aggreCollider=GetComponent<CircleCollider2D>();
-            aggreCollider.radius = data.aggressionRange;
+            aggreCollider.radius = config.aggressionRange;
             
             Mover = GetComponent<GridMover>();
             Animator = GetComponent<UnitAnimator>();
@@ -81,7 +83,7 @@ namespace Units
             
             Health = GetComponent<HealthComponent>();
             Health.OnDied+= Die;
-            Health.Setup(unitData.health);
+            Health.Setup(unitConfig.health);
             
             HealthBarController.Init(Health);
             
