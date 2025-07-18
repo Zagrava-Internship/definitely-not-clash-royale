@@ -22,7 +22,7 @@ namespace Units.UnitStates
             }
             if (Unit.CurrentTarget is { IsDead: false })
             {
-                var node = GridManager.Instance.GetNodeFromWorldPoint(Unit.CurrentTarget.Position);
+                var node = GridManager.Instance.GetNodeFromWorldPoint(Unit.CurrentTarget.Transform.position);
                 if (node != null) Unit.SetState(new MoveState(Unit, node));
             }
         }

@@ -12,7 +12,7 @@ namespace Targeting
             foreach (var target in TargetRegistry.AllTargets)
             {
                 if (target.IsDead) continue;
-                var distSq = (target.Position - position).sqrMagnitude;
+                var distSq = (target.Transform.position - position).sqrMagnitude;
                 if (!(distSq < minDistSq)) continue;
                 minDistSq = distSq;
                 closest = target;

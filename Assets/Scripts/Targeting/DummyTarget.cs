@@ -1,16 +1,14 @@
-﻿using System;
-using Health;
-using Targeting;
+﻿using Health;
 using UnityEngine;
 
-namespace Units
+namespace Targeting
 {
     public class DummyTarget : TargetableBase
     {
         [SerializeField] private int hp = 100;
         private HealthComponent Health { get; set; }
         private HealthBarController HealthBarController { get; set; }
-        public override Vector3 Position => transform.position;
+        public override Transform Transform => transform;
         public override bool IsDead => Health.Current<=0;
 
         protected override void OnEnable()
