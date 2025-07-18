@@ -7,7 +7,11 @@ namespace Targeting
         [Header("Allegiance")]
         [SerializeField]
         private string teamId; 
-        public string TeamId => teamId;
+        public string TeamId
+        {
+            get => teamId;
+            protected set => teamId = value;
+        }
         protected virtual void OnEnable()  => TargetRegistry.AllTargets.Add(this);
         protected virtual void OnDisable() => TargetRegistry.AllTargets.Remove(this);
         

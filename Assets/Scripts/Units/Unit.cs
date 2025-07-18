@@ -1,4 +1,3 @@
-using System;
 using Combat;
 using Health;
 using Maps.MapManagement.Grid;
@@ -6,12 +5,12 @@ using Targeting;
 using Units.Animation;
 using Units.UnitStates;
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 namespace Units
 {
     [RequireComponent(typeof(GridMover))]
-    public class Unit : MonoBehaviour
+    public class Unit : TargetableBase
     {
         [Header("Base data")]
         [SerializeField] private UnitData data;
@@ -31,13 +30,23 @@ namespace Units
         private HealthComponent Health { get; set; }
         public WeaponComponent Weapon { get; private set; }
         private HealthBarController HealthBarController { get; set; }
-        
+     
+        public override Transform Transform => transform;
+        public override bool IsDead => Health == null || Health.Current <= 0;
+
+        public override void TakeDamage(int damage)
+        {
+            if (IsDead) return;
+            Health?.TakeDamage(damage);
+        }
         public void SetTarget(ITargetable target) => CurrentTarget = target;
         
         private UnitState _state;          
         private SpriteRenderer _spriteRenderer;
 
-        public void Initialize(UnitData unitData)
+        
+        
+        public void Initialize(UnitData unitData, string teamId)
         {
             if (!unitData)
             {
@@ -45,6 +54,8 @@ namespace Units
             }
             data = unitData;
             
+            TeamId = teamId;
+
             // Set up the unit's properties based on the provided UnitData
             var aggreCollider=GetComponent<CircleCollider2D>();
             aggreCollider.radius = data.aggressionRange;

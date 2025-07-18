@@ -11,10 +11,10 @@ namespace Health
         public event Action OnHealthChanged;
         public event Action OnDied;
 
-        public void Setup(int maxHP)
+        public void Setup(int maxHp)
         {
-            Max = maxHP;
-            Current = maxHP;
+            Max = maxHp;
+            Current = maxHp;
         }
 
         public void TakeDamage(int amount)

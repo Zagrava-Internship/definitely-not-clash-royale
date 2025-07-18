@@ -16,7 +16,7 @@ namespace Units.UnitStates
         {
             if (Unit.CurrentTarget == null || Unit.CurrentTarget.IsDead)
             {
-                var target = TargetFinder.FindClosestTarget(Unit.transform.position);
+                var target = TargetFinder.FindClosestTarget(Unit.transform.position, Unit.TeamId);
                 if (target != null)
                     Unit.SetTarget(target);
             }

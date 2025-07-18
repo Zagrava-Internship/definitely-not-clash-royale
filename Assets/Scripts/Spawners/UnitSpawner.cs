@@ -5,10 +5,11 @@ namespace Spawners
 {
     public static class UnitSpawner 
     {
-        public static void Spawn(UnitData unitData, Vector3 position)
+        public static void Spawn(UnitData unitData, Vector3 position, string teamId)
         {
             var obj = Object.Instantiate(unitData.prefab, position, Quaternion.identity);
-            obj.GetComponent<Unit>().Initialize(unitData);
+            var unit = obj.GetComponent<Unit>();
+            unit.Initialize(unitData, teamId);
         }
 
     }

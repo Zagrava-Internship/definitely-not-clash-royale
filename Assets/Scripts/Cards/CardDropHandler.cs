@@ -61,7 +61,7 @@ namespace Cards
                 return;
             }
             
-            UnitSpawner.Spawn(card.UnitToSpawn, finalPos);
+            UnitSpawner.Spawn(card.UnitToSpawn, finalPos, "Team1");
             _manaSpender.Spend(card.Cost);
             
             deckController.PlayCard(index);
