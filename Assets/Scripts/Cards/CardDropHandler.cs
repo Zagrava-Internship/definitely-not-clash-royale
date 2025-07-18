@@ -2,6 +2,7 @@
 using Mana;
 using Maps.MapManagement.Grid;
 using Spawners;
+using Targeting;
 using UnityEngine;
 
 namespace Cards
@@ -61,7 +62,7 @@ namespace Cards
                 return;
             }
             
-            UnitSpawner.Spawn(card.UnitToSpawn, finalPos, "Team1");
+            UnitSpawner.Spawn(card.UnitToSpawn, finalPos, TeamIds.Team1);
             _manaSpender.Spend(card.Cost);
             
             deckController.PlayCard(index);
