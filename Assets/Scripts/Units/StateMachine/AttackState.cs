@@ -1,4 +1,5 @@
 ﻿using Targeting;
+using UnityEngine;
 
 namespace Units.StateMachine
 {
@@ -19,15 +20,23 @@ namespace Units.StateMachine
         private void HandleAttackAnimationEnd()
         {
             Unit.Animator.OnAttackAnimationEnd -= HandleAttackAnimationEnd;
-            Unit.AttackStrategy.Attack(Unit, _target);
-            if (_target is { IsDead: false })
-            {
-                Unit.Animator.PlayAttack();
-                Unit.Animator.OnAttackAnimationEnd += HandleAttackAnimationEnd;
-            } else
+            
+            if (_target == null || _target.IsDead || _target != Unit.CurrentTarget)
             {
                 Unit.SetState(new IdleState(Unit));
+                return;
             }
+            if (Vector3.Distance(Unit.Transform.position,
+                    _target.Transform.position) > Unit.AttackStrategy.Range)
+            {
+                Unit.SetState(new MoveState(Unit));
+                return;
+            }
+            
+            Unit.AttackStrategy.Attack(Unit, _target);
+            
+            Unit.Animator.PlayAttack();
+            Unit.Animator.OnAttackAnimationEnd += HandleAttackAnimationEnd;
         }
 
         public override void Update()

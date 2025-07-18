@@ -1,5 +1,4 @@
-﻿using Maps.MapManagement.Grid;
-using Targeting;
+﻿using Targeting;
 using UnityEngine;
 
 namespace Units.StateMachine
@@ -41,9 +40,7 @@ namespace Units.StateMachine
             {
                 Unit.SetState(new AttackState(Unit, Unit.CurrentTarget));
             } else {
-                var node = GridManager.Instance
-                    .GetNodeFromWorldPoint(Unit.CurrentTarget.Transform.position);
-                if (node != null) Unit.SetState(new MoveState(Unit, node));
+                Unit.SetState(new MoveState(Unit));
             }
         }
 

@@ -16,6 +16,8 @@ namespace Units.Strategies.Attack
         public void Attack(Unit unit, ITargetable target)
         {
             if (target == null || target.IsDead) return;
+            if (Vector3.Distance(unit.transform.position, target.Transform.position) > Range) return;
+
             target.TakeDamage(unit.Damage);
         }
     }

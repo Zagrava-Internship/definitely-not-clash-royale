@@ -81,7 +81,7 @@ namespace Units
             HealthBarController= GetComponent<HealthBarController>();
             
             Health = GetComponent<HealthComponent>();
-            Health.OnDied+= Die;
+            Health.OnDied += Die;
             Health.Setup(unitConfig.health);
             
             HealthBarController.Init(Health);
@@ -115,40 +115,20 @@ namespace Units
         {
             Destroy(gameObject);
         }
-        
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerStay2D (Collider2D other)
         {
-            if (CurrentTarget is null)
-                return;
-            if(!other.CompareTag("Enemy"))
-                return;
-            if (other.transform.position == CurrentTarget.Transform.position)
+            var tgt = other.GetComponent<ITargetable>();
+            if (tgt == null || tgt.TeamId == TeamId || tgt.IsDead) return;
+            if (CurrentTarget == null || CurrentTarget.IsDead)
             {
-                // Log the distance between the unit and the target
-                Debug.Log($"Unit {name} collided with target {CurrentTarget.Transform.name} at position {other.transform.position}. " +
-                          $"Distance to target: {Vector2.Distance(transform.position, CurrentTarget.Transform.position)}");
-                // TODO : // Add to target registry or handle the target
-                // Placeholder implementation
-                if (other.TryGetComponent(out ITargetable target))
-                {
-                    SetTarget(target);
-                }
+                SetTarget(tgt);
+                return;
             }
-            else
-            {
-                Debug.LogWarning($"Unexpected collision with {other.name} at position {other.transform.position}. " +
-                                 $"Expected target position: {CurrentTarget.Transform.position}");
-            }
-        }
+            var newDistSq = (tgt.Transform.position - transform.position).sqrMagnitude;
+            var curDistSq = (CurrentTarget.Transform.position - transform.position).sqrMagnitude;
 
-        private void OnTriggerStay2D(Collider2D other)
-        {
-            if (!other.CompareTag("Enemy")) return;
-            if(_state is AttackState)return;
-            var distance = Vector2.Distance(transform.position, other.transform.position);
-            if (!(distance <= AttackRange)) return;
-            //Debug.Log("Unit is within attack range of the target.");
-            Mover.ForceToStop();
+            if (newDistSq + 0.01f < curDistSq) 
+                SetTarget(tgt);
         }
     }
 }

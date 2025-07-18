@@ -15,8 +15,6 @@ namespace Maps.MapManagement.Grid
         // The last direction the unit moved in, used to determine if the direction has changed.
         private Vector2 _lastDirection;
         
-        // Invoked when the unit finishes moving along the entire path to the target node.
-        public event Action OnPathComplete;
         public event Action<Vector2> OnDirectionChanged;
         
         public void MoveTo(GridNode targetNode,float speed)
@@ -50,7 +48,6 @@ namespace Maps.MapManagement.Grid
                     _targetIndex++;
                     if (_targetIndex >= _path.Count)
                     {
-                        OnPathComplete?.Invoke();
                         yield break; 
                     }
                     currentWaypoint = _path[_targetIndex].WorldPosition;
@@ -87,10 +84,9 @@ namespace Maps.MapManagement.Grid
         }
         public void ForceToStop()
         {
-            StopAllCoroutines();
+             StopAllCoroutines();
             _path = null;
-            _targetIndex = 0;
-            OnPathComplete?.Invoke(); // Notify that the path is complete even if stopped
+            _targetIndex = 0; 
         }
     }
 }
