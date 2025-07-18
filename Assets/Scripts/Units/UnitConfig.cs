@@ -17,6 +17,7 @@ namespace Units
 
         [Header("VFX / Visuals")]
         public WeaponBase weaponData;
+        public GameObject projectilePrefab;
         
         [Header("Stats")]
         public int health;

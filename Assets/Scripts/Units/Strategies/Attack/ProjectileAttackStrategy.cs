@@ -11,6 +11,8 @@ namespace Units.Strategies.Attack
 
         private Unit _unit;
 
+        public void SetProjectilePrefab(GameObject prefab) => projectilePrefab = prefab;
+
         private void Awake() => _unit = GetComponent<Unit>();
 
         public float Range => _unit.AttackRange;
@@ -22,6 +24,6 @@ namespace Units.Strategies.Attack
             ParticleManager.SpawnParticle(projectilePrefab, target.Transform,
                 () => target.TakeDamage(unit.Damage));
         }
-
+        
     }
 }
