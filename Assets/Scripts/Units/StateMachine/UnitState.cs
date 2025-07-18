@@ -1,4 +1,4 @@
-﻿namespace Units.UnitStates
+﻿namespace Units.StateMachine
 {
     /// <summary>
     /// Base class for all unit states (Idle, Move, Attack, etc.).

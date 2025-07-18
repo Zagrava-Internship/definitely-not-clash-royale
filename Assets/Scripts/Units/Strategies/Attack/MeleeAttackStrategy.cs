@@ -1,7 +1,7 @@
 ﻿using Targeting;
 using UnityEngine;
 
-namespace Units.Strategies
+namespace Units.Strategies.Attack
 {
     [RequireComponent(typeof(Unit))]
     public class MeleeAttackStrategy: MonoBehaviour, IAttackStrategy

@@ -1,7 +1,6 @@
 ﻿using Targeting;
-using UnityEngine;
 
-namespace Units.UnitStates
+namespace Units.StateMachine
 {
     public class AttackState: UnitState
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Units.Strategies
+namespace Units.Strategies.Movement
 {
     public interface IMovementStrategy
     {

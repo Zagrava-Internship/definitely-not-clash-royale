@@ -1,8 +1,7 @@
 ﻿using Maps.MapManagement.Grid;
-using Units.Animation;
 using UnityEngine;
 
-namespace Units.UnitStates
+namespace Units.StateMachine
 {
     public class MoveState : UnitState
     {

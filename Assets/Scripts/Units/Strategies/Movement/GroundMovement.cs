@@ -1,7 +1,8 @@
 ﻿using Maps.MapManagement.Grid;
+using Units.StateMachine;
 using UnityEngine;
 
-namespace Units.Strategies
+namespace Units.Strategies.Movement
 {
     [RequireComponent(typeof(Unit))]
     public class GroundMovement : MonoBehaviour, IMovementStrategy
@@ -40,7 +41,7 @@ namespace Units.Strategies
         private void OnPathComplete()
         {
             _mover.OnPathComplete -= OnPathComplete;
-            _unit.SetState(new Units.UnitStates.AttackState(_unit, _unit.CurrentTarget));
+            _unit.SetState(new AttackState(_unit, _unit.CurrentTarget));
         }
 
         private void OnDirectionChanged(Vector2 dir)

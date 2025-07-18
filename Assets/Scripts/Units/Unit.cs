@@ -3,8 +3,10 @@ using Health;
 using Maps.MapManagement.Grid;
 using Targeting;
 using Units.Animation;
+using Units.StateMachine;
 using Units.Strategies;
-using Units.UnitStates;
+using Units.Strategies.Attack;
+using Units.Strategies.Movement;
 using UnityEngine;
 
 

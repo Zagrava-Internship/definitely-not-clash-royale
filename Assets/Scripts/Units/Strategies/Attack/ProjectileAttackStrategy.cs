@@ -2,7 +2,7 @@
 using Targeting;
 using UnityEngine;
 
-namespace Units.Strategies
+namespace Units.Strategies.Attack
 {
     public class ProjectileAttackStrategy: MonoBehaviour, IAttackStrategy
     {

@@ -1,6 +1,6 @@
 ﻿using Targeting;
 
-namespace Units.Strategies
+namespace Units.Strategies.Attack
 {
     public interface IAttackStrategy
     {
