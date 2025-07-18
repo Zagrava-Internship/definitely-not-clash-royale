@@ -1,3 +1,4 @@
+using System;
 using Combat;
 using Health;
 using Maps.MapManagement.Grid;
@@ -21,6 +22,7 @@ namespace Units
         public float AttackRange => data.weaponData.AttackRange;
         public float AttackSpeed => data.weaponData.AttackSpeed;
         public float AttackDelay => data.weaponData.AttackDelay;
+        public float AggressionRange => data.aggressionRange;
         //public UnitType Type => data.type;
 
         public GridMover Mover { get; private set; } 
@@ -42,6 +44,11 @@ namespace Units
                 throw new System.ArgumentNullException(nameof(unitData), "Unit.Initialize: UnitData is null");
             }
             data = unitData;
+            
+            // Set up the unit's properties based on the provided UnitData
+            var aggreCollider=GetComponent<CircleCollider2D>();
+            aggreCollider.radius = data.aggressionRange;
+            
             Mover = GetComponent<GridMover>();
             Animator = GetComponent<UnitAnimator>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -87,16 +94,18 @@ namespace Units
         {
             if (CurrentTarget is null)
                 return;
+            if(!other.CompareTag("Enemy"))
+                return;
             if (other.transform.position == CurrentTarget.Transform.position)
             {
                 // Log the distance between the unit and the target
                 Debug.Log($"Unit {name} collided with target {CurrentTarget.Transform.name} at position {other.transform.position}. " +
                           $"Distance to target: {Vector2.Distance(transform.position, CurrentTarget.Transform.position)}");
-                // Check if the radius of the collider is within the attack range
-                if (Vector2.Distance(transform.position, CurrentTarget.Transform.position) <= AttackRange)
+                // TODO : // Add to target registry or handle the target
+                // Placeholder implementation
+                if (other.TryGetComponent(out ITargetable target))
                 {
-                    // If the unit is in attack range, stop moving
-                    Mover.ForceToStop();
+                    SetTarget(target);
                 }
             }
             else
@@ -104,6 +113,16 @@ namespace Units
                 Debug.LogWarning($"Unexpected collision with {other.name} at position {other.transform.position}. " +
                                  $"Expected target position: {CurrentTarget.Transform.position}");
             }
+        }
+
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            if (!other.CompareTag("Enemy")) return;
+            if(_state is AttackState)return;
+            var distance = Vector2.Distance(transform.position, other.transform.position);
+            if (!(distance <= AttackRange)) return;
+            //Debug.Log("Unit is within attack range of the target.");
+            Mover.ForceToStop();
         }
     }
 }

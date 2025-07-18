@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: LumberjackWeaponData
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 25
-  <AttackRange>k__BackingField: 1
+  <AttackRange>k__BackingField: 0.8
   <AttackSpeed>k__BackingField: 0.2
   <AttackDelay>k__BackingField: 0.1

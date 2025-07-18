@@ -18,3 +18,4 @@ MonoBehaviour:
   health: 75
   speed: 2
   weaponData: {fileID: 11400000, guid: 0d148829936cd78489b82a91433b89f8, type: 2}
+  aggressionRange: 2.5
