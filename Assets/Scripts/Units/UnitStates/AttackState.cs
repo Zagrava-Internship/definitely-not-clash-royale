@@ -14,12 +14,25 @@ namespace Units.UnitStates
         public override void Enter()
         {
             Unit.Animator.PlayAttack();
-            Unit.Animator.OnAttackAnimationEnd+= OnAttackAnimationEnd;
+            Unit.Animator.OnAttackAnimationEnd+= HandleAttackAnimationEnd;
         }
 
-        private void OnAttackAnimationEnd()
+        private void HandleAttackAnimationEnd()
         {
-            Unit.Weapon.Attack(_target);
+            Unit.Animator.OnAttackAnimationEnd -= HandleAttackAnimationEnd;
+            Unit.AttackStrategy.Attack(Unit, _target);
+            if (_target is { IsDead: false })
+            {
+                Unit.Animator.PlayAttack();
+                Unit.Animator.OnAttackAnimationEnd += HandleAttackAnimationEnd;
+            } else
+            {
+                Unit.SetState(new IdleState(Unit));
+            }
+            
+            Unit.Animator.PlayAttack();
+            Unit.Animator.OnAttackAnimationEnd += () =>
+                Unit.AttackStrategy.Attack(Unit, _target);
         }
 
         public override void Update()
@@ -30,7 +43,7 @@ namespace Units.UnitStates
 
         public override void Exit()
         {
-            Unit.Animator.OnAttackAnimationEnd -= OnAttackAnimationEnd;
+            Unit.Animator.OnAttackAnimationEnd -= HandleAttackAnimationEnd;
             Unit.Animator.ResetState();
         }
         

@@ -21,9 +21,7 @@ namespace Units.UnitStates
                 return;
             }
 
-            Unit.Mover.OnPathComplete += OnPathComplete;
-            Unit.Mover.OnDirectionChanged += OnDirectionChanged;
-            Unit.Mover.MoveTo(_targetNode, Unit.Speed);
+            Unit.MovementStrategy.Move(Unit, _targetNode.WorldPosition, Unit.Speed);
             
             // Animation
             Unit.Animator.PlayMove(Vector2.zero);
@@ -33,23 +31,12 @@ namespace Units.UnitStates
 
         public override void Exit()
         {
-            Unit.Mover.OnPathComplete -= OnPathComplete;
+            Unit.MovementStrategy.Stop(Unit);
+
             // Reset the animator state
             Unit.Animator.ResetState();
         }
-
-        private void OnPathComplete()
-        {
-            if (Unit.CurrentTarget != null)
-                Unit.SetState(new AttackState(Unit, Unit.CurrentTarget));
-            else
-                Unit.SetState(new IdleState(Unit));
-        }
         
-        private void OnDirectionChanged(Vector2 direction)
-        {
-            Unit.Animator.ChangeMovingDirection(direction);
-        }
         public override string DisplayName => "Move";
     }
 

@@ -3,6 +3,7 @@ using Health;
 using Maps.MapManagement.Grid;
 using Targeting;
 using Units.Animation;
+using Units.Strategies;
 using Units.UnitStates;
 using UnityEngine;
 
@@ -15,6 +16,9 @@ namespace Units
         [Header("Base data")]
         [SerializeField] private UnitData data;
         
+        public IMovementStrategy MovementStrategy { get; private set; }
+        public IAttackStrategy   AttackStrategy   { get; private set; }
+
         public float MaxHealth => data.health;
         public float Speed => data.speed;
         public int Damage => data.weaponData.Damage;
@@ -56,6 +60,14 @@ namespace Units
             
             TeamId = teamId;
 
+            MovementStrategy = GetComponent<IMovementStrategy>();
+            AttackStrategy   = GetComponent<IAttackStrategy>();
+            
+            if (MovementStrategy == null)
+                Debug.LogError($"{name}: missing IMovementStrategy component!");
+            if (AttackStrategy == null)
+                Debug.LogError($"{name}: missing IAttackStrategy component!");
+            
             // Set up the unit's properties based on the provided UnitData
             var aggreCollider=GetComponent<CircleCollider2D>();
             aggreCollider.radius = data.aggressionRange;

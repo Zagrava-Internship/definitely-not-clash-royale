@@ -1,5 +1,6 @@
 ﻿using Maps.MapManagement.Grid;
 using Targeting;
+using UnityEngine;
 
 namespace Units.UnitStates
 {
@@ -16,13 +17,32 @@ namespace Units.UnitStates
         {
             if (Unit.CurrentTarget == null || Unit.CurrentTarget.IsDead)
             {
-                var target = TargetFinder.FindClosestTarget(Unit.transform.position, Unit.TeamId);
-                if (target != null)
-                    Unit.SetTarget(target);
+                var enemy = TargetFinder.FindClosestEnemy(
+                    Unit.transform.position,
+                    Unit.TeamId
+                );
+
+                if (enemy != null) Unit.SetTarget(enemy);
+                else return;
             }
-            if (Unit.CurrentTarget is { IsDead: false })
+            
+            if (Unit.CurrentTarget == null)
             {
-                var node = GridManager.Instance.GetNodeFromWorldPoint(Unit.CurrentTarget.Transform.position);
+                Debug.Log("CurrentTarget is null in IdleState but should not be.");
+                return;
+            }
+            
+            var dist = Vector3.Distance(
+                Unit.transform.position,
+                Unit.CurrentTarget.Transform.position
+            );
+
+            if (dist <= Unit.AttackStrategy.Range)
+            {
+                Unit.SetState(new AttackState(Unit, Unit.CurrentTarget));
+            } else {
+                var node = GridManager.Instance
+                    .GetNodeFromWorldPoint(Unit.CurrentTarget.Transform.position);
                 if (node != null) Unit.SetState(new MoveState(Unit, node));
             }
         }
