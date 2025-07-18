@@ -28,10 +28,6 @@ namespace Units.StateMachine
             {
                 Unit.SetState(new IdleState(Unit));
             }
-            
-            Unit.Animator.PlayAttack();
-            Unit.Animator.OnAttackAnimationEnd += () =>
-                Unit.AttackStrategy.Attack(Unit, _target);
         }
 
         public override void Update()
