@@ -1,3 +1,4 @@
+using Combat;
 using UnityEngine;
 
 namespace Units
@@ -10,14 +11,8 @@ namespace Units
         public GameObject ghostPrefab;
         public int health;
         public float speed;
-        public int damage;
-        public UnitType type;
-    }
-
-    public enum UnitType
-    {
-        Melee,
-        Ranged,
-        Flying
+        //public int damage; // This is now part of the weapon data
+        //public UnitType type; // This is now part of the weapon data
+        public WeaponBase weaponData; // Reference to the weapon data for this unit
     }
 }

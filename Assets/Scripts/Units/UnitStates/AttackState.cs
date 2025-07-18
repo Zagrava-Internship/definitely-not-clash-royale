@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Targeting;
+using UnityEngine;
 
 namespace Units.UnitStates
 {
@@ -18,7 +19,7 @@ namespace Units.UnitStates
 
         private void OnAttackAnimationEnd()
         {
-            _target.TakeDamage(Unit.Damage);
+            Unit.Weapon.Attack(_target);
         }
 
         public override void Update()
