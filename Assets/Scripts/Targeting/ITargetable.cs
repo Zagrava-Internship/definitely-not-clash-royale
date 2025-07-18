@@ -5,7 +5,7 @@ namespace Targeting
     /// <summary>
     /// Contract for all entities that can be targeted and damaged by units (e.g., units, buildings, etc.).
     /// </summary>
-    public interface ITargetable
+    public interface ITargetable: ITeamEntity
     {
         // Transform of the target
         Transform Transform { get; }

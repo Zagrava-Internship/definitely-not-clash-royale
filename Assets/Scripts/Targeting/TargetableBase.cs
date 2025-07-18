@@ -4,6 +4,10 @@ namespace Targeting
 {
     public abstract class TargetableBase : MonoBehaviour, ITargetable
     {
+        [Header("Allegiance")]
+        [SerializeField]
+        private string teamId; 
+        public string TeamId => teamId;
         protected virtual void OnEnable()  => TargetRegistry.AllTargets.Add(this);
         protected virtual void OnDisable() => TargetRegistry.AllTargets.Remove(this);
         
