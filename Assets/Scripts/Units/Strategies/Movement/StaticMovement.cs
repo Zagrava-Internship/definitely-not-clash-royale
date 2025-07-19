@@ -6,14 +6,14 @@ namespace Units.Strategies.Movement
     {
         public void Move(Unit unit, Vector3 destination, float speed)
         {
-            // TODO
-            throw new System.NotImplementedException();
+            // Static movement does not change position, so we do nothing here.
+            // This is useful for units that do not move
         }
 
         public void Stop(Unit unit)
         {
-            // TODO
-            throw new System.NotImplementedException();
+            // Static movement does not require stopping, so we do nothing here as well.
+            // This is useful for units that do not move    
         }
     }
 }
