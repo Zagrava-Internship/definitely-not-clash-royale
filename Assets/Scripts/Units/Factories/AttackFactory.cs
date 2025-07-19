@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Combat;
 using Units.Enums;
 using Units.Strategies.Attack;
 using UnityEngine;
@@ -9,18 +10,18 @@ namespace Units.Factories
     /// <summary>
     /// Factory for attaching an attack strategy to a GameObject based on AttackType.
     /// </summary>
-    public class AttackFactory
+    public static class AttackFactory
     {
         private static readonly Dictionary<AttackType, Func<GameObject, UnitConfig, IAttackStrategy>> Map =
             new()
             {
                 { AttackType.Melee, (go, _) => go.AddComponent<MeleeAttackStrategy>() },
                 {
-                    AttackType.Projectile, (go, cfg) =>
+                    AttackType.Ranged, (go, cfg) =>
                     {
-                        var strat = go.AddComponent<ProjectileAttackStrategy>();
-                        if (cfg.projectilePrefab != null)
-                            strat.SetProjectilePrefab(cfg.projectilePrefab);
+                        var strat = go.AddComponent<ParticleAttackStrategy>();
+                        if (cfg.weaponData is RangedWeaponData rangedWeaponData)
+                            strat.SetProjectilePrefab(rangedWeaponData.particlePrefab);
                         return strat;
                     }
                 },

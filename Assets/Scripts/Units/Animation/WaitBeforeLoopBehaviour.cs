@@ -14,7 +14,7 @@ namespace Units.Animation
             _delayed = false;
             var unit = animator.GetComponent<Unit>();
             if (unit is not null)
-                _delay = unit.AttackDelay; // Use the weapon's attack delay if available
+                _delay = unit.Stats.AttackDelay; // Use the weapon's attack delay if available
         }
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

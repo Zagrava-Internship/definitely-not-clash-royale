@@ -10,7 +10,7 @@ namespace Combat.Particles
         public static void SpawnParticle(GameObject particle, Transform target,
             Action onParticleFollowedTarget)
         {
-            if (particle == null || target == null)
+            if (particle is null || target is null)
             {
                 Debug.LogError("Particle or target is null.");
                 return;

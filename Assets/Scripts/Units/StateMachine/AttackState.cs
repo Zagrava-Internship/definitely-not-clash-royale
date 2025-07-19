@@ -23,26 +23,26 @@ namespace Units.StateMachine
             
             if (_target == null || _target.IsDead || _target != Unit.CurrentTarget)
             {
-                Unit.SetState(new IdleState(Unit));
+                Unit.StateMachine.SetState(new IdleState(Unit));
                 return;
             }
             if (Vector3.Distance(Unit.Transform.position,
                     _target.Transform.position) > Unit.AttackStrategy.Range)
             {
-                Unit.SetState(new MoveState(Unit));
+                Unit.StateMachine.SetState(new MoveState(Unit));
                 return;
             }
             
             Unit.AttackStrategy.Attack(Unit, _target);
             
-            Unit.Animator.PlayAttack();
+            //Unit.Animator.PlayAttack();
             Unit.Animator.OnAttackAnimationEnd += HandleAttackAnimationEnd;
         }
 
         public override void Update()
         {
             if(_target== null || _target.IsDead)
-                Unit.SetState(new IdleState(Unit));
+                Unit.StateMachine.SetState(new IdleState(Unit));
         }
 
         public override void Exit()

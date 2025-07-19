@@ -1,10 +1,11 @@
-﻿using Combat.Particles;
+﻿using Combat.Interfaces;
+using Combat.Particles;
 using Targeting;
 using UnityEngine;
 
 namespace Units.Strategies.Attack
 {
-    public class ProjectileAttackStrategy: MonoBehaviour, IAttackStrategy
+    public class ParticleAttackStrategy: MonoBehaviour, IAttackStrategy
     {
         [Header("Visuals")]
         [SerializeField] private GameObject projectilePrefab;
@@ -15,14 +16,14 @@ namespace Units.Strategies.Attack
 
         private void Awake() => _unit = GetComponent<Unit>();
 
-        public float Range => _unit.AttackRange;
-        public float AttackDelay => _unit.AttackDelay;
+        public float Range => _unit.Stats.AttackRange;
+        public float AttackDelay => _unit.Stats.AttackDelay;
 
-        public void Attack(Unit unit, ITargetable target)
+        public void Attack(IAttacker attacker,ITargetable target)
         {
             if (target == null || target.IsDead) return;
             ParticleManager.SpawnParticle(projectilePrefab, target.Transform,
-                () => target.TakeDamage(unit.Damage));
+                () => target.TakeDamage(attacker.Damage));
         }
         
     }

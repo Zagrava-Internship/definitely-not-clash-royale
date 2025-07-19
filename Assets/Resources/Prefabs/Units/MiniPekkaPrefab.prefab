@@ -224,6 +224,9 @@ GameObject:
   - component: {fileID: 194035386669707685}
   - component: {fileID: 7681826332599097055}
   - component: {fileID: 7823827505488836774}
+  - component: {fileID: 3763299976357076452}
+  - component: {fileID: 3947922241094288577}
+  - component: {fileID: 7551004280779982399}
   - component: {fileID: -84456539534517020}
   - component: {fileID: -2875596379866090558}
   m_Layer: 0
@@ -316,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4073d60f82dc5904690fe478130f875f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: a0876aac08254764ab54e589172f514f, type: 2}
+  teamId: 
 --- !u!114 &7181394458553254338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,6 +404,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponObject: {fileID: 11400000, guid: 28f9de007130414479cadaa11249f9a0, type: 2}
+--- !u!114 &3763299976357076452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7706684635721876194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280c17ed4e484b088b8323567634f572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3947922241094288577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7706684635721876194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da590b7454454a16b1b01156a48a919a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: {fileID: 9115931688533665171}
+--- !u!114 &7551004280779982399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7706684635721876194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16801f9c0d794e90b71e0b6b22081603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _config: {fileID: 0}
 --- !u!58 &-84456539534517020
 CircleCollider2D:
   m_ObjectHideFlags: 0

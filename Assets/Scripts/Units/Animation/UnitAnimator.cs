@@ -10,8 +10,11 @@ namespace Units.Animation
         private void Awake()
         {
             _animator = GetComponent<Animator>();
-            _animator.SetFloat(UnitAnimationParameters.AttackSpeed, 
-                GetComponent<Unit>().AttackSpeed);
+        }
+        public void Initialize(float attackSpeed)
+        {
+            _animator ??= GetComponent<Animator>();
+            _animator.SetFloat(UnitAnimationParameters.AttackSpeed, attackSpeed);
         }
         // ResetState is used to reset the animator state when changing states or when the unit is idle
         public void ResetState()

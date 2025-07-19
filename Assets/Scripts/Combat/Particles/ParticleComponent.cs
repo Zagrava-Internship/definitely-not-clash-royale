@@ -22,7 +22,7 @@ namespace Combat.Particles
             StartCoroutine(FollowTargetCoroutine(target));
             
         }
-        public IEnumerator FollowTargetCoroutine(Transform target)
+        private IEnumerator FollowTargetCoroutine(Transform target)
         {
             while (target is not null)
             {

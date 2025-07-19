@@ -22,7 +22,7 @@ namespace Units.StateMachine
         {
             if (Unit.CurrentTarget == null || Unit.CurrentTarget.IsDead)
             {
-                Unit.SetState(new IdleState(Unit));
+                Unit.StateMachine.SetState(new IdleState(Unit));
                 return;
             }
 
@@ -34,7 +34,7 @@ namespace Units.StateMachine
             }
 
             if (Vector3.Distance(Unit.transform.position, _lastTargetPos) <= Unit.AttackStrategy.Range)
-                Unit.SetState(new AttackState(Unit, Unit.CurrentTarget));
+                Unit.StateMachine.SetState(new AttackState(Unit, Unit.CurrentTarget));
         }
 
         public override void Exit()
@@ -49,7 +49,7 @@ namespace Units.StateMachine
         {
             var node = GridManager.Instance.GetNodeFromWorldPoint(_lastTargetPos);
             if (node != null)
-                Unit.MovementStrategy.Move(Unit, node.WorldPosition, Unit.Speed);
+                Unit.MovementStrategy.Move(Unit, node.WorldPosition, Unit.Stats.Speed);
         }
         
         public override string DisplayName => "Move";

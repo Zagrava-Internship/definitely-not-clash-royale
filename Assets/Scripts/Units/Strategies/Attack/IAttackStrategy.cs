@@ -1,4 +1,5 @@
-﻿using Targeting;
+﻿using Combat.Interfaces;
+using Targeting;
 
 namespace Units.Strategies.Attack
 {
@@ -6,6 +7,6 @@ namespace Units.Strategies.Attack
     {
         float Range { get; }
         float AttackDelay { get; }
-        void Attack(Unit unit, ITargetable target);
+        void Attack(IAttacker attacker,ITargetable target);
     }
 }

@@ -1,4 +1,5 @@
 using Combat;
+using Combat.Interfaces;
 using Health;
 using Maps.MapManagement.Grid;
 using Targeting;
@@ -12,123 +13,85 @@ using UnityEngine.Serialization;
 
 namespace Units
 {
-    [RequireComponent(typeof(GridMover))]
-    public class Unit : TargetableBase
+    [RequireComponent(typeof(GridMover), typeof(UnitStats), typeof(UnitTargeting))]
+    [RequireComponent(typeof(HealthComponent), typeof(WeaponComponent), typeof(UnitStateMachine))]
+    [RequireComponent(typeof(UnitAnimator), typeof(SpriteRenderer), typeof(HealthBarController))]
+    public class Unit : TargetableBase,IAttacker
     {
-        [FormerlySerializedAs("data")]
-        [Header("Base data")]
-        [SerializeField] private UnitConfig config;
-        
-        public IMovementStrategy MovementStrategy { get; private set; }
-        public IAttackStrategy   AttackStrategy   { get; private set; }
-
-        public float MaxHealth => config.health;
-        public float Speed => config.speed;
-        public int Damage => config.weaponData.Damage;
-        public float AttackRange => config.weaponData.AttackRange;
-        public float AttackSpeed => config.weaponData.AttackSpeed;
-        public float AttackDelay => config.weaponData.AttackDelay;
-        public float AggressionRange => config.aggressionRange;
-        //public UnitType Type => data.type;
-
-        public GridMover Mover { get; private set; } 
-        public UnitAnimator Animator { get; private set; }
-        public ITargetable CurrentTarget { get; private set; }
+        // Components
+        public UnitStats Stats { get; private set; }
+        public UnitTargeting Targeting { get; private set; }
+        public UnitStateMachine StateMachine { get; private set; }
         private HealthComponent Health { get; set; }
         public WeaponComponent Weapon { get; private set; }
-        private HealthBarController HealthBarController { get; set; }
-     
+        public GridMover Mover { get; private set; }
+        public UnitAnimator Animator { get; private set; }
+        
+        // Strategies
+        public IMovementStrategy MovementStrategy { get; private set; }
+        public IAttackStrategy AttackStrategy { get; private set; }
+        
+        // ITargetable 
         public override Transform Transform => transform;
         public override bool IsDead => Health == null || Health.Current <= 0;
+        public ITargetable CurrentTarget => Targeting.CurrentTarget;
+        
+        // IAttacker properties
+        public int Damage => Stats.Damage;
 
+        private SpriteRenderer _spriteRenderer;
+        
+        public void Initialize(UnitConfig unitConfig, string teamId)
+        {
+            TeamId = teamId;
+            
+            // Get components
+            Stats = GetComponent<UnitStats>();
+            Targeting = GetComponent<UnitTargeting>();
+            StateMachine = GetComponent<UnitStateMachine>();
+            Health = GetComponent<HealthComponent>();
+            Weapon = GetComponent<WeaponComponent>();
+            Mover = GetComponent<GridMover>();
+            Animator = GetComponent<UnitAnimator>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            var healthBarController = GetComponent<HealthBarController>();
+            
+            // Validate components
+            Stats.Initialize(unitConfig);
+            Targeting.Initialize(Stats.AggressionRange);
+            Health.Setup(Stats.MaxHealth);
+            healthBarController.Init(Health);
+            StateMachine.Initialize(this);
+            Animator.Initialize(unitConfig.weaponData.AttackSpeed);
+            
+            MovementStrategy = GetComponent<IMovementStrategy>();
+            AttackStrategy = GetComponent<IAttackStrategy>();
+            if (MovementStrategy == null) Debug.LogError($"{name}: missing IMovementStrategy component!");
+            if (AttackStrategy == null) Debug.LogError($"{name}: missing IAttackStrategy component!");
+            
+            Health.OnDied += Die;
+            Mover.OnDirectionChanged += RotateFromDirection;
+        }
+        
         public override void TakeDamage(int damage)
         {
             if (IsDead) return;
             Health?.TakeDamage(damage);
         }
-        public void SetTarget(ITargetable target) => CurrentTarget = target;
         
-        private UnitState _state;          
-        private SpriteRenderer _spriteRenderer;
-
-        
-        
-        public void Initialize(UnitConfig unitConfig, string teamId)
+        public void OnTargetAcquired(ITargetable target)
         {
-            if (!unitConfig)
-            {
-                throw new System.ArgumentNullException(nameof(unitConfig), "Unit.Initialize: UnitData is null");
-            }
-            config = unitConfig;
-            
-            TeamId = teamId;
-
-            MovementStrategy = GetComponent<IMovementStrategy>();
-            AttackStrategy = GetComponent<IAttackStrategy>();
-            
-            if (MovementStrategy == null)
-                Debug.LogError($"{name}: missing IMovementStrategy component!");
-            if (AttackStrategy == null)
-                Debug.LogError($"{name}: missing IAttackStrategy component!");
-            
-            // Set up the unit's properties based on the provided UnitData
-            var agreeCollider = GetComponent<CircleCollider2D>();
-            agreeCollider.radius = config.aggressionRange;
-            
-            Mover = GetComponent<GridMover>();
-            Animator = GetComponent<UnitAnimator>();
-            _spriteRenderer = GetComponent<SpriteRenderer>();
-            HealthBarController= GetComponent<HealthBarController>();
-            
-            Health = GetComponent<HealthComponent>();
-            Health.OnDied += Die;
-            Health.Setup(unitConfig.health);
-            
-            HealthBarController.Init(Health);
-            
-            Weapon = GetComponent<WeaponComponent>();
-            if (Weapon is null)
-                Debug.LogError("Unit: WeaponComponent is not assigned. Please assign a weapon component to the unit.");
-            
-            Mover.OnDirectionChanged += RotateFromDirection;
-            SetState(new IdleState(this));
+            // This method can be used to handle logic when a target is acquired
         }
-        
+
         private void RotateFromDirection(Vector2 direction)
         {
             _spriteRenderer.flipX = direction.x < 0;
         }
 
-        private void Update() =>  _state?.Update();
-
-        public UnitState GetState()
-        {
-           return _state;
-        }
-        public void SetState(UnitState next)
-        {
-            _state?.Exit();
-            _state = next;
-            _state.Enter();
-        }
         private void Die()
         {
             Destroy(gameObject);
-        }
-        private void OnTriggerStay2D (Collider2D other)
-        {
-            var tgt = other.GetComponent<ITargetable>();
-            if (tgt == null || tgt.TeamId == TeamId || tgt.IsDead) return;
-            if (CurrentTarget == null || CurrentTarget.IsDead)
-            {
-                SetTarget(tgt);
-                return;
-            }
-            var newDistSq = (tgt.Transform.position - transform.position).sqrMagnitude;
-            var curDistSq = (CurrentTarget.Transform.position - transform.position).sqrMagnitude;
-
-            if (newDistSq + 0.01f < curDistSq) 
-                SetTarget(tgt);
         }
     }
 }

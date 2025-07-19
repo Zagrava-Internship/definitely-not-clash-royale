@@ -21,7 +21,7 @@ namespace Units.StateMachine
                     Unit.TeamId
                 );
 
-                if (enemy != null) Unit.SetTarget(enemy);
+                if (enemy != null) Unit.Targeting.SetTarget(enemy);
                 else return;
             }
             
@@ -38,9 +38,9 @@ namespace Units.StateMachine
 
             if (dist <= Unit.AttackStrategy.Range)
             {
-                Unit.SetState(new AttackState(Unit, Unit.CurrentTarget));
+                Unit.StateMachine.SetState(new AttackState(Unit, Unit.CurrentTarget));
             } else {
-                Unit.SetState(new MoveState(Unit));
+                Unit.StateMachine.SetState(new MoveState(Unit));
             }
         }
 
