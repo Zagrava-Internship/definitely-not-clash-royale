@@ -8,6 +8,7 @@ namespace Combat.Particles
     public static class ParticleManager
     {
         public static void SpawnParticle(GameObject particle, Transform target,
+            Transform parent,
             Action onParticleFollowedTarget)
         {
             if (particle is null || target is null)
@@ -15,10 +16,10 @@ namespace Combat.Particles
                 Debug.LogError("Particle or target is null.");
                 return;
             }
-            var particleInstance = Object.Instantiate(particle, target.position, Quaternion.identity).GetComponent<ParticleComponent>();
+            var particleInstance = Object.Instantiate(particle, parent.position, Quaternion.identity).GetComponent<ParticleComponent>();
             particleInstance.FollowTarget(target);
             particleInstance.OnParticleFollowedTarget += onParticleFollowedTarget;
-            Debug.Log($"Spawned particle at {target.position}");
+            //Debug.Log($"Spawned particle at {parent.position}");
         }
     }
 }

@@ -24,18 +24,29 @@ namespace Combat.Particles
         }
         private IEnumerator FollowTargetCoroutine(Transform target)
         {
-            while (target is not null)
+            var lastKnownPosition = target.position;
+            while (true)
             {
-                transform.position = Vector3.MoveTowards(transform.position, target.position, Speed * Time.deltaTime);
-                var direction = (target.position - transform.position).normalized;
-                var lookRotation = Quaternion.LookRotation(direction);
-                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Speed * Time.deltaTime);
+                if (target != null)
+                    lastKnownPosition = target.position;
                 
-                if (Vector3.Distance(transform.position, target.position) < 0.1f)// Check if the particle is close enough to the target
+                transform.position = Vector3.MoveTowards(transform.position, lastKnownPosition, Speed * Time.deltaTime);
+                
+                if (Vector3.Distance(transform.position, lastKnownPosition) > 0.01f)
+                {
+                    var direction = (lastKnownPosition - transform.position).normalized;
+                    // Calculate the angle in degrees
+                    // and adjust it to point upwards (0 degrees is right, -90 degrees is up)
+                    var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg-90f;
+                    var targetRotation = Quaternion.Euler(0f, 0f, angle);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Speed * 5f * Time.deltaTime);
+                }
+                
+                if (Vector3.Distance(transform.position, lastKnownPosition) < 0.1f)
                 {
                     OnParticleFollowedTarget?.Invoke();
-                    Debug.Log($"Particle reached target at {target.position}");
-                    Destroy(gameObject); // Destroy the particle after reaching the target
+                    //Debug.Log($"Particle reached destination at {lastKnownPosition}");
+                    Destroy(gameObject);
                     yield break;
                 }
                 yield return null;
