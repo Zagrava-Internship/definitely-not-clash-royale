@@ -5,24 +5,25 @@ using UnityEngine;
 
 namespace Units.Strategies.Attack
 {
-    public class ParticleAttackStrategy: MonoBehaviour, IAttackStrategy
+    public class RangedAttackStrategy: MonoBehaviour, IAttackStrategy
     {
         [Header("Visuals")]
         [SerializeField] private GameObject projectilePrefab;
 
-        private Unit _unit;
+        private IAttacker _attacker;
 
         public void SetProjectilePrefab(GameObject prefab) => projectilePrefab = prefab;
 
-        private void Awake() => _unit = GetComponent<Unit>();
+        private void Awake() => _attacker = GetComponent<IAttacker>();
 
-        public float Range => _unit.Stats.AttackRange;
-        public float AttackDelay => _unit.Stats.AttackDelay;
+        public float Range => _attacker.AttackRange;
+        public float AttackDelay => _attacker.AttackDelay;
 
         public void Attack(IAttacker attacker,ITargetable target)
         {
             if (target == null || target.IsDead) return;
             ParticleManager.SpawnParticle(projectilePrefab, target.Transform,
+                _attacker.Transform,
                 () => target.TakeDamage(attacker.Damage));
         }
         

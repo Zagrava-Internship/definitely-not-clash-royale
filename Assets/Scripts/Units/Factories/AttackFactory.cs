@@ -19,7 +19,7 @@ namespace Units.Factories
                 {
                     AttackType.Ranged, (go, cfg) =>
                     {
-                        var strat = go.AddComponent<ParticleAttackStrategy>();
+                        var strat = go.AddComponent<RangedAttackStrategy>();
                         if (cfg.weaponData is RangedWeaponData rangedWeaponData)
                             strat.SetProjectilePrefab(rangedWeaponData.particlePrefab);
                         return strat;
