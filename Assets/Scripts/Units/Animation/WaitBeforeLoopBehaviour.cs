@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Combat.Interfaces;
+using UnityEngine;
 
 namespace Units.Animation
 {
@@ -12,9 +13,9 @@ namespace Units.Animation
         {
             _timer = 0f;
             _delayed = false;
-            var unit = animator.GetComponent<Unit>();
-            if (unit is not null)
-                _delay = unit.Stats.AttackDelay; // Use the weapon's attack delay if available
+            var attacker = animator.GetComponent<IAttacker>();
+            if (attacker is not null)
+                _delay = attacker.AttackDelay; // Use the weapon's attack delay if available
         }
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

@@ -1,4 +1,6 @@
-﻿using Targeting;
+﻿using System;
+using Combat.Interfaces;
+using Targeting;
 using UnityEngine;
 
 namespace Units
@@ -6,27 +8,31 @@ namespace Units
     [RequireComponent(typeof(CircleCollider2D))]
     public class UnitTargeting : MonoBehaviour
     {
-        [SerializeField] private Unit unit; // The unit that this targeting component belongs to
+        private IAttacker _attacker; // The attacker component that will handle target acquisition 
         private CircleCollider2D _aggroCollider;
 
         public ITargetable CurrentTarget { get; private set; }
         public bool HasTarget => CurrentTarget is { IsDead: false };
+        
+        public event Action<ITargetable> OnTargetAcquired;
+        public event Action<ITargetable> OnTargetLost;
 
         private void Awake()
         {
             _aggroCollider = GetComponent<CircleCollider2D>();
-            if (unit == null) unit = GetComponentInParent<Unit>();
+            _aggroCollider.isTrigger = true; // Ensure the collider is a trigger for detecting targets
         }
 
-        public void Initialize(float aggressionRange)
+        public void Initialize(IAttacker attacker,float aggressionRange)
         {
+            _attacker = attacker;
             _aggroCollider.radius = aggressionRange;
         }
 
         public void SetTarget(ITargetable target)
         {
             CurrentTarget = target;
-            unit.OnTargetAcquired(target);
+            OnTargetAcquired?.Invoke(target);
         }
         
         public void ClearTarget() => CurrentTarget = null;
@@ -34,8 +40,9 @@ namespace Units
 
         private void OnTriggerStay2D(Collider2D other)
         {
+            //Debug.Log("OnTriggerStay2D called with: " + other.name);
             var tgt = other.GetComponent<ITargetable>();
-            if (tgt == null || tgt.TeamId == unit.TeamId || tgt.IsDead) return;
+            if (tgt == null || tgt.Team == _attacker.Team || tgt.IsDead) return;
             
             if (!HasTarget)
             {
@@ -47,6 +54,18 @@ namespace Units
 
             if (newDistSq + 0.01f < curDistSq)
                 SetTarget(tgt);
+        }
+        
+        // Handle when a target exits the aggro range
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            //Debug.Log("OnTriggerExit2D called with: " + other.name);
+            var tgt = other.GetComponent<ITargetable>();
+            if (tgt == null || tgt.Team == _attacker.Team || tgt.IsDead) return;
+
+            if (CurrentTarget != tgt) return;
+            ClearTarget();
+            OnTargetLost?.Invoke(tgt);
         }
     }
 }
