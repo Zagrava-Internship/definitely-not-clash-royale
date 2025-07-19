@@ -9,13 +9,12 @@ using UnityEngine;
 namespace Towers
 {
     [RequireComponent(typeof(UnitStats), typeof(UnitTargeting))]
-    [RequireComponent(typeof(HealthComponent), typeof(WeaponComponent))]
+    [RequireComponent(typeof(HealthComponent))]
     public class Tower : TargetableBase,IAttacker
     {
         public UnitStats Stats { get; private set; }
         public UnitTargeting Targeting { get; private set; }
         public HealthComponent Health { get; private set; }
-        public WeaponComponent Weapon { get; private set; }
         public IAttackStrategy AttackStrategy { get; private set; }
         
         // IAttacker properties
@@ -33,7 +32,6 @@ namespace Towers
             Stats = GetComponent<UnitStats>();
             Targeting = GetComponent<UnitTargeting>();
             Health = GetComponent<HealthComponent>();
-            Weapon = GetComponent<WeaponComponent>();
             AttackStrategy = GetComponent<IAttackStrategy>();
             var healthBarController = GetComponent<HealthBarController>(); 
             

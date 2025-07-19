@@ -4842,7 +4842,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1478420302}
   - component: {fileID: 1478420303}
-  - component: {fileID: 1478420304}
   m_Layer: 0
   m_Name: PrincessTowerLeftBlue
   m_TagString: Untagged
@@ -4922,19 +4921,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1478420304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1478420301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9876765419a748c6a0f430dcce0e37ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponObject: {fileID: 11400000, guid: 185a8a416dd2a484c96d8571455db345, type: 2}
 --- !u!1 &1528435074
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ using UnityEngine.Serialization;
 namespace Units
 {
     [RequireComponent(typeof(GridMover), typeof(UnitStats), typeof(UnitTargeting))]
-    [RequireComponent(typeof(HealthComponent), typeof(WeaponComponent), typeof(UnitStateMachine))]
+    [RequireComponent(typeof(HealthComponent), typeof(UnitStateMachine))]
     [RequireComponent(typeof(UnitAnimator), typeof(SpriteRenderer), typeof(HealthBarController))]
     public class Unit : TargetableBase,IAttacker
     {
@@ -23,7 +23,6 @@ namespace Units
         public UnitTargeting Targeting { get; private set; }
         public UnitStateMachine StateMachine { get; private set; }
         private HealthComponent Health { get; set; }
-        public WeaponComponent Weapon { get; private set; }
         public GridMover Mover { get; private set; }
         public UnitAnimator Animator { get; private set; }
         
@@ -50,7 +49,6 @@ namespace Units
             Targeting = GetComponent<UnitTargeting>();
             StateMachine = GetComponent<UnitStateMachine>();
             Health = GetComponent<HealthComponent>();
-            Weapon = GetComponent<WeaponComponent>();
             Mover = GetComponent<GridMover>();
             Animator = GetComponent<UnitAnimator>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
