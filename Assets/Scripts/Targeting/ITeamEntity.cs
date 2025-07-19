@@ -7,6 +7,6 @@
     public interface ITeamEntity
     {
         // Unique team identifier, e.g. "Team1", "Blue", or a GUID.
-        string TeamId { get; }
+        Team Team { get; }
     }
 }

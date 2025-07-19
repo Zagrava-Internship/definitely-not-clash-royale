@@ -37,12 +37,14 @@ namespace Units
         
         // IAttacker properties
         public int Damage => Stats.Damage;
+        public float AttackRange=> Stats.AttackRange;
+        public float AttackDelay=> Stats.AttackDelay;
 
         private SpriteRenderer _spriteRenderer;
         
-        public void Initialize(UnitConfig unitConfig, string teamId)
+        public void Initialize(UnitConfig unitConfig, Team team)
         {
-            TeamId = teamId;
+            Team = team;
             
             // Get components
             Stats = GetComponent<UnitStats>();
@@ -56,7 +58,7 @@ namespace Units
             
             // Validate components
             Stats.Initialize(unitConfig);
-            Targeting.Initialize(Stats.AggressionRange);
+            Targeting.Initialize(this,Stats.AggressionRange);
             Health.Setup(Stats.MaxHealth);
             healthBarController.Init(Health);
             StateMachine.Initialize(this);
@@ -76,10 +78,15 @@ namespace Units
             if (IsDead) return;
             Health?.TakeDamage(damage);
         }
-        
+
         public void OnTargetAcquired(ITargetable target)
         {
             // This method can be used to handle logic when a target is acquired
+        }
+
+        public void OnTargetLost(ITargetable target)
+        {
+            // This method can be used to handle logic when a target is lost
         }
 
         private void RotateFromDirection(Vector2 direction)

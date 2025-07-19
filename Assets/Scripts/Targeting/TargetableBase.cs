@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Targeting
 {
     public abstract class TargetableBase : MonoBehaviour, ITargetable
     {
+        [FormerlySerializedAs("teamId")]
         [Header("Allegiance")]
         [SerializeField]
-        private string teamId; 
-        public string TeamId
+        private Team team; 
+        public Team Team
         {
-            get => teamId;
-            protected set => teamId = value;
+            get => team;
+            protected set => team = value;
         }
         protected virtual void OnEnable()  => TargetRegistry.AllTargets.Add(this);
         protected virtual void OnDisable() => TargetRegistry.AllTargets.Remove(this);

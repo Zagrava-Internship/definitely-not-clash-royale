@@ -5,6 +5,7 @@ namespace Units
     public class UnitStats:MonoBehaviour
     {
         [SerializeField] private UnitConfig _config;
+        public UnitConfig Config => _config;
         
         public int MaxHealth => _config.health;
         public float Speed => _config.speed;

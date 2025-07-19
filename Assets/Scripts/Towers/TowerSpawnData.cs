@@ -1,4 +1,5 @@
 ﻿using System;
+using Targeting;
 using UnityEngine;
 
 namespace Towers
@@ -8,6 +9,6 @@ namespace Towers
     {
         public Tower towerPrefab; 
         public Transform spawnPoint;   
-        public string teamId = "Team_1"; 
+        public Team teamId = Team.Team1; 
     }
 }
