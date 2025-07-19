@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 10
   <AttackRange>k__BackingField: 5
-  <AttackSpeed>k__BackingField: 0.5
-  <AttackDelay>k__BackingField: 0
+  <AttackSpeed>k__BackingField: 1
+  <AttackDelay>k__BackingField: 0.1
   canTargetFlying: 1
   particlePrefab: {fileID: 3028697784853728800, guid: 571105aaa3d12ee499fee33a02447638, type: 3}
