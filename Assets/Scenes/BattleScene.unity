@@ -4440,10 +4440,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2297942e77ee4683b73a25efa03125d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMana: 10
-  regenRate: 1
+  maxMana: 12
+  regenRate: 1.8
   currentMana: 0
-  initialMana: 5
+  initialMana: 8
 --- !u!4 &1491653526
 Transform:
   m_ObjectHideFlags: 0
@@ -6173,8 +6173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f270649e73324591ae86097c34221043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decisionInterval: 1
-  spawnRadius: 1.5
+  decisionInterval: 1.5
   myTeam: 1
   deckController: {fileID: 2104235723}
   manaProvider: {fileID: 1491653527}
@@ -6431,8 +6430,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5827878daad7a074d994863953845d6f, type: 2}
   - {fileID: 11400000, guid: 5827878daad7a074d994863953845d6f, type: 2}
   - {fileID: 11400000, guid: 8c7fabf940c3eaa48a0aa5b3c170427f, type: 2}
-  - {fileID: 11400000, guid: 8c7fabf940c3eaa48a0aa5b3c170427f, type: 2}
-  - {fileID: 11400000, guid: e0cbf2ae0051d7e43b43ff38883d78d7, type: 2}
+  - {fileID: 11400000, guid: 1932e26f8dde7d94c96aa295aea1fb8b, type: 2}
+  - {fileID: 11400000, guid: 1932e26f8dde7d94c96aa295aea1fb8b, type: 2}
   - {fileID: 11400000, guid: e0cbf2ae0051d7e43b43ff38883d78d7, type: 2}
   handSlots:
   - {fileID: 1950233344}
