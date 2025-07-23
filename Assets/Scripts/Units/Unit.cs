@@ -78,17 +78,7 @@ namespace Units
             if (IsTargetDead) return;
             Health?.TakeDamage(damage);
         }
-
-        public void OnTargetAcquired(ITargetable target)
-        {
-            // This method can be used to handle logic when a target is acquired
-        }
-
-        public void OnTargetLost(ITargetable target)
-        {
-            // This method can be used to handle logic when a target is lost
-        }
-
+        
         private void RotateFromDirection(Vector2 direction)
         {
             _spriteRenderer.flipX = direction.x < 0;
