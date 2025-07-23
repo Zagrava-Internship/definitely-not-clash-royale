@@ -20,7 +20,6 @@ namespace Units.Animation
         public void ResetState()
         {
             _animator.SetBool(UnitAnimationParameters.IsMoving, false);
-            _animator.SetBool(UnitAnimationParameters.IsAttacking, false);
         }
         // PlayMove is used to play the moving animation with the given direction
         public void PlayMove(Vector2 direction)
@@ -38,14 +37,13 @@ namespace Units.Animation
         // PlayAttack is used to play the attacking animation
         public void PlayAttack()
         {
-            _animator.SetBool(UnitAnimationParameters.IsAttacking, true);
+            _animator.SetTrigger(UnitAnimationParameters.IsAttacking);
         }
         // PlayIdle is used to play the idle animation
         public void PlayIdle()
         {
             ResetState();
         }
-        
         // This method is called by the animation event at the end of the attack animation
         public void OnAttackAnimationEndEvent()
         {

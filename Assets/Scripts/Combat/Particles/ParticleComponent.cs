@@ -39,7 +39,7 @@ namespace Combat.Particles
                     // and adjust it to point upwards (0 degrees is right, -90 degrees is up)
                     var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg-90f;
                     var targetRotation = Quaternion.Euler(0f, 0f, angle);
-                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Speed * 5f * Time.deltaTime);
+                    transform.rotation = targetRotation;
                 }
                 
                 if (Vector3.Distance(transform.position, lastKnownPosition) < 0.1f)

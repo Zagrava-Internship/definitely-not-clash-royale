@@ -17,6 +17,6 @@ MonoBehaviour:
   movementType: 2
   attackType: 1
   weaponData: {fileID: 11400000, guid: 185a8a416dd2a484c96d8571455db345, type: 2}
-  health: 250
+  health: 10000
   speed: 0
   aggressionRange: 7

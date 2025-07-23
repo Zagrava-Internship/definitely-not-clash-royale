@@ -2,6 +2,7 @@
 using Combat.Interfaces;
 using Targeting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Units
 {
@@ -9,24 +10,24 @@ namespace Units
     public class UnitTargeting : MonoBehaviour
     {
         private IAttacker _attacker; // The attacker component that will handle target acquisition 
-        private CircleCollider2D _aggroCollider;
+        [FormerlySerializedAs("_aggroCollider")] [SerializeField]
+        public CircleCollider2D aggroCollider;
 
         public ITargetable CurrentTarget { get; private set; }
-        public bool HasTarget => CurrentTarget is { IsDead: false };
+        public bool HasTarget => CurrentTarget is { IsTargetDead: false };
         
         public event Action<ITargetable> OnTargetAcquired;
         public event Action<ITargetable> OnTargetLost;
 
         private void Awake()
         {
-            _aggroCollider = GetComponent<CircleCollider2D>();
-            _aggroCollider.isTrigger = true; // Ensure the collider is a trigger for detecting targets
+            aggroCollider.isTrigger = true; // Ensure the collider is a trigger for detecting targets
         }
 
-        public void Initialize(IAttacker attacker,float aggressionRange)
+        public void InitializeTargeting(IAttacker attacker,float aggressionRange)
         {
             _attacker = attacker;
-            _aggroCollider.radius = aggressionRange;
+            aggroCollider.radius = aggressionRange;
         }
 
         public void SetTarget(ITargetable target)
@@ -40,17 +41,18 @@ namespace Units
 
         private void OnTriggerStay2D(Collider2D other)
         {
-            //Debug.Log("OnTriggerStay2D called with: " + other.name);
+            if(!other.CompareTag("Stress"))
+                return; // Ignore non-stress objects
             var tgt = other.GetComponent<ITargetable>();
-            if (tgt == null || tgt.Team == _attacker.Team || tgt.IsDead) return;
+            if (tgt == null || tgt.Team == _attacker.Team || tgt.IsTargetDead) return;
             
             if (!HasTarget)
             {
                 SetTarget(tgt);
                 return;
             }
-            var newDistSq = (tgt.Transform.position - transform.position).sqrMagnitude;
-            var curDistSq = (CurrentTarget.Transform.position - transform.position).sqrMagnitude;
+            var newDistSq = (tgt.ObjectTransform.position - transform.position).sqrMagnitude;
+            var curDistSq = (CurrentTarget.ObjectTransform.position - transform.position).sqrMagnitude;
 
             if (newDistSq + 0.01f < curDistSq)
                 SetTarget(tgt);
@@ -60,8 +62,10 @@ namespace Units
         private void OnTriggerExit2D(Collider2D other)
         {
             //Debug.Log("OnTriggerExit2D called with: " + other.name);
+            if(!other.CompareTag("Stress"))
+                return; // Ignore non-stress objects
             var tgt = other.GetComponent<ITargetable>();
-            if (tgt == null || tgt.Team == _attacker.Team || tgt.IsDead) return;
+            if (tgt == null || tgt.Team == _attacker.Team || tgt.IsTargetDead) return;
 
             if (CurrentTarget != tgt) return;
             ClearTarget();

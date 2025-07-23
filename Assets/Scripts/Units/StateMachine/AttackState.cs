@@ -1,4 +1,5 @@
-﻿using Targeting;
+﻿using System.Collections;
+using Targeting;
 using UnityEngine;
 
 namespace Units.StateMachine
@@ -6,6 +7,7 @@ namespace Units.StateMachine
     public class AttackState: UnitState
     {
         private readonly ITargetable _target;
+        private Coroutine _attackCoroutine;
         public AttackState(Unit unit, ITargetable target) : base(unit)
         {
             this._target = target;
@@ -14,31 +16,37 @@ namespace Units.StateMachine
         public override void Enter()
         {
             Unit.Animator.PlayAttack();
-            Unit.Animator.OnAttackAnimationEnd+= HandleAttackAnimationEnd;
+            _attackCoroutine = Unit.StartCoroutine(AttackSequence());
         }
-
-        private void HandleAttackAnimationEnd()
+        
+        private IEnumerator AttackSequence() 
         {
-            Unit.Animator.OnAttackAnimationEnd -= HandleAttackAnimationEnd;
-            
-            if (_target == null || _target.IsDead || _target != Unit.CurrentTarget)
+            while (true) 
             {
-                Unit.StateMachine.SetState(new IdleState(Unit));
-                return;
+                if (_target == null || _target.IsTargetDead || _target != Unit.AttackerCurrentTarget)
+                {
+                    Unit.StateMachine.SetState(new IdleState(Unit));
+                    yield break; 
+                }
+                if (Vector3.Distance(Unit.ObjectTransform.position, _target.ObjectTransform.position) > Unit.AttackStrategy.Range)
+                {
+                    Unit.StateMachine.SetState(new MoveState(Unit));
+                    yield break; 
+                }
+                Unit.Animator.PlayAttack();
+                
+                var animationEnded = false;
+                System.Action onAnimEnd = () => animationEnded = true;
+                Unit.Animator.OnAttackAnimationEnd += onAnimEnd;
+                
+                yield return new WaitUntil(() => animationEnded); 
+                Unit.Animator.OnAttackAnimationEnd -= onAnimEnd;
+                
+                Unit.AttackStrategy.Attack(Unit, _target);
+                
+                yield return new WaitForSeconds(Unit.AttackStrategy.AttackDelay);
             }
-            if (Vector3.Distance(Unit.Transform.position,
-                    _target.Transform.position) > Unit.AttackStrategy.Range)
-            {
-                Unit.StateMachine.SetState(new MoveState(Unit));
-                return;
-            }
-            
-            Unit.AttackStrategy.Attack(Unit, _target);
-            
-            //Unit.Animator.PlayAttack();
-            Unit.Animator.OnAttackAnimationEnd += HandleAttackAnimationEnd;
         }
-
         public override void Update()
         {
             if(_target== null || _target.IsTargetDead)
@@ -47,8 +55,12 @@ namespace Units.StateMachine
 
         public override void Exit()
         {
-            Unit.Animator.OnAttackAnimationEnd -= HandleAttackAnimationEnd;
             Unit.Animator.ResetState();
+            if (_attackCoroutine != null)
+            {
+                Unit.StopCoroutine(_attackCoroutine);
+                _attackCoroutine = null;
+            }
         }
         
         public override string DisplayName => "Attack";
