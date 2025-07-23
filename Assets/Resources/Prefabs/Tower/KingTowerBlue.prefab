@@ -314,6 +314,9 @@ GameObject:
   - component: {fileID: 1973792367203116315}
   - component: {fileID: 7751346686952164348}
   - component: {fileID: 9085163610323311374}
+  - component: {fileID: 8948600738721875675}
+  - component: {fileID: 283984438762188763}
+  - component: {fileID: 1177881446313461242}
   m_Layer: 0
   m_Name: KingTowerBlue
   m_TagString: Aggre
@@ -443,7 +446,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 1.39
+  m_Radius: 1.85
 --- !u!50 &-8906848955499428075
 Rigidbody2D:
   serializedVersion: 5
@@ -570,6 +573,42 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8948600738721875675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777712766228976942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a435da4b611c46d19d3d297847b6f146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &283984438762188763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777712766228976942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280c17ed4e484b088b8323567634f572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1177881446313461242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777712766228976942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdf1d0addc8349539054ea4f585a89d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8097027172729503871
 GameObject:
   m_ObjectHideFlags: 0

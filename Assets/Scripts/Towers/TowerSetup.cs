@@ -37,7 +37,7 @@ namespace Towers
             
             var towerConfig = newTowerInstance.GetComponent<UnitStats>().Config;
             
-            newTowerInstance.Initialize(towerConfig, data.teamId);
+            newTowerInstance.InitializeTower(towerConfig, data.teamId);
 
             newTowerInstance.name = $"{data.towerPrefab.name} ({data.teamId})";
         }
