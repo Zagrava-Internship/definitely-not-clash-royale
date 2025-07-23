@@ -18,7 +18,7 @@ namespace Spawners
             AttackFactory.AddAttack(obj, unitConfig.attackType, unitConfig);
             var unit = obj.GetComponent<Unit>();
             
-            unit.Initialize(unitConfig, team);
+            unit.InitializeUnit(unitConfig, team);
         }
 
     }

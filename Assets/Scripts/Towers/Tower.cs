@@ -24,14 +24,14 @@ namespace Towers
         private bool _isAttacking;
 
         // IAttacker properties
-        public int Damage => Stats.Damage;
-        public float AttackRange => Stats.AttackRange;
-        public float AttackDelay => Stats.AttackDelay; // Meant to be used by an external cooldown system.
+        public int AttackerDamage => Stats.Damage;
+        public float AttackerRange => Stats.AttackRange;
+        public float AttackerDelay => Stats.AttackDelay; // Meant to be used by an external cooldown system.
 
         // ITargetable
-        public override Transform Transform => transform;
-        public override bool IsDead => Health == null || Health.Current <= 0;
-        public ITargetable CurrentTarget => Targeting.CurrentTarget;
+        public override Transform ObjectTransform => transform;
+        public override bool IsTargetDead => Health == null || Health.Current <= 0;
+        public ITargetable AttackerCurrentTarget => Targeting.CurrentTarget;
 
         public void Initialize(UnitConfig towerConfig, Team team)
         {
@@ -43,12 +43,12 @@ namespace Towers
             AttackStrategy = GetComponent<IAttackStrategy>();
             _animator = GetComponent<TowerAnimator>();
 
-            Stats.Initialize(towerConfig);
-            Targeting.Initialize(this, Stats.AggressionRange);
+            Stats.InitializeStats(towerConfig);
+            Targeting.InitializeTargeting(this, Stats.AggressionRange);
             Health.Setup(Stats.MaxHealth);
             _animator.Initialize(Stats.AttackDelay);
 
-            GetComponent<HealthBarController>()?.Init(Health);
+            GetComponent<HealthBarController>()?.Init(Health,team);
 
             Health.OnDied += Die;
             _animator.OnAttackAnimationEnd += HandleAttackAnimationEnd;
@@ -66,15 +66,15 @@ namespace Towers
         private void Update()
         {
             // If the target dies mid-attack, reset the attack state.
-            if (_isAttacking && (CurrentTarget == null || CurrentTarget.IsDead))
+            if (_isAttacking && (AttackerCurrentTarget == null || AttackerCurrentTarget.IsTargetDead))
             {
                 ResetAttackState();
             }
         }
 
-        public override void TakeDamage(int damage)
+        public override void ApplyDamage(int damage)
         {
-            if (IsDead) return;
+            if (IsTargetDead) return;
             Health.TakeDamage(damage);
         }
 
@@ -94,9 +94,9 @@ namespace Towers
         /// </summary>
         private void HandleAttackAnimationEnd()
         {
-            if (CurrentTarget != null && !CurrentTarget.IsDead)
+            if (AttackerCurrentTarget is { IsTargetDead: false })
             {
-                AttackStrategy.Attack(this, CurrentTarget);
+                AttackStrategy.Attack(this, AttackerCurrentTarget);
             }
         }
 

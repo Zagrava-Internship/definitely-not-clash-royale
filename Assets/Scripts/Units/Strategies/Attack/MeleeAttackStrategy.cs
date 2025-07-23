@@ -16,10 +16,10 @@ namespace Units.Strategies.Attack
 
         public void Attack(IAttacker attacker,ITargetable target)
         {
-            if (target == null || target.IsDead) return;
-            if (Vector3.Distance(attacker.Transform.position, target.Transform.position) > Range) return;
+            if (target == null || target.IsTargetDead) return;
+            if (Vector3.Distance(attacker.ObjectTransform.position, target.ObjectTransform.position) > Range) return;
 
-            target.TakeDamage(attacker.Damage);
+            target.ApplyDamage(attacker.AttackerDamage);
         }
     }
 }

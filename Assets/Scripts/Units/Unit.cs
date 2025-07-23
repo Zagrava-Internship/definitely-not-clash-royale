@@ -31,18 +31,18 @@ namespace Units
         public IAttackStrategy AttackStrategy { get; private set; }
         
         // ITargetable 
-        public override Transform Transform => transform;
-        public override bool IsDead => Health == null || Health.Current <= 0;
-        public ITargetable CurrentTarget => Targeting.CurrentTarget;
+        public override Transform ObjectTransform => transform;
+        public override bool IsTargetDead => Health == null || Health.Current <= 0;
+        public ITargetable AttackerCurrentTarget => Targeting.CurrentTarget;
         
         // IAttacker properties
-        public int Damage => Stats.Damage;
-        public float AttackRange=> Stats.AttackRange;
-        public float AttackDelay=> Stats.AttackDelay;
+        public int AttackerDamage => Stats.Damage;
+        public float AttackerRange=> Stats.AttackRange;
+        public float AttackerDelay=> Stats.AttackDelay;
 
         private SpriteRenderer _spriteRenderer;
         
-        public void Initialize(UnitConfig unitConfig, Team team)
+        public void InitializeUnit(UnitConfig unitConfig, Team team)
         {
             Team = team;
             
@@ -57,11 +57,11 @@ namespace Units
             var healthBarController = GetComponent<HealthBarController>();
             
             // Validate components
-            Stats.Initialize(unitConfig);
-            Targeting.Initialize(this,Stats.AggressionRange);
+            Stats.InitializeStats(unitConfig);
+            Targeting.InitializeTargeting(this,Stats.AggressionRange);
             Health.Setup(Stats.MaxHealth);
-            healthBarController.Init(Health);
-            StateMachine.Initialize(this);
+            healthBarController.Init(Health,team);
+            StateMachine.InitializeStateMachine(this);
             Animator.Initialize(unitConfig.weaponData.AttackSpeed);
             
             MovementStrategy = GetComponent<IMovementStrategy>();
@@ -73,9 +73,9 @@ namespace Units
             Mover.OnDirectionChanged += RotateFromDirection;
         }
         
-        public override void TakeDamage(int damage)
+        public override void ApplyDamage(int damage)
         {
-            if (IsDead) return;
+            if (IsTargetDead) return;
             Health?.TakeDamage(damage);
         }
 

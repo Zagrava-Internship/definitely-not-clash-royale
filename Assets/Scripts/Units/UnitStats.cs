@@ -15,11 +15,11 @@ namespace Units
         public float AttackDelay => _config.weaponData.AttackDelay;
         public float AggressionRange => _config.aggressionRange;
 
-        public void Initialize(UnitConfig unitConfig)
+        public void InitializeStats(UnitConfig unitConfig)
         {
             if (!unitConfig)
             {
-                throw new System.ArgumentNullException(nameof(unitConfig), "UnitStats.Initialize: UnitConfig is null");
+                throw new System.ArgumentNullException(nameof(unitConfig), "UnitStats.InitializeStats: UnitConfig is null");
             }
             _config = unitConfig;
         }

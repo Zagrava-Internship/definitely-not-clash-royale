@@ -4,9 +4,10 @@ namespace Combat.Interfaces
 {
     public interface IAttacker:ITargetable
     {
-        int Damage { get; }
-        float AttackRange { get; }
-        float AttackDelay { get; }
+        int AttackerDamage { get; }
+        float AttackerRange { get; }
+        float AttackerDelay { get; }
+        ITargetable AttackerCurrentTarget { get; }
         void OnTargetAcquired(ITargetable target);
         void OnTargetLost(ITargetable target);
     }

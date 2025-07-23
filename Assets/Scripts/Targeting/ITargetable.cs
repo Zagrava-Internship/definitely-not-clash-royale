@@ -7,13 +7,12 @@ namespace Targeting
     /// </summary>
     public interface ITargetable: ITeamEntity
     {
-        // Transform of the target
-        Transform Transform { get; }
+        // ObjectTransform of the target
+        Transform ObjectTransform { get; }
         
-        // Is the target dead?
-        bool IsDead { get; }
+        bool IsTargetDead { get; }
         
         // Method to apply damage to the target
-        void TakeDamage(int damage);
+        void ApplyDamage(int damage);
     }
 }

@@ -41,7 +41,7 @@ namespace Units.StateMachine
 
         public override void Update()
         {
-            if(_target== null || _target.IsDead)
+            if(_target== null || _target.IsTargetDead)
                 Unit.StateMachine.SetState(new IdleState(Unit));
         }
 

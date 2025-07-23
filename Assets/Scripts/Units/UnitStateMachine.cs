@@ -7,7 +7,7 @@ namespace Units
     {
         private UnitState _currentState;
 
-        public void Initialize(Unit unit)
+        public void InitializeStateMachine(Unit unit)
         {
             SetState(new IdleState(unit));
         }

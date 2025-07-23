@@ -13,28 +13,28 @@ namespace Units.StateMachine
 
         public override void Enter()
         {
-            _lastTargetPos = Unit.CurrentTarget.Transform.position;
+            _lastTargetPos = Unit.AttackerCurrentTarget.ObjectTransform.position;
             Repath();
             Unit.Animator.PlayMove(Vector2.zero);
         }
 
         public override void Update()
         {
-            if (Unit.CurrentTarget == null || Unit.CurrentTarget.IsDead)
+            if (Unit.AttackerCurrentTarget == null || Unit.AttackerCurrentTarget.IsTargetDead)
             {
                 Unit.StateMachine.SetState(new IdleState(Unit));
                 return;
             }
 
-            var delta = Unit.CurrentTarget.Transform.position - _lastTargetPos;
+            var delta = Unit.AttackerCurrentTarget.ObjectTransform.position - _lastTargetPos;
             if (delta.sqrMagnitude >= RepathDistanceSq)
             {
-                _lastTargetPos = Unit.CurrentTarget.Transform.position;
+                _lastTargetPos = Unit.AttackerCurrentTarget.ObjectTransform.position;
                 Repath();
             }
 
             if (Vector3.Distance(Unit.transform.position, _lastTargetPos) <= Unit.AttackStrategy.Range)
-                Unit.StateMachine.SetState(new AttackState(Unit, Unit.CurrentTarget));
+                Unit.StateMachine.SetState(new AttackState(Unit, Unit.AttackerCurrentTarget));
         }
 
         public override void Exit()

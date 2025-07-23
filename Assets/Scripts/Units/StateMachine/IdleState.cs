@@ -14,7 +14,7 @@ namespace Units.StateMachine
 
         public override void Update()
         {
-            if (Unit.CurrentTarget == null || Unit.CurrentTarget.IsDead)
+            if (Unit.AttackerCurrentTarget == null || Unit.AttackerCurrentTarget.IsTargetDead)
             {
                 var enemy = TargetFinder.FindClosestEnemy(
                     Unit.transform.position,
@@ -25,20 +25,20 @@ namespace Units.StateMachine
                 else return;
             }
             
-            if (Unit.CurrentTarget == null)
+            if (Unit.AttackerCurrentTarget == null)
             {
-                Debug.Log("CurrentTarget is null in IdleState but should not be.");
+                Debug.Log("AttackerCurrentTarget is null in IdleState but should not be.");
                 return;
             }
             
             var dist = Vector3.Distance(
                 Unit.transform.position,
-                Unit.CurrentTarget.Transform.position
+                Unit.AttackerCurrentTarget.ObjectTransform.position
             );
 
             if (dist <= Unit.AttackStrategy.Range)
             {
-                Unit.StateMachine.SetState(new AttackState(Unit, Unit.CurrentTarget));
+                Unit.StateMachine.SetState(new AttackState(Unit, Unit.AttackerCurrentTarget));
             } else {
                 Unit.StateMachine.SetState(new MoveState(Unit));
             }

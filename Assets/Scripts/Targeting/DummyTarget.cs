@@ -8,8 +8,8 @@ namespace Targeting
         [SerializeField] private int hp = 100;
         private HealthComponent Health { get; set; }
         private HealthBarController HealthBarController { get; set; }
-        public override Transform Transform => transform;
-        public override bool IsDead => Health.Current<=0;
+        public override Transform ObjectTransform => transform;
+        public override bool IsTargetDead => Health.Current<=0;
 
         protected override void OnEnable()
         {
@@ -20,12 +20,13 @@ namespace Targeting
             Health.OnDied+= Die;
             Health.Setup(hp);
             
-            HealthBarController.Init(Health);
+            // Since this is a dummy target, we can set the team directly
+            HealthBarController.Init(Health,Team);
         }
 
-        public override void TakeDamage(int damage)
+        public override void ApplyDamage(int damage)
         {
-            if (IsDead) return;
+            if (IsTargetDead) return;
             Health.TakeDamage(damage);
         }
         private void Die()

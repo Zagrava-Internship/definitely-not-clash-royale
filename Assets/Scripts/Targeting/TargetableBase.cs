@@ -17,9 +17,9 @@ namespace Targeting
         protected virtual void OnEnable()  => TargetRegistry.AllTargets.Add(this);
         protected virtual void OnDisable() => TargetRegistry.AllTargets.Remove(this);
         
-        public abstract Transform Transform { get; }
-        public abstract bool IsDead { get; }
-        public abstract void TakeDamage(int damage);
+        public abstract Transform ObjectTransform { get; }
+        public abstract bool IsTargetDead { get; }
+        public abstract void ApplyDamage(int damage);
     }
 
 }

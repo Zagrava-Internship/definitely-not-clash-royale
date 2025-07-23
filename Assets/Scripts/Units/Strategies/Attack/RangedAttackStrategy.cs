@@ -16,15 +16,15 @@ namespace Units.Strategies.Attack
 
         private void Awake() => _attacker = GetComponent<IAttacker>();
 
-        public float Range => _attacker.AttackRange;
-        public float AttackDelay => _attacker.AttackDelay;
+        public float Range => _attacker.AttackerRange;
+        public float AttackDelay => _attacker.AttackerDelay;
 
         public void Attack(IAttacker attacker,ITargetable target)
         {
-            if (target == null || target.IsDead) return;
-            ParticleManager.SpawnParticle(projectilePrefab, target.Transform,
-                _attacker.Transform,
-                () => target.TakeDamage(attacker.Damage));
+            if (target == null || target.IsTargetDead) return;
+            ParticleManager.SpawnParticle(projectilePrefab, target.ObjectTransform,
+                _attacker.ObjectTransform,
+                () => target.ApplyDamage(attacker.AttackerDamage));
         }
         
     }

@@ -14,10 +14,10 @@ namespace Targeting
             var minDistSq = float.MaxValue;
             foreach (var target in TargetRegistry.AllTargets)
             {
-                if (target.IsDead) continue;
+                if (target.IsTargetDead) continue;
                 if (target.Team == myTeam) continue;
                 
-                var distSq = (target.Transform.position - position).sqrMagnitude;
+                var distSq = (target.ObjectTransform.position - position).sqrMagnitude;
                 if (!(distSq < minDistSq)) continue;
                 
                 minDistSq = distSq;

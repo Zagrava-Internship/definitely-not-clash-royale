@@ -20,9 +20,9 @@ namespace Editor
             }
             else
             {
-                if (GUILayout.Button("Initialize State Machine"))
+                if (GUILayout.Button("InitializeStats State Machine"))
                 {
-                    unit.StateMachine.Initialize(unit);
+                    unit.StateMachine.InitializeStateMachine(unit);
                 }
             }
             var currentState = unit.StateMachine.GetState();
