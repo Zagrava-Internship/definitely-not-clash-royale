@@ -312,11 +312,11 @@ GameObject:
   - component: {fileID: 3132794377521264902}
   - component: {fileID: 5704111268031238928}
   - component: {fileID: 1973792367203116315}
-  - component: {fileID: 7751346686952164348}
   - component: {fileID: 9085163610323311374}
   - component: {fileID: 8948600738721875675}
   - component: {fileID: 283984438762188763}
   - component: {fileID: 1177881446313461242}
+  - component: {fileID: 6861841494445141075}
   m_Layer: 0
   m_Name: KingTowerRed
   m_TagString: Aggre
@@ -539,18 +539,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fillRenderer: {fileID: 263282219282677957}
   backgroundRenderer: {fileID: 8027887140967909867}
---- !u!114 &7751346686952164348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5777712766228976942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d80770086c4fa48faf938bf8a95bfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &9085163610323311374
 Animator:
   serializedVersion: 7
@@ -607,6 +595,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdf1d0addc8349539054ea4f585a89d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6861841494445141075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777712766228976942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 956804050d5d43339541ab66655a630d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8097027172729503871

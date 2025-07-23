@@ -1557,10 +1557,10 @@ MonoBehaviour:
   - towerPrefab: {fileID: 3132794377521264902, guid: a16b7234554c11a4bae57e333a5f3507, type: 3}
     spawnPoint: {fileID: 235708659}
     teamId: 0
-  - towerPrefab: {fileID: 3132794377521264902, guid: fc4274ab8d7efde40a99df608a774cad, type: 3}
+  - towerPrefab: {fileID: 2713750559797499560, guid: fc4274ab8d7efde40a99df608a774cad, type: 3}
     spawnPoint: {fileID: 1150476345}
     teamId: 1
-  - towerPrefab: {fileID: 3132794377521264902, guid: fc4274ab8d7efde40a99df608a774cad, type: 3}
+  - towerPrefab: {fileID: 2713750559797499560, guid: fc4274ab8d7efde40a99df608a774cad, type: 3}
     spawnPoint: {fileID: 1721600230}
     teamId: 1
   - towerPrefab: {fileID: 3132794377521264902, guid: f488c258265549f4e9ddfc322ca80144, type: 3}
