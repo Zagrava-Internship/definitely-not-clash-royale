@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83359a7423e8400398e00326614a6f61, type: 3}
+  m_Name: DragonWeaponData
+  m_EditorClassIdentifier: 
+  <Damage>k__BackingField: 50
+  <AttackRange>k__BackingField: 4
+  <AttackSpeed>k__BackingField: 0.3
+  <AttackDelay>k__BackingField: 0.7
+  canTargetFlying: 1
+  particlePrefab: {fileID: 3028697784853728800, guid: 1b6ef0e294916534bb37ba35c88a0791, type: 3}

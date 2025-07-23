@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20e539e56bd94d428f7bf1cb8bdb8b0, type: 3}
+  m_Name: DragonData
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7706684635721876194, guid: 1d0808845f137be44819b8bf93ee3968, type: 3}
+  ghostPrefab: {fileID: 7706684635721876194, guid: 11b703e81d37ee74b8e6fc880e413e80, type: 3}
+  movementType: 1
+  attackType: 1
+  weaponData: {fileID: 11400000, guid: 0d17c18ec8660e9469f85cc7c0b225f0, type: 2}
+  health: 200
+  speed: 1
+  aggressionRange: 2.5
