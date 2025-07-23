@@ -28,7 +28,7 @@ namespace Towers
                 return;
             }
 
-            var newTowerInstance = Instantiate(
+            var newTowerInstance = Instantiate (
                 data.towerPrefab,
                 data.spawnPoint.position,
                 data.spawnPoint.rotation,
