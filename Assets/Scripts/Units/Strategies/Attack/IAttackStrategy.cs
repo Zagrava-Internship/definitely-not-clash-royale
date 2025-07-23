@@ -7,6 +7,6 @@ namespace Units.Strategies.Attack
     {
         float Range { get; }
         float AttackDelay { get; }
-        void Attack(IAttacker attacker,ITargetable target);
+        void Attack(IAttacker attacker, ITargetable target);
     }
 }

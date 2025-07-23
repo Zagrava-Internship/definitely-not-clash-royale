@@ -2,7 +2,7 @@
 
 namespace Combat.Interfaces
 {
-    public interface IAttacker:ITargetable
+    public interface IAttacker: ITargetable
     {
         int AttackerDamage { get; }
         float AttackerRange { get; }

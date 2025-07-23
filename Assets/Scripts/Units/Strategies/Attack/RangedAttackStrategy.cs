@@ -16,7 +16,7 @@ namespace Units.Strategies.Attack
 
         private void Awake() => _attacker = GetComponent<IAttacker>();
 
-        public float Range => _attacker.AttackerRange;
+        public float Range => _attacker.AttackerRange*0.428571f; // NOT A MAGIC NUMBER
         public float AttackDelay => _attacker.AttackerDelay;
 
         public void Attack(IAttacker attacker,ITargetable target)
