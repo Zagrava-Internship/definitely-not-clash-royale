@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20e539e56bd94d428f7bf1cb8bdb8b0, type: 3}
+  m_Name: RedPrincessTowerData 1
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5777712766228976942, guid: fc4274ab8d7efde40a99df608a774cad, type: 3}
+  ghostPrefab: {fileID: 5777712766228976942, guid: fc4274ab8d7efde40a99df608a774cad, type: 3}
+  movementType: 2
+  attackType: 1
+  weaponData: {fileID: 11400000, guid: 185a8a416dd2a484c96d8571455db345, type: 2}
+  health: 250
+  speed: 0
+  aggressionRange: 7
