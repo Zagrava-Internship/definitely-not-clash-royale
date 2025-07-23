@@ -1,4 +1,6 @@
-﻿using Cards;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Cards;
 using UnityEngine;
 
 namespace Deck
@@ -11,6 +13,10 @@ namespace Deck
         
         private Deck _deck;
         
+        public IList<CardData> CurrentHand 
+            => handSlots.Select(slot => slot.CardData)
+                .Where(cd => cd != null)
+                .ToList();
         private void Awake()
         {
             _deck = new Deck(playerDeck, handSlots.Length, new System.Random());
