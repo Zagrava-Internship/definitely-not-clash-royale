@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a1501f7394f80428540a927157bc3d, type: 3}
+  m_Name: DragonCardData
+  m_EditorClassIdentifier: 
+  cardName: Dragon
+  background: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 2798428174210070986, guid: 001a76be8df3e6b418527360343f12de, type: 3}
+  unitToSpawn: {fileID: 11400000, guid: 597de17c08824434cbdb16607f41e521, type: 2}
+  cost: 6
