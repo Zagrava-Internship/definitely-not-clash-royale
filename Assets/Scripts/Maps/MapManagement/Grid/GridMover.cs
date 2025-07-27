@@ -8,6 +8,8 @@ namespace Maps.MapManagement.Grid
 {
     public class GridMover:MonoBehaviour
     {
+        private const float Threshold = 0.1f; // Threshold to avoid jittering when determining a direction
+        
         private float _moveSpeed;
         private List<GridNode> _path;
         private int _targetIndex;
@@ -16,6 +18,7 @@ namespace Maps.MapManagement.Grid
         private Vector2 _lastDirection;
         
         public event Action<Vector2> OnDirectionChanged;
+        public event Action OnMovementUpdate; // Optional event to notify when movement updates occur
         
         public void MoveTo(GridNode targetNode,float speed)
         {
@@ -28,12 +31,18 @@ namespace Maps.MapManagement.Grid
             }
             var startGridPos = new Vector2Int(startGridNode.X, startGridNode.Y);
             _path = GridManager.Instance.FindPath(startGridPos, new Vector2Int(targetNode.X, targetNode.Y));
-            if (_path is not { Count: > 0 }) return;
+
+
             StopAllCoroutines();
             StartCoroutine(FollowPath());
         }
         private IEnumerator FollowPath()
         {
+            if (_path == null || _path.Count == 0)
+            {
+                yield break;
+            }
+
             _targetIndex = 0;
             
             var currentWaypoint = _path[_targetIndex].WorldPosition; 
@@ -43,7 +52,7 @@ namespace Maps.MapManagement.Grid
             {
                 var targetPos = new Vector3(currentWaypoint.x, currentWaypoint.y, transform.position.z);
 
-                if (Vector3.Distance(transform.position, targetPos) < 0.05f)
+                if (Vector3.Distance(transform.position, targetPos) < Threshold)
                 {
                     _targetIndex++;
                     if (_targetIndex >= _path.Count)
@@ -51,33 +60,26 @@ namespace Maps.MapManagement.Grid
                         yield break; 
                     }
                     currentWaypoint = _path[_targetIndex].WorldPosition;
-                    UpdateDirection(currentWaypoint);
-                    targetPos = new Vector3(currentWaypoint.x, currentWaypoint.y, transform.position.z);
+                    var movementVector = (Vector2)currentWaypoint - (Vector2)transform.position;
+                    UpdateDirection(movementVector);
+                    targetPos = new Vector3(currentWaypoint.x, currentWaypoint.y, targetPos.y * -0.01f);// Ensure z position is consistent
                 }
 
                 transform.position = Vector3.MoveTowards(transform.position, 
                     targetPos, _moveSpeed * Time.deltaTime);
+                OnMovementUpdate?.Invoke(); // Notify that movement has been updated
             
                 yield return null;
             }
         }
-        private void UpdateDirection(Vector2 targetPosition)
+        private void UpdateDirection(Vector2 movementVector)
         {
-            // Calculate the current position in 2D space
-            var currentPosition = new Vector2(transform.position.x, transform.position.y);
-            // Calculate the displacement vector from the current position to the target position
-            var displacement = targetPosition - currentPosition;
-            
-            const float threshold = 0.05f; // This is used to determine if the displacement is negligible.
-            // The bigger the threshold, the more "quantized" the direction will be.
-            
-            // Quantize the direction based on the displacement vector.
-            var x = Mathf.Abs(displacement.x) < threshold ? 0 : Mathf.Sign(displacement.x);
-            var y = Mathf.Abs(displacement.y) < threshold ? 0 : Mathf.Sign(displacement.y);
+            var x = Mathf.Abs(movementVector.x) < Threshold ? 0 : Mathf.Sign(movementVector.x);
+            var y = Mathf.Abs(movementVector.y) < Threshold ? 0 : Mathf.Sign(movementVector.y);
 
             var quantizedDirection = new Vector2(x, y);
 
-            if (quantizedDirection == _lastDirection) return;
+            if (quantizedDirection == Vector2.zero || quantizedDirection == _lastDirection) return;
 
             _lastDirection = quantizedDirection;
             OnDirectionChanged?.Invoke(_lastDirection);
