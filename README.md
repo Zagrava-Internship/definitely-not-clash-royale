@@ -12,25 +12,27 @@ A feature-rich, single-player mini-clone of Clash Royale, developed in Unity. Th
 
 * [🎮 Core Gameplay Features](#-core-gameplay-features)
 * [🏗️ Architectural Deep Dive & Design Patterns](#️-architectural-deep-dive--design-patterns)
-* [📦 Building the Project](#-getting-started)
-* [👨‍💻 About the Authors](#-about-the-author)
+* [📦 Building the Project](#-building-the-project)
+* [👨‍💻 About the Authors](#-about-the-authors)
 * [📄 License](#-license)
 
 ---
+
 
 ## 🎮 Core Gameplay Features
 
 * 💧 **Mana Management:** A dynamic mana regeneration system that dictates the pace of gameplay.
 * 🃏 **Card and Deck System:** Draw, play, and recycle cards from a deck to summon units onto the battlefield.
 * ⚔️ **Unit Spawning & AI:** Place units that automatically navigate towards the nearest enemy or tower. The game features a simple but effective AI opponent that strategically plays its own cards.
-* 🌐 **Grid-Based Battlefield:** All interactions, from unit placement to pathfinding, are managed on a robust grid system.
+* 🌐 **Grid-Based Battlefield & Pathfinding:** All interactions, from unit placement to their intelligent movement across the map, are managed on a robust grid system utilizing efficient **algorithms** for pathfinding.
 * 🤖 **Diverse Unit Types:** The architecture supports a wide variety of units with unique stats and behaviors (e.g., melee, ranged, ground, flying, static structures).
+* ✨ **Dynamic Animations:** Units come to life with animations that respond to their movement direction, attacks, and idle states.
 
 ---
 
 ## 🏗️ Architectural Deep Dive & Design Patterns
 
-This project was built with a strong emphasis on clean, modular, and extensible code. Here are the key architectural patterns and decisions that power the game.
+This project was built with a strong emphasis on clean, modular, and extensible code, heavily leveraging **Unity's component-based architecture** and **Scriptable Objects** for data management. Here are the key architectural patterns and decisions that power the game.
 
 ### 🤖 State Machine Pattern
 Manages the lifecycle and behavior of all units in a clean, organized way, making it easy to add or modify behaviors.
@@ -38,7 +40,7 @@ Manages the lifecycle and behavior of all units in a clean, organized way, makin
 * **States:** `IdleState`, `MoveState`, `AttackState`
 
 ### 🏭 Factory Pattern
-Dynamically attaches behaviors (like movement and attack types) to units at runtime. This promotes loose coupling and allows for creating new unit variations without touching the core `Unit` class.
+Dynamically attaches behaviors (like movement and attack types) to units at runtime. This promotes **loose coupling** and allows for creating new unit variations without touching the core `Unit` class.
 * **Factories:** `MovementFactory`, `AttackFactory`
 * **Products:**
     * `IMovementStrategy`: `GroundMovement`, `FlyingMovement`, `StaticMovement`
@@ -47,32 +49,43 @@ Dynamically attaches behaviors (like movement and attack types) to units at runt
 ### 🎯 Strategy Pattern
 Defines a family of interchangeable algorithms and encapsulates each one. This is used extensively to handle variations in core mechanics.
 * **Movement Strategies (`IMovementStrategy`):** Governs how different units navigate the world.
-    * `GroundMovement`: Uses A* pathfinding on the grid.
-    * `FlyingMovement`: Uses direct linear interpolation.
-    * `StaticMovement`: Does not move.
+    * `GroundMovement`: Critically, this strategy leverages the **A\* pathfinding algorithm** within the `Pathfinder` to intelligently navigate the grid, avoiding obstacles and finding optimal routes to targets.
+    * `FlyingMovement`: Uses direct linear interpolation, unconstrained by the ground grid.
+    * `StaticMovement`: Does not move, used for structures like towers.
 * **Attack Strategies (`IAttackStrategy`):** Abstracts the method of dealing damage.
     * `MeleeAttackStrategy`
     * `RangedAttackStrategy`
-* **Grid Region Strategies (`RegionStrategy`):** Defines shapes for placement validation and area-of-effect calculations.
-    * `CircleStrategy`, `RectangleStrategy`, `HorizontalLineStrategy`, `VerticalLineStrategy`, `PointStrategy`
+* **Grid Region Strategies (`RegionStrategy`):** These **Scriptable Object** assets define various shapes (e.g., `CircleStrategy`, `RectangleStrategy`) used for placement validation and other area-of-effect calculations on the grid.
 
-###  фасада Pattern for Mana System
+### 🏛️ Facade Pattern for Mana System
 Provides simplified, purpose-driven interfaces to a more complex subsystem. This makes the `ManaManager` easier and safer to use from different parts of the codebase.
 * **Facades:** `ManaReadOnlyFacade` (`IManaReadOnly`), `ManaSpenderFacade` (`IManaSpender`)
 * **Complex Subsystem:** `ManaManager`
 
 ### ⚡ Event-Driven & Service-Oriented Design
-To promote decoupling and maintainability, the systems communicate primarily through events and centralized services. Components subscribe to events they care about instead of holding direct, rigid references to each other.
+To promote decoupling and maintainability, the systems communicate primarily through **C# events** and centralized services. Components subscribe to events they care about instead of holding direct, rigid references to each other.
 * **Centralized Services:**
     * `CardPlayabilityService`: Manages card usability based on mana, notifying UI via events.
     * `TargetRegistry`: A static registry of all targetable entities (`ITargetable`) for efficient target acquisition.
-    * `ParticleManager`: A pool-based manager for spawning and recycling visual effects.
-    * `GridManager` & `Pathfinder`: Central hub for all grid queries and A* pathfinding.
+    * `ParticleManager`: Handles spawning and recycling of visual effects.
+    * `GridManager` & `Pathfinder`: The central hub for all grid queries and efficient **pathfinding algorithms**, providing optimal paths for ground units.
 * **Key Events:** `OnCardDropped`, `OnManaChanged`, `OnHealthChanged`, `OnDied`, `OnDirectionChanged`, and many more.
+
+### 🎨 Animation System
+The project uses Unity's **Animator component** and **Animation events** to create responsive and dynamic character movements.
+* `UnitAnimator`: A dedicated component that controls unit animations based on their state (moving, attacking, idle) and direction.
+* `WaitBeforeLoopBehaviour`: A custom StateMachineBehaviour used in animations to introduce delays before looping, often tied to attack speed.
+
+### 📂 Data Management with Scriptable Objects
+Crucial game data is managed through **Scriptable Objects**, allowing for easy iteration and configuration without modifying code.
+* `CardData`: Defines properties for each playable card.
+* `UnitConfig`: Configures all stats, prefabs, and strategy types for each unit.
+* `WeaponBase` (and its derivations `MeleeWeaponData`, `RangedWeaponData`): Defines weapon characteristics.
+* `GridSettingsData`, `ObstacleData`, `PlacementData`: Configures the battlefield grid, obstacles, and valid placement zones.
 
 ---
 
-### 📦 Building the Project
+## 📦 Building the Project
 
 If you want to create a standalone executable version of the game, follow these steps:
 
