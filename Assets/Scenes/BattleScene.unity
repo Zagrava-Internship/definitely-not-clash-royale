@@ -179,7 +179,7 @@ Transform:
   m_GameObject: {fileID: 51059132}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2435,7 +2435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 317180836}
-  spawnZ: -1
+  spawnZ: -2
   deckController: {fileID: 1844047082}
   manaSpenderProvider: {fileID: 1748467182}
 --- !u!4 &737997886
@@ -2856,7 +2856,7 @@ Transform:
   m_GameObject: {fileID: 982422728}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6175,6 +6175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decisionInterval: 1.5
   myTeam: 1
+  spawnZ: 0
   deckController: {fileID: 2104235723}
   manaProvider: {fileID: 1491653527}
   manaSpenderProvider: {fileID: 1491653524}
