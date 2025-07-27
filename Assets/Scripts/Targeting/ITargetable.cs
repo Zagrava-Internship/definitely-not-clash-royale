@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Units.Enums;
+using UnityEngine;
 
 namespace Targeting
 {
@@ -9,10 +10,12 @@ namespace Targeting
     {
         // ObjectTransform of the target
         Transform ObjectTransform { get; }
+        MovementType MovementType { get; }
         
         bool IsTargetDead { get; }
         
         // Method to apply damage to the target
         void ApplyDamage(int damage);
+        bool CanBeTargeted(Team otherTeam, MovementType otherMovementType);
     }
 }

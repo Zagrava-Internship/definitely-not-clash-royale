@@ -1,4 +1,5 @@
 ﻿using Units;
+using Units.Enums;
 using UnityEngine;
 
 namespace Targeting
@@ -8,7 +9,7 @@ namespace Targeting
         /// <summary>
         /// Finds the closest valid enemy target for the unit (by Team).
         /// </summary>
-        public static ITargetable FindClosestEnemy(Vector3 position, Team myTeam)
+        public static ITargetable FindClosestEnemy(Vector3 position, Team myTeam,MovementType myMovementType)
         {
             ITargetable closest = null;
             var minDistSq = float.MaxValue;
@@ -16,6 +17,7 @@ namespace Targeting
             {
                 if (target.IsTargetDead) continue;
                 if (target.Team == myTeam) continue;
+                if (!target.CanBeTargeted(myTeam,myMovementType)) continue;
                 
                 var distSq = (target.ObjectTransform.position - position).sqrMagnitude;
                 if (!(distSq < minDistSq)) continue;

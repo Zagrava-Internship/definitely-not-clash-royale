@@ -18,7 +18,8 @@ namespace Units.StateMachine
             {
                 var enemy = TargetFinder.FindClosestEnemy(
                     Unit.transform.position,
-                    Unit.Team
+                    Unit.Team,
+                    Unit.MovementType
                 );
 
                 if (enemy != null) Unit.Targeting.SetTarget(enemy);

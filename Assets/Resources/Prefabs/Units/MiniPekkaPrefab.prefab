@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1634337176436265709}
   - component: {fileID: 1784283752253900080}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5829895574934435257}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1670660672853765706}
   - component: {fileID: 71515258489906672}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AggreCollider
   m_TagString: Aggre
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7360458047433594592}
   - component: {fileID: 5982891185135936843}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 7551004280779982399}
   - component: {fileID: -84456539534517020}
   - component: {fileID: -2875596379866090558}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MiniPekkaPrefab
   m_TagString: Stress
   m_Icon: {fileID: 0}
@@ -388,6 +388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 0
+  sortingGroup: {fileID: 0}
 --- !u!114 &7181394458553254338
 MonoBehaviour:
   m_ObjectHideFlags: 0
