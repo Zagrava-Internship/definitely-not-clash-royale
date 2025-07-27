@@ -5,6 +5,9 @@
 
 A feature-rich, single-player mini-clone of Clash Royale, developed in Unity. This project serves as a comprehensive case study in robust game architecture, clean code principles, and the practical application of design patterns. It was developed during a one-month internship at **Zagrava Games**.
 
+<div align="center">
+<img width="170" height="auto" alt="image" src="https://github.com/user-attachments/assets/50abafe2-19ce-4d50-a484-b261da01abaa" />
+</div>
 
 ---
 
