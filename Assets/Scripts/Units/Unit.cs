@@ -4,10 +4,12 @@ using Health;
 using Maps.MapManagement.Grid;
 using Targeting;
 using Units.Animation;
+using Units.Enums;
 using Units.StateMachine;
 using Units.Strategies.Attack;
 using Units.Strategies.Movement;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.Serialization;
 
 
@@ -45,6 +47,7 @@ namespace Units
         public void InitializeUnit(UnitConfig unitConfig, Team team)
         {
             Team = team;
+            MovementType = unitConfig.movementType ;
             
             // Get components
             Stats = GetComponent<UnitStats>();
@@ -79,7 +82,7 @@ namespace Units
             Health?.TakeDamage(damage);
         }
         
-        private void RotateFromDirection(Vector2 direction)
+        public void RotateFromDirection(Vector2 direction)
         {
             _spriteRenderer.flipX = direction.x < 0;
         }

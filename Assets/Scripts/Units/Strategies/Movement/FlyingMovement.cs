@@ -28,7 +28,11 @@ namespace Units.Strategies.Movement
             while (Vector3.Distance(unit.transform.position, destination) > ArriveEpsilon)
             {
                 var dir = (destination - unit.transform.position).normalized;
+                // Ensure Z position is constant for flying units
+                dir.z = 0; // Keep the Z component zero for horizontal movement
                 unit.transform.position += dir * speed * Time.deltaTime;
+                unit.RotateFromDirection(dir);
+                // 
 
                 unit.Animator.ChangeMovingDirection(new Vector2(dir.x, dir.y));
 
