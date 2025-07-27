@@ -1,12 +1,14 @@
 ﻿using System;
 using Combat.Interfaces;
 using Targeting;
+using Units.Animation;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 namespace Units
 {
     [RequireComponent(typeof(CircleCollider2D))]
+    [RequireComponent(typeof(UnitAnimator))]
     public class UnitTargeting : MonoBehaviour
     {
         private IAttacker _attacker; // The attacker component that will handle target acquisition 
@@ -18,10 +20,13 @@ namespace Units
         
         public event Action<ITargetable> OnTargetAcquired;
         public event Action<ITargetable> OnTargetLost;
+        
+        private UnitAnimator _animator;
 
         private void Awake()
         {
             aggroCollider.isTrigger = true; // Ensure the collider is a trigger for detecting targets
+            _animator = GetComponent<UnitAnimator>();
         }
 
         public void InitializeTargeting(IAttacker attacker,float aggressionRange)
@@ -33,6 +38,15 @@ namespace Units
         public void SetTarget(ITargetable target)
         {
             CurrentTarget = target;
+            // Calculate the direction to the target
+            var direction = (target.ObjectTransform.position - transform.position).normalized;
+            var x = Mathf.Abs(direction.x) < 0.05f ? 0 : Mathf.Sign(direction.x);
+            var y = Mathf.Abs(direction.y) < 0.05f ? 0 : Mathf.Sign(direction.y);
+
+            var quantizedDirection = new Vector2(x, y);
+            // Rotate the unit to face the target using the direction vector
+            _animator.ChangeMovingDirection(quantizedDirection);
+            
             OnTargetAcquired?.Invoke(target);
         }
         
@@ -45,6 +59,8 @@ namespace Units
                 return; // Ignore non-stress objects
             var tgt = other.GetComponent<ITargetable>();
             if (tgt == null || tgt.Team == _attacker.Team || tgt.IsTargetDead) return;
+            if(!tgt.CanBeTargeted(_attacker.Team, _attacker.MovementType))
+                return; // Ignore targets that cannot be targeted by this attacker
             
             if (!HasTarget)
             {

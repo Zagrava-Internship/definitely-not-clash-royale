@@ -16,6 +16,8 @@ namespace AI
         private float decisionInterval = 1f;
 
         [SerializeField] private Team myTeam = Team.Team2;
+        [SerializeField] private float spawnZ;
+        
 
         [Header("References")] [SerializeField]
         private DeckController deckController;
@@ -83,8 +85,8 @@ namespace AI
                 return;
             }
 
-
-            UnitSpawner.Spawn(bestCard.UnitToSpawn, spawnPos.Value, myTeam);
+            var finalPos=new Vector3(spawnPos.Value.x,spawnPos.Value.y, spawnZ);
+            UnitSpawner.Spawn(bestCard.UnitToSpawn,finalPos, myTeam);
             _manaSpender.Spend(bestCard.Cost);
 
             int index = hand.IndexOf(bestCard);
